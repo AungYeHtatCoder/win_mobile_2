@@ -54,27 +54,27 @@
 						</a>
 						<div class="menu-submenu">
 							<div class="menu-item">
-								<a href="{{ route('admin.permissions.index') }}" target="_blank" class="menu-link">
+								<a href="{{ route('admin.permissions.index') }}" class="menu-link">
 									<div class="menu-text">Permission</div>
 								</a>
 							</div>
 							<div class="menu-item">
-								<a href="{{ route('admin.roles.index') }}" target="_blank" class="menu-link">
+								<a href="{{ route('admin.roles.index') }}" class="menu-link">
 									<div class="menu-text">Role</div>
 								</a>
 							</div>
 							<div class="menu-item">
-								<a href="{{ route('admin.users.index') }}" target="_blank" class="menu-link">
+								<a href="{{ route('admin.users.index') }}" class="menu-link">
 									<div class="menu-text">Users</div>
 								</a>
 							</div>
 							<div class="menu-item">
-								<a href="pos_table_booking.html" target="_blank" class="menu-link">
+								<a href="pos_table_booking.html" class="menu-link">
 									<div class="menu-text">Table Booking</div>
 								</a>
 							</div>
 							<div class="menu-item">
-								<a href="pos_menu_stock.html" target="_blank" class="menu-link">
+								<a href="pos_menu_stock.html" class="menu-link">
 									<div class="menu-text">Menu Stock</div>
 								</a>
 							</div>
@@ -93,27 +93,27 @@
 						</a>
 						<div class="menu-submenu">
 							<div class="menu-item">
-								<a href="" target="_blank" class="menu-link">
+								<a href="{{ route('admin.banners.index') }}" class="menu-link">
 									<div class="menu-text">Home Banners</div>
 								</a>
 							</div>
 							{{-- <div class="menu-item">
-								<a href="pos_kitchen_order.html" target="_blank" class="menu-link">
+								<a href="pos_kitchen_order.html" class="menu-link">
 									<div class="menu-text">Kitchen Order</div>
 								</a>
 							</div> --}}
 							{{-- <div class="menu-item">
-								<a href="pos_counter_checkout.html" target="_blank" class="menu-link">
+								<a href="pos_counter_checkout.html" class="menu-link">
 									<div class="menu-text">Counter Checkout</div>
 								</a>
 							</div> --}}
 							{{-- <div class="menu-item">
-								<a href="pos_table_booking.html" target="_blank" class="menu-link">
+								<a href="pos_table_booking.html" class="menu-link">
 									<div class="menu-text">Table Booking</div>
 								</a>
 							</div> --}}
 							{{-- <div class="menu-item">
-								<a href="pos_menu_stock.html" target="_blank" class="menu-link">
+								<a href="pos_menu_stock.html" class="menu-link">
 									<div class="menu-text">Menu Stock</div>
 								</a>
 							</div> --}}
@@ -134,17 +134,17 @@
 						</a>
 						<div class="menu-submenu">
 							<div class="menu-item">
-								<a href="" target="_blank" class="menu-link">
+								<a href="{{ route('admin.categories.index') }}" class="menu-link">
 									<div class="menu-text">Categories</div>
 								</a>
 							</div>
 							<div class="menu-item">
-								<a href="pos_kitchen_order.html" target="_blank" class="menu-link">
+								<a href="{{ route('admin.brands.index') }}" class="menu-link">
 									<div class="menu-text">Brands</div>
 								</a>
 							</div>
 							<div class="menu-item">
-								<a href="pos_counter_checkout.html" target="_blank" class="menu-link">
+								<a href="pos_counter_checkout.html" class="menu-link">
 									<div class="menu-text">Products</div>
 								</a>
 							</div>
@@ -160,7 +160,7 @@
 							<span class="menu-icon"><i class="bi bi-people"></i></span>
 							<span class="menu-text">AdminProfile</span>
 						</a>
-						@else 
+						@else
 								<a href="{{ route('admin.profiles.index') }}" class="menu-link">
 							<span class="menu-icon"><i class="bi bi-people"></i></span>
 							<span class="menu-text">UserProfile</span>
