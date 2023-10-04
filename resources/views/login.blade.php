@@ -1,7 +1,7 @@
 <x-layout>
 
     <!-- content section start  -->
-  <section class="logins" style="padding-top: 7rem;">
+  <section class="logins">
     <div class="row d-flex flex-column justify-content-center align-items-center">
       <form class="col-lg-4 col-md-6 col-sm-8 shadow p-3 bg-body rounded mt-5 mb-5">
 

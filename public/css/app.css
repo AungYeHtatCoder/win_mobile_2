@@ -966,10 +966,15 @@ form.search-box button {
 
 footer {
   font-family: 'Cormorant Garamond', serif;
-  text-align: center;
   padding-top: 3rem;
   font-weight: bold;
   background: linear-gradient(-10deg, #f0f0f0, transparent, #f0f0f0, transparent, #f0f0f0);
+}
+
+@media(max-width:768px){
+  footer{
+    text-align: center;
+  }
 }
 
 footer h5 {
@@ -1096,9 +1101,9 @@ footer .lower_footer {
 
 
 /* ------------ content section end  ------------- */
-.contents {
+/* .contents {
   font-family: 'Cormorant Garamond', serif;
-}
+} */
 
 .contents .card {
   outline: none;
