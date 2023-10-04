@@ -1,11 +1,15 @@
 <?php
 
+use App\Http\Controllers\Admin\ColorController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\RolesController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\PermissionController;
+use App\Http\Controllers\Admin\RAMController;
+use App\Http\Controllers\Admin\StorageController;
+use App\Http\Controllers\Admin\PhoneRAMController;
 
 /*
 |--------------------------------------------------------------------------
@@ -99,6 +103,15 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'App\Http\Co
     Route::put('/change-phone-address', [ProfileController::class, 'PhoneAddressChange'])->name('changePhoneAddress');
     Route::put('/change-kpay-no', [ProfileController::class, 'KpayNoChange'])->name('changeKpayNo');
     Route::put('/change-join-date', [ProfileController::class, 'JoinDate'])->name('addJoinDate');
+
+    // Color resource route
+    Route::resource('colors', ColorController::class);
+
+    // Storage resource route
+    Route::resource('storages', StorageController::class);
+
+    // RAM resource route
+    Route::resource('rams', PhoneRAMController::class);
     
 });
     
