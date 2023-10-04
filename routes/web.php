@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\BannerController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ColorController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -104,6 +106,19 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'App\Http\Co
     Route::put('/change-kpay-no', [ProfileController::class, 'KpayNoChange'])->name('changeKpayNo');
     Route::put('/change-join-date', [ProfileController::class, 'JoinDate'])->name('addJoinDate');
 
+    //banner crud
+    Route::resource('banners', BannerController::class);
+
+    //category crud
+    Route::resource('categories', CategoryController::class);
+
+    //brand crud
+    Route::resource('brands', BrandController::class);
+});
+
+// csrf token error fix
+Route::get('/csrf-token', function () {
+    return response()->json(['csrfToken' => csrf_token()]);
     // Color resource route
     Route::resource('colors', ColorController::class);
 
@@ -112,10 +127,5 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'App\Http\Co
 
     // RAM resource route
     Route::resource('rams', PhoneRAMController::class);
-    
+
 });
-    
-    // csrf token error fix 
-    Route::get('/csrf-token', function () {
-        return response()->json(['csrfToken' => csrf_token()]);
-    });
