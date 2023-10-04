@@ -20,7 +20,7 @@
 							<div class="profile-sidebar">
 								<div class="desktop-sticky-top">
 									<div class="profile-img">
-										<img src="assets/img/user/profile.jpg" alt="">
+										<img src="{{ Auth::user()->profile }}" alt="">
 									</div>
 									<!-- profile info -->
          <h4 class="text align-center">User Information </h4>
@@ -37,7 +37,7 @@
 										<i class="fa fa-link fa-fw text-inverse text-opacity-50"></i>Kpay No {{ Auth::user()->kpay_no }}
 									</div>
          <div class="mb-3">
-										<i class="fa fa-link fa-fw text-inverse text-opacity-50"></i> Join Date 
+										<i class="fa fa-link fa-fw text-inverse text-opacity-50"></i> Join Date }}
 									</div>
          <div class="mb-3">
           {{-- @if(Auth::user()->salaries->isNotEmpty())
@@ -224,91 +224,7 @@
 												<!-- END tab-pane -->
 									
 												<!-- BEGIN tab-pane -->
-												<div class="tab-pane fade" id="profile-followers">
-													<div class="list-group">
-														<div class="list-group-item d-flex align-items-center">
-															<img src="assets/img/user/user-1.jpg" alt="" width="50" class="rounded-sm ms-n2">
-															<div class="flex-fill px-3">
-																<div><a href="#" class="text-inverse fw-bold text-decoration-none">Ethel Wilkes</a></div>
-																<div class="text-inverse text-opacity-50 fs-13px">North Raundspic</div>
-															</div>
-															<a href="#" class="btn btn-outline-theme">Follow</a>
-														</div>
-														<div class="list-group-item d-flex align-items-center">
-															<img src="assets/img/user/user-2.jpg" alt="" width="50" class="rounded-sm ms-n2">
-															<div class="flex-fill px-3">
-																<div><a href="#" class="text-inverse fw-bold text-decoration-none">Shanaya Hansen</a></div>
-																<div class="text-inverse text-opacity-50 fs-13px">North Raundspic</div>
-															</div>
-															<a href="#" class="btn btn-outline-theme">Follow</a>
-														</div>
-														<div class="list-group-item d-flex align-items-center">
-															<img src="assets/img/user/user-3.jpg" alt="" width="50" class="rounded-sm ms-n2">
-															<div class="flex-fill px-3">
-																<div><a href="#" class="text-inverse fw-bold text-decoration-none">James Allman</a></div>
-																<div class="text-inverse text-opacity-50 fs-13px">North Raundspic</div>
-															</div>
-															<a href="#" class="btn btn-outline-theme">Follow</a>
-														</div>
-														<div class="list-group-item d-flex align-items-center">
-															<img src="assets/img/user/user-4.jpg" alt="" width="50" class="rounded-sm ms-n2">
-															<div class="flex-fill px-3">
-																<div><a href="#" class="text-inverse fw-bold text-decoration-none">Marie Welsh</a></div>
-																<div class="text-inverse text-opacity-50 fs-13px">Crencheporford</div>
-															</div>
-															<a href="#" class="btn btn-outline-theme">Follow</a>
-														</div>
-														<div class="list-group-item d-flex align-items-center">
-															<img src="assets/img/user/user-5.jpg" alt="" width="50" class="rounded-sm ms-n2">
-															<div class="flex-fill px-3">
-																<div><a href="#" class="text-inverse fw-bold text-decoration-none">Lamar Kirkland</a></div>
-																<div class="text-inverse text-opacity-50 fs-13px">Prince Ewoodswan</div>
-															</div>
-															<a href="#" class="btn btn-outline-theme">Follow</a>
-														</div>
-														<div class="list-group-item d-flex align-items-center">
-															<img src="assets/img/user/user-6.jpg" alt="" width="50" class="rounded-sm ms-n2">
-															<div class="flex-fill px-3">
-																<div><a href="#" class="text-inverse fw-bold text-decoration-none">Bentley Osborne</a></div>
-																<div class="text-inverse text-opacity-50 fs-13px">Red Suvern</div>
-															</div>
-															<a href="#" class="btn btn-outline-theme">Follow</a>
-														</div>
-														<div class="list-group-item d-flex align-items-center">
-															<img src="assets/img/user/user-7.jpg" alt="" width="50" class="rounded-sm ms-n2">
-															<div class="flex-fill px-3">
-																<div><a href="#" class="text-inverse fw-bold text-decoration-none">Ollie Goulding</a></div>
-																<div class="text-inverse text-opacity-50 fs-13px">Doa</div>
-															</div>
-															<a href="#" class="btn btn-outline-theme">Follow</a>
-														</div>
-														<div class="list-group-item d-flex align-items-center">
-															<img src="assets/img/user/user-8.jpg" alt="" width="50" class="rounded-sm ms-n2">
-															<div class="flex-fill px-3">
-																<div><a href="#" class="text-inverse fw-bold text-decoration-none">Hiba Calvert</a></div>
-																<div class="text-inverse text-opacity-50 fs-13px">Stemunds</div>
-															</div>
-															<a href="#" class="btn btn-outline-theme">Follow</a>
-														</div>
-														<div class="list-group-item d-flex align-items-center">
-															<img src="assets/img/user/user-9.jpg" alt="" width="50" class="rounded-sm ms-n2">
-															<div class="flex-fill px-3">
-																<div><a href="#" class="text-inverse fw-bold text-decoration-none">Rivka Redfern</a></div>
-																<div class="text-inverse text-opacity-50 fs-13px">Fallnee</div>
-															</div>
-															<a href="#" class="btn btn-outline-theme">Follow</a>
-														</div>
-														<div class="list-group-item d-flex align-items-center">
-															<img src="assets/img/user/user-10.jpg" alt="" width="50" class="rounded-sm ms-n2">
-															<div class="flex-fill px-3">
-																<div><a href="#" class="text-inverse fw-bold text-decoration-none">Roshni Fernandez</a></div>
-																<div class="text-inverse text-opacity-50 fs-13px">Mount Lerdo</div>
-															</div>
-															<a href="#" class="btn btn-outline-theme">Follow</a>
-														</div>
-													</div>
-													<div class="text-center p-3"><a href="#" class="text-inverse text-decoration-none">Show more <b class="caret"></b></a></div>
-												</div>
+
 												<!-- END tab-pane -->
 									
 												<!-- BEGIN tab-pane -->
@@ -327,12 +243,12 @@
 													<div class="list-group list-group-flush">
 														<div class="list-group-item fw-bold px-3 d-flex">
 															<span class="flex-fill">Change Password</span> 
-															<a href="#" class="text-inverse text-opacity-50"><i class="fa fa-cog"></i></a>
+															<div class="text-inverse text-opacity-50"><i class="fa fa-cog"></i></div>
 														</div>
 														<div class="list-group-item px-3">
 															<div class="text-inverse text-opacity-50"><small><strong></strong></small></div>
 															<div class="fw-bold mb-2"># You can change your password here</div>
-															<a href="#" class="card text-inverse text-decoration-none mb-1">
+															<a class="card text-inverse text-decoration-none mb-1">
 																<div class="card-body">
 																	<div class="row no-gutters">
 																		<div class="col-md-8">
@@ -378,7 +294,7 @@
 																	<div class="card-arrow-bottom-right"></div>
 																</div>
 															</a>
-															<div><small class="text-inverse text-opacity-50">1.89m share</small></div>
+															{{-- <div><small class="text-inverse text-opacity-50">1.89m share</small></div> --}}
 														</div>
 														
 														
@@ -386,7 +302,7 @@
               <div class="list-group-item px-3">
 															<div class="text-inverse text-opacity-50"><small><strong></strong></small></div>
 															<div class="fw-bold mb-2"># You can change your Phone & Address here</div>
-															<a href="#" class="card text-inverse text-decoration-none mb-1">
+															<a class="card text-inverse text-decoration-none mb-1">
 																<div class="card-body">
 																	<div class="row no-gutters">
 																		<div class="col-md-8">
@@ -427,14 +343,14 @@
 																	<div class="card-arrow-bottom-right"></div>
 																</div>
 															</a>
-															<div><small class="text-inverse text-opacity-50">1.89m share</small></div>
+															{{-- <div><small class="text-inverse text-opacity-50">1.89m share</small></div> --}}
 														</div>
              {{-- change phone & address end --}}
              {{-- kpay add start --}}
                <div class="list-group-item px-3">
-															<div class="text-inverse text-opacity-50"><small><strong></strong></small></div>
-															<div class="fw-bold mb-2"># You can change your Phone & Address here</div>
-															<a href="#" class="card text-inverse text-decoration-none mb-1">
+															{{-- <div class="text-inverse text-opacity-50"><small><strong></strong></small></div> --}}
+															<div class="fw-bold mb-2"># You can change your Kpay No</div>
+															<a class="card text-inverse text-decoration-none mb-1">
 																<div class="card-body">
 																	<div class="row no-gutters">
 																		<div class="col-md-8">
@@ -466,46 +382,10 @@
 																	<div class="card-arrow-bottom-right"></div>
 																</div>
 															</a>
-															<div><small class="text-inverse text-opacity-50">1.89m share</small></div>
+															{{-- <div><small class="text-inverse text-opacity-50">1.89m share</small></div> --}}
 														</div>
              {{-- kpay add end --}}
-             {{-- add join date start --}}
-               <div class="list-group-item px-4">
-															<div class="text-inverse text-opacity-50"><small><strong></strong></small></div>
-															<div class="fw-bold mb-2"># You can change your Kpay No here</div>
-															<a class="card text-inverse text-decoration-none mb-1">
-																<div class="card-body">
-																	<div class="row no-gutters">
-																		<div class="col-md-8">
-																		<form action="{{ route('admin.addJoinDate', Auth::user()->id) }}" method="post">
-                 @csrf
-                 @method('PUT')
-                 <div class="form-group">
-															<label class="form-label">Join Date <span class="text-danger">*</span></label>
-															{{-- <div class="input-group"> --}}
-																<input type="text" name="join_date" class="form-control" id="datepicker-component" placeholder="10/12/2023(d/m/y)">
-																{{-- <label class="input-group-text" for="datepicker-component"><i class="fa fa-calendar"></i></label> --}}
-															{{-- </div> --}}
-														</div>
-                 
-                <div class="form-group mt-3">
-                  <button type="submit" class="btn btn-primary btn-sm">AddJoinDate</button>
-                </div>
-                </form>
-																		</div>
-																		
-																	</div>
-																</div>
-																<div class="card-arrow">
-																	<div class="card-arrow-top-left"></div>
-																	<div class="card-arrow-top-right"></div>
-																	<div class="card-arrow-bottom-left"></div>
-																	<div class="card-arrow-bottom-right"></div>
-																</div>
-															</a>
-															<div><small class="text-inverse text-opacity-50">1.89m share</small></div>
-														</div>
-             {{-- add join date end --}}
+             
 														<a href="#" class="list-group-item list-group-action text-center">
 															Show more
 														</a>

@@ -80,8 +80,8 @@
 							</div>
 						</div>
 					</div>
-                    {{-- User Interface --}}
-                    <div class="menu-header">User Interface</div>
+      {{-- User Interface --}}
+      <div class="menu-header">User Interface</div>
 					<div class="menu-item has-sub">
 						<a href="javascript:;" class="menu-link">
 							<div class="menu-icon">
@@ -155,10 +155,17 @@
 					<div class="menu-divider"></div>
 					<div class="menu-header">Users</div>
 					<div class="menu-item">
-						<a href="profile.html" class="menu-link">
+						@if(Auth::user()->id === 1)
+								<a href="{{ route('admin.profiles.index') }}" class="menu-link">
 							<span class="menu-icon"><i class="bi bi-people"></i></span>
-							<span class="menu-text">Profile</span>
+							<span class="menu-text">AdminProfile</span>
 						</a>
+						@else 
+								<a href="{{ route('admin.profiles.index') }}" class="menu-link">
+							<span class="menu-icon"><i class="bi bi-people"></i></span>
+							<span class="menu-text">UserProfile</span>
+						</a>
+						@endif
 					</div>
 					<div class="menu-item">
 						<a href="calendar.html" class="menu-link">

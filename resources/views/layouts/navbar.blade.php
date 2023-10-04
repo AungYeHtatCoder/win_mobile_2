@@ -170,12 +170,16 @@
 				<div class="menu-item dropdown dropdown-mobile-full">
 					<a href="#" data-bs-toggle="dropdown" data-bs-display="static" class="menu-link">
 						<div class="menu-img online">
-							<img src="{{ asset('admin_app/assets/img/user/profile.jpg')}}" alt="Profile" height="60">
+							<img src="{{ Auth::user()->profile }}" alt="Profile" height="60">
 						</div>
 						<div class="menu-text d-sm-block d-none w-170px">{{ Auth::user()->name }}</div>
 					</a>
 					<div class="dropdown-menu dropdown-menu-end me-lg-3 fs-11px mt-1">
-						<a class="dropdown-item d-flex align-items-center" href="profile.html">PROFILE <i class="bi bi-person-circle ms-auto text-theme fs-16px my-n1"></i></a>
+						@if(Auth::user()->id === 1)
+						<a class="dropdown-item d-flex align-items-center" href="{{ route('admin.profiles.index') }}">AdminPROFILE <i class="bi bi-person-circle ms-auto text-theme fs-16px my-n1"></i></a>
+						@else 
+						<a class="dropdown-item d-flex align-items-center" href="{{ route('admin.profiles.index') }}">UserPROFILE <i class="bi bi-person-circle ms-auto text-theme fs-16px my-n1"></i></a>
+						@endif
 						<a class="dropdown-item d-flex align-items-center" href="email_inbox.html">INBOX <i class="bi bi-envelope ms-auto text-theme fs-16px my-n1"></i></a>
 						<a class="dropdown-item d-flex align-items-center" href="calendar.html">CALENDAR <i class="bi bi-calendar ms-auto text-theme fs-16px my-n1"></i></a>
 						<a class="dropdown-item d-flex align-items-center" href="settings.html">SETTINGS <i class="bi bi-gear ms-auto text-theme fs-16px my-n1"></i></a>
