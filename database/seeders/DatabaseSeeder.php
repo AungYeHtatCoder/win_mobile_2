@@ -24,6 +24,9 @@ class DatabaseSeeder extends Seeder
             PermissionRoleTableSeeder::class,
             UsersTableSeeder::class,
             RoleUserTableSeeder::class,
+            ColorTableSeeder::class,
+            StorageTableSeeder::class,
+            PhoneRAMTableSeeder::class,
         ]);
     }
 }
