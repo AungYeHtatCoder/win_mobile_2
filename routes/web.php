@@ -114,11 +114,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'App\Http\Co
 
     //brand crud
     Route::resource('brands', BrandController::class);
-});
 
-// csrf token error fix
-Route::get('/csrf-token', function () {
-    return response()->json(['csrfToken' => csrf_token()]);
     // Color resource route
     Route::resource('colors', ColorController::class);
 
@@ -127,5 +123,11 @@ Route::get('/csrf-token', function () {
 
     // RAM resource route
     Route::resource('rams', PhoneRAMController::class);
+});
+
+// csrf token error fix
+Route::get('/csrf-token', function () {
+    return response()->json(['csrfToken' => csrf_token()]);
+
 
 });
