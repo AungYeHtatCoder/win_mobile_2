@@ -26,7 +26,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'App\Http\Controllers\Admin', 'middleware' => ['auth']], function () {
-    //Route::get('/', [HomeController::class, 'index'])->name('home');
     // Permissions
     Route::delete('permissions/destroy', [PermissionController::class, 'massDestroy'])->name('permissions.massDestroy');
     Route::resource('permissions', PermissionController::class);
@@ -39,19 +38,13 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'App\Http\Co
     Route::delete('users/destroy', [UsersController::class, 'massDestroy'])->name('users.massDestroy');
     Route::resource('users', UsersController::class);
     // profile resource rotues
-    Route::resource('profiles', ProfileController::class);
-    //Route::post('/profiles/update/', [ProfileController::class, 'profileChange']);
-    // brand_categories resource rotues
-    // change password route with auth id
+     Route::resource('profiles', ProfileController::class);
     Route::put('/change-password', [ProfileController::class, 'changePassword'])->name('changePassword');
     // PhoneAddressChange route with auth id route with put method
     Route::put('/change-phone-address', [ProfileController::class, 'PhoneAddressChange'])->name('changePhoneAddress');
-    // user log activities route
-    // Route::get('add-to-log', [App\Http\Controllers\Admin\UserLogActivityController::class, 'store'])->name('logActivity.store');
-    // Route::get('logActivity', [App\Http\Controllers\Admin\UserLogActivityController::class, 'index'])->name('logActivity');
-    // Route::delete('/admin/logActivity/{id}', [UserLogActivityController::class, 'destroy'])->name('logActivity.destroy');
-    // Route::get('/admin/logActivity/{id}', [UserLogActivityController::class, 'show'])->name('logActivity.show');
-
+    Route::put('/change-kpay-no', [ProfileController::class, 'KpayNoChange'])->name('changeKpayNo');
+    Route::put('/change-join-date', [ProfileController::class, 'JoinDate'])->name('addJoinDate');
+    
 });
     
     // csrf token error fix 

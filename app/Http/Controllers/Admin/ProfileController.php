@@ -2,18 +2,21 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use Carbon\Carbon;
+use App\Models\User;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\URL;
-use Illuminate\Support\Str;
-use App\Models\User;
 use App\Http\Requests\UserRequest;
+use Illuminate\Support\Facades\URL;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Symfony\Component\HttpFoundation\Response;
+
 class ProfileController extends Controller
 {
     /**
@@ -21,7 +24,15 @@ class ProfileController extends Controller
      */
    public function index()
     {
-        return view('admin.profile.index');
+        if (auth()->user()->hasRole('Admin')) {
+            $user = User::find(Auth::user()->id);
+            return view('admin.profile.admin_profile', compact('user'));
+
+    } else {
+            $user = User::find(Auth::user()->id);
+            return view('admin.profile.user_profile', compact('user'));
+    }
+        //return view('admin.profile.index');
     }
 
     /**
@@ -56,54 +67,136 @@ class ProfileController extends Controller
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+
     public function update(UserRequest $request, User $profile)
     {
+    $data = $request->validated();
 
-        $data = $request->validated();
-        //dd($data);
+    // Check if a new profile image has been uploaded
+    $newImage = $request->file('profile');
+    
+    if ($newImage) {
+       // $main_folder = 'profile_images/';
+        $main_folder = 'profile_image/' . Str::random();
+        $filename = $newImage->getClientOriginalName();
 
-        /** @var \Illuminate\Http\UploadedFile $image */
-        $image = $data['profile'] ?? null;
-        // Check if image was given and save on local file system
-        if ($image) {
-            $relativePath = $this->saveImage($image);
-            $data['profile'] = URL::to(Storage::url($relativePath));
-            $data['profile_mime'] = $image->getClientMimeType();
-            $data['profile_size'] = $image->getSize();
+        // Store the new image with specified visibility settings
+        $path = Storage::putFileAs('public/'.
+            $main_folder, 
+            $newImage, 
+            $filename,
+            [
+                'visibility' => 'public',
+                'directory_visibility' => 'public'
+            ]
+        );
 
-            // If there is an old image, delete it
-            if ($profile->image) {
-                Storage::deleteDirectory('/public/' . dirname($profile->image));
-            }
+        $data['profile'] = URL::to(Storage::url($path));
+        $data['profile_mime'] = $newImage->getClientMimeType();
+        $data['profile_size'] = $newImage->getSize();
+        
+        // If there is an old image, delete it
+        if ($profile->profile) {
+            $oldImagePath = str_replace(URL::to('/'), '', $profile->profile);
+            Storage::delete($oldImagePath);
         }
-
-        $profile->update($data);
-
-        return redirect()->route('admin.profiles.index')->with('toast_success', 'Profile updated successfully');
     }
 
-    public function profileChange(Request $request){
-        $profile = $request->file('profile');
-        $ext = $profile->getClientOriginalExtension();
-        if($ext === "png" || $ext === "jpeg" || $ext === "jpg"){
-            $user = User::find(Auth::user()->id);
-            //delete existed profile
-            if($user->profile){
-                File::delete(public_path('assets/img/profile/'.$user->profile));
-            }
-            // image
-            $filename = uniqid('profile') . '.' . $ext; // Generate a unique filename
-            $profile->move(public_path('assets/img/profile/'), $filename); // Save the file to the pub
+    $profile->update($data);
 
+    return redirect()->back()->with('toast_success', 'Profile updated successfully');
+}
+
+
+    // password change function
+    public function changePassword(Request $request)
+    {
+        //dd($request->all());
+        $request->validate([
+            'old_password' => 'required',
+            'password' => 'required|confirmed|min:8',
+
+        ]);
+
+        $user = User::find(Auth::user()->id);
+
+        if (Hash::check($request->old_password, $user->password)) {
             $user->update([
-                'profile' => $filename
+                'password' => Hash::make($request->password)
             ]);
-            return redirect()->back()->with('toast_success', "Your Profile has been Updated.");
-        }else{
-            return redirect()->back()->with('error', "Please use validate file type!");
+
+            if (auth()->user()->hasRole('Admin')) {
+                return redirect()->back()->with('toast_success', "Admin Password has been  Updated.");
+            } else {
+                return redirect()->back()->with('toast_success', "Customer Password has been Updated.");
+            }
+        } else {
+            return redirect()->back()->with('error', "Old password does not match!");
+        }
+    }
+
+    // phone address update function
+    public function PhoneAddressChange(Request $request)
+    {
+        //dd($request->all());
+        $request->validate([
+            'phone' => 'required',
+            'address' => 'required',
+
+        ]);
+
+        $user = User::find(Auth::user()->id);
+
+        $user->update([
+            'phone' => $request->phone,
+            'address' => $request->address
+        ]);
+
+        if (auth()->user()->hasRole('Admin')) {
+            return redirect()->back()->with('toast_success', "Admin Profile has been  Updated.");
+        } else {
+            return redirect()->back()->with('toast_success', "Customer Profile has been Updated.");
+        }
+    }
+
+    public function KpayNoChange(Request $request)
+    {
+        //dd($request->all());
+        $request->validate([
+            'kpay_no' => 'required',
+        ]);
+
+        $user = User::find(Auth::user()->id);
+
+        $user->update([
+            'kpay_no' => $request->kpay_no,
+        ]);
+
+        if (auth()->user()->hasRole('Admin')) {
+            return redirect()->back()->with('toast_success', "Admin Profile has been  Updated.");
+        } else {
+            return redirect()->back()->with('toast_success', "Customer Profile has been Updated.");
+        }
+    }
+
+        public function JoinDate(Request $request)
+    {
+        //dd($request->all());
+        $request->validate([
+            'join_date' => 'required',
+        ]);
+            $formattedJoinDate = Carbon::createFromFormat('m/d/Y', $request->input('join_date'))->format('Y-m-d');
+
+        $user = User::find(Auth::user()->id);
+
+        $user->update([
+            'join_date' => $formattedJoinDate,
+        ]);
+
+        if (auth()->user()->hasRole('Admin')) {
+            return redirect()->back()->with('toast_success', "Admin Profile has been  Updated.");
+        } else {
+            return redirect()->back()->with('toast_success', "Customer Profile has been Updated.");
         }
     }
 

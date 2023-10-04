@@ -28,6 +28,13 @@ class User extends Authenticatable
         'profile',
         'email',
         'password',
+        'profile',
+        'profile_mime',
+        'profile_size',
+        'phone',
+        'address',
+        'kpay_no'
+        
     ];
 
     /**
