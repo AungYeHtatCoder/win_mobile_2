@@ -15,7 +15,7 @@
             <div class="item">
               <div class="card">
                 <div class="card-body d-flex justify-content-center">
-                  <img src="{{ asset('assets/Samsung-Galaxy-S23-SOURCE-Samsung.png') }}" class="img-fluid card-image-top w-75" alt="">
+                  <img src="./assets/Samsung-Galaxy-S23-SOURCE-Samsung.png" class="img-fluid card-image-top w-75" alt="">
                 </div>
               </div>
             </div>
@@ -136,13 +136,6 @@
             <strong>Hsu Nandar Lwin</strong>&nbsp;<small class="fst-italic">27 Feb 2018 10:57:43</small>
             <div class="d-flex">
               <div>
-                <span><i class="fas fa-star"></i></span>
-                <span><i class="fas fa-star"></i></span>
-                <span><i class="fas fa-star"></i></span>
-                <span><i class="fas fa-star-half"></i></span>
-                <span><i class="fas fa-star-half"></i></span>
-              </div>
-              <div>
                 <span>&nbsp;&nbsp;(4.0 Rating)</span>
               </div>
             </div>
@@ -156,13 +149,6 @@
             <strong>Thit Htoo Aung</strong>&nbsp;<small class="fst-italic">27 Feb 2018 10:57:43</small>
             <div class="d-flex">
               <div>
-                <span><i class="fas fa-star"></i></span>
-                <span><i class="fas fa-star"></i></span>
-                <span><i class="fas fa-star"></i></span>
-                <span><i class="fas fa-star-half"></i></span>
-                <span><i class="fas fa-star-half"></i></span>
-              </div>
-              <div>
                 <span>&nbsp;&nbsp;(4.0 Rating)</span>
               </div>
             </div>
@@ -175,13 +161,6 @@
           <div class="mb-md-4">
             <strong>Khant Aung</strong>&nbsp;<small class="fst-italic">27 Feb 2018 10:57:43</small>
             <div class="d-flex">
-              <div>
-                <span><i class="fas fa-star"></i></span>
-                <span><i class="fas fa-star"></i></span>
-                <span><i class="fas fa-star"></i></span>
-                <span><i class="fas fa-star-half"></i></span>
-                <span><i class="fas fa-star-half"></i></span>
-              </div>
               <div>
                 <span>&nbsp;&nbsp;(4.0 Rating)</span>
               </div>

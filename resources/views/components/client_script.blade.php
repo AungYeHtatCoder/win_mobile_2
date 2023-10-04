@@ -42,6 +42,8 @@
       });
     });
 
+    // product details page
+
     // Get the input element
     const numberInput = document.getElementById("numberInput");
 
@@ -58,6 +60,8 @@
         numberInput.value++;
       }
     }
+
+    // Hero slider 
 
     document.addEventListener("DOMContentLoaded", function () {
       // Reference to your carousel element
