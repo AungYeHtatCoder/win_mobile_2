@@ -26,6 +26,9 @@ class DatabaseSeeder extends Seeder
             RoleUserTableSeeder::class,
             CategorySeeder::class,
             BrandSeeder::class,
+            ColorTableSeeder::class,
+            StorageTableSeeder::class,
+            PhoneRAMTableSeeder::class,
         ]);
     }
 }

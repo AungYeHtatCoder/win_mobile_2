@@ -2,12 +2,16 @@
 
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ColorController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\RolesController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\PermissionController;
+use App\Http\Controllers\Admin\RAMController;
+use App\Http\Controllers\Admin\StorageController;
+use App\Http\Controllers\Admin\PhoneRAMController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +25,62 @@ use App\Http\Controllers\Admin\PermissionController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
+});
+
+// Login page
+Route::get('/login',function(){
+    return view('login');
+});
+
+// Register page
+Route::get('/register',function(){
+    return view('register');
+});
+
+// Shop page
+Route::get('/shop',function(){
+    return view('shop');
+});
+
+//product details page
+Route::get('/product-details',function(){
+    return view('product_details');
+});
+
+// my-cart page
+Route::get('/my-cart',function(){
+    return view('my_cart');
+});
+
+// payment page
+Route::get('/payment',function(){
+    return view('payment');
+});
+
+// contact
+Route::get('/contact',function(){
+    return view('contact');
+});
+
+// profile
+Route::get('/profile',function(){
+    return view('profile');
+});
+
+// profile Edit
+Route::get('/profile-edit',function(){
+    return view('profile_edit');
+});
+
+// change-password
+Route::get('/change-password',function(){
+    return view('change_password');
+});
+
+// order-history
+Route::get('/order-history',function(){
+    return view('order_history');
 });
 
 Auth::routes();
@@ -60,4 +119,13 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'App\Http\Co
 // csrf token error fix
 Route::get('/csrf-token', function () {
     return response()->json(['csrfToken' => csrf_token()]);
+    // Color resource route
+    Route::resource('colors', ColorController::class);
+
+    // Storage resource route
+    Route::resource('storages', StorageController::class);
+
+    // RAM resource route
+    Route::resource('rams', PhoneRAMController::class);
+
 });
