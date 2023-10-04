@@ -21,7 +21,7 @@
       <div id="nav" class="navbar navbar-collapse collapse justify-content-center align-items-center menu-lg-bars">
         <ul class="navbar-nav">
           <li class="nav-item dropdowns">
-            <a href="#" class="nav-link" data-bs-target="#phone" data-bs-toggle="collapse">Phone
+            <a href="/" class="nav-link" data-bs-target="#phone" data-bs-toggle="collapse">Phone
               <i class="fas fa-plus plus-icons"></i>
             </a>
             <!-- dropdown menu -->
@@ -62,7 +62,7 @@
             </ul>
             <!-- end mobile menu -->
           </li>
-          <li class="nav-item dropdowns">
+          {{-- <li class="nav-item dropdowns">
             <a href="#" class="nav-link" data-bs-target="#brand" data-bs-toggle="collapse">Brand
               <i class="fas fa-plus plus-icons"></i>
             </a>
@@ -108,7 +108,7 @@
               <li><a href="#"><i class="fas fa-greater-than me-2"></i>Oppo</a></li>
             </ul>
             <!-- end mobile menu -->
-          </li>
+          </li> --}}
           <li class="nav-item dropdowns">
             <a href="#" class="nav-link" data-bs-target="#accessory" data-bs-toggle="collapse">Accessory
               <i class="fas fa-plus plus-icons"></i>
@@ -155,7 +155,7 @@
             <!-- end mobile menu -->
           </li>
 
-          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
 
           <li class="mobile-view">
             <a href="#" class="nav-link" data-bs-target="#account" data-bs-toggle="collapse">Account
