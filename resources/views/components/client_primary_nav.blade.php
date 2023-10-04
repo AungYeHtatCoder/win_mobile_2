@@ -163,7 +163,7 @@
               <!-- mobile menu -->
               <ul id="account" class="collapse sub-menus">
                 <li>
-                  <a href="/login"><i class="fas fa-user me-2"></i>Account</a>
+                  <a href="/profile"><i class="fas fa-user me-2"></i>Account</a>
                 </li>
                 <li>
                   <a href="#"><i class="fas fa-heart me-2"></i>wishlist</a>
@@ -184,7 +184,7 @@
             <a href="#!" class="text-dark"><i class="far fa-heart mx-2"></i></a>
           </li>
           <li>
-            <a href="/login" class="text-dark"><i class="far fa-user mx-2"></i></a>
+            <a href="/profile" class="text-dark"><i class="far fa-user mx-2"></i></a>
           </li>
           <li>
             <a href="/my-cart" class="text-dark"><i class="fa fa-shopping-bag mx-2"></i></a>
