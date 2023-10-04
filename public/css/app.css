@@ -244,6 +244,35 @@ hr {
   opacity: 1;
 }
 
+/* section topic  */
+.section-topic {
+  width: 500px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.topic {
+  width: 500px;
+  position: relative;
+  text-align: center;
+}
+
+.topic::after {
+  width: 200px;
+  height: 3px;
+  background: orange;
+
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: -7px;
+  z-index: -1;
+}
+
+
 /* my cart section end  */
 
 /* Hide the default number input arrows */

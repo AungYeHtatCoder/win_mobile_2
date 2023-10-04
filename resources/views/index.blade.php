@@ -492,7 +492,10 @@
 
   <section>
     <div class="container">
-      <div class="row">
+      <div class="mt-5 d-flex justify-content-center">
+        <h2 class="text-center topic">Available Accessories</h2>
+      </div>
+      <div class="row mt-sm-3 mt-lg-5">
         <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded">
           <div class="text-end">
             <a href="#"><i class="fas fa-heart text-dark"></i></a>
@@ -710,6 +713,19 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="mt-lg-5 mt-sm-3">
+    <div class="container bg-body-tertiary p-3">
+        <div class="row text-center">
+          <div class="col-lg-8 col-sm-12 m-auto">
+            <h3>Order Now!</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga cum maxime hic quidem corporis distinctio reiciendis nisi? Magni ducimus iste magnam temporibus, quos harum, culpa deleniti similique facilis quas qui exercitationem rem labore eveniet, voluptates totam pariatur! Consectetur, distinctio quos.
+          </p>
+          </div>
+        </div>
     </div>
   </section>
   <!-- content section end  -->
