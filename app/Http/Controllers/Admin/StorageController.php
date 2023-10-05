@@ -14,7 +14,7 @@ class StorageController extends Controller
      */
     public function index()
     {
-        $storages = Storage::all();
+        $storages = Storage::latest()->get();
         return view('admin.storage.index', compact('storages'));
     }
 

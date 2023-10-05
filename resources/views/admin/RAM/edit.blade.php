@@ -3,7 +3,7 @@
 <div class="row">
  <div class="col-md-8">
   <div id="formGrid" class="mb-5">
-   <h4>RAM Create <span> <a href="{{ route('admin.rams.index') }}" class="btn btn-primary">Back To
+   <h4>RAM Edit <span> <a href="{{ route('admin.rams.index') }}" class="btn btn-primary">Back To
       RAM Dashboard</a></span></h4>
    <p></p>
    <div class="card">
