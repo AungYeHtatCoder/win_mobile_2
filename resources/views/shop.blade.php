@@ -10,7 +10,7 @@
           <img src="./assets/iphone-14-purple-feature1-m.jpg" class="img-fluid w-50" alt="">
         </div>
         <div>
-          <a href="/product_details">Xiaomi Note 12 <sup class="text-warning">New</sup></a>
+          <a href="/product-details">Xiaomi Note 12 <sup class="text-warning">New</sup></a>
         </div>
         <div>
           <small>Storage : 64GB , 128GB, 512GB</small>
@@ -40,7 +40,7 @@
           <img src="./assets/note-12-mzb0e2kin-redmi-original-imagz62rkfazphz2.jpg" class="img-fluid w-50" alt="">
         </div>
         <div>
-          <a href="/product_details">Xiaomi Note 12 <sup class="text-danger">Second</sup></a>
+          <a href="/product-details">Xiaomi Note 12 <sup class="text-danger">Second</sup></a>
         </div>
         <div>
           <small>Storage : 64GB , 128GB, 512GB</small>
@@ -70,7 +70,7 @@
           <img src="./assets/xiaomi-redmi-note-10-1650374785.jpg" class="img-fluid w-50" alt="">
         </div>
         <div>
-          <a href="/product_details">Xiaomi Note 12 <sup class="text-warning">New</sup></a>
+          <a href="/product-details">Xiaomi Note 12 <sup class="text-warning">New</sup></a>
         </div>
         <div>
           <small>Storage : 64GB , 128GB, 512GB</small>
@@ -100,7 +100,7 @@
           <img src="./assets/csm_Huawei-Mate-60-Offizielle-Render-1_83ec8c5665.jpg" class="img-fluid w-50" alt="">
         </div>
         <div>
-          <a href="/product_details">Xiaomi Note 12 <sup class="text-danger">Second</sup></a>
+          <a href="/product-details">Xiaomi Note 12 <sup class="text-danger">Second</sup></a>
         </div>
         <div>
           <small>Storage : 64GB , 128GB, 512GB</small>
@@ -130,7 +130,7 @@
           <img src="./assets/vivo-v25-5g-back.jpg" class="img-fluid w-50" alt="">
         </div>
         <div>
-          <a href="/product_details">Xiaomi Note 12 <sup class="text-warning">New</sup></a>
+          <a href="/product-details">Xiaomi Note 12 <sup class="text-warning">New</sup></a>
         </div>
         <div>
           <small>Storage : 64GB , 128GB, 512GB</small>
@@ -160,7 +160,7 @@
           <img src="./assets/71HUnJvHsbL.jpg" class="img-fluid w-50" alt="">
         </div>
         <div>
-          <a href="/product_details">Xiaomi Note 12 <sup class="text-danger">Second</sup></a>
+          <a href="/product-details">Xiaomi Note 12 <sup class="text-danger">Second</sup></a>
         </div>
         <div>
           <small>Storage : 64GB , 128GB, 512GB</small>
@@ -190,7 +190,7 @@
           <img src="./assets/Oppo_reno6.jpg" class="img-fluid w-50" alt="">
         </div>
         <div>
-          <a href="/product_details">Xiaomi Note 12 <sup class="text-warning">New</sup></a>
+          <a href="/product-details">Xiaomi Note 12 <sup class="text-warning">New</sup></a>
         </div>
         <div>
           <small>Storage : 64GB , 128GB, 512GB</small>
@@ -220,7 +220,7 @@
           <img src="./assets/Sony-Xperia-10-V_featured-image-packshot-review.jpg" class="img-fluid w-50" alt="">
         </div>
         <div>
-          <a href="/product_details">Xiaomi Note 12 <sup class="text-warning">New</sup></a>
+          <a href="/product-details">Xiaomi Note 12 <sup class="text-warning">New</sup></a>
         </div>
         <div>
           <small>Storage : 64GB , 128GB, 512GB</small>
@@ -250,7 +250,7 @@
           <img src="./assets/csm_Huawei-Mate-60-Offizielle-Render-1_83ec8c5665.jpg" class="img-fluid w-50" alt="">
         </div>
         <div>
-          <a href="/product_details">Xiaomi Note 12 <sup class="text-danger">Second</sup></a>
+          <a href="/product-details">Xiaomi Note 12 <sup class="text-danger">Second</sup></a>
         </div>
         <div>
           <small>Storage : 64GB , 128GB, 512GB</small>
@@ -280,7 +280,7 @@
           <img src="./assets/71LfnkRgZ4L._AC_UF894,1000_QL80_.jpg" class="img-fluid w-50" alt="">
         </div>
         <div>
-          <a href="/product_details">Apple Watch 2 <sup class="text-warning">New</sup></a>
+          <a href="/product-details">Apple Watch 2 <sup class="text-warning">New</sup></a>
         </div>
         <div>
           <small>Color : Black ,White</small>
@@ -307,7 +307,7 @@
           <img src="./assets/71K6mroOBJL._SL1500_.jpg" class="img-fluid w-50" alt="">
         </div>
         <div>
-          <a href="/product_details">Bluetooth Speaker <sup class="text-warning">New</sup></a>
+          <a href="/product-details">Bluetooth Speaker <sup class="text-warning">New</sup></a>
         </div>
         <div>
           <small>Storage : 64GB , 128GB, 512GB</small>
@@ -334,7 +334,7 @@
           <img src="./assets/OIP (2).jpeg" class="img-fluid w-50" alt="">
         </div>
         <div>
-          <a href="/product_details">Apple Airpot 1 <sup class="text-warning">New</sup></a>
+          <a href="/product-details">Apple Airpot 1 <sup class="text-warning">New</sup></a>
         </div>
         <div>
           <small>Storage : 64GB , 128GB, 512GB</small>
@@ -361,7 +361,7 @@
           <img src="./assets/R.jpeg" class="img-fluid w-50" alt="">
         </div>
         <div>
-          <a href="/product_details">Gaming Earphone <sup class="text-warning">New</sup></a>
+          <a href="/product-details">Gaming Earphone <sup class="text-warning">New</sup></a>
         </div>
         <div>
           <small>Storage : 64GB , 128GB, 512GB</small>
@@ -388,7 +388,7 @@
           <img src="./assets/OIP (1).jpeg" class="img-fluid w-50" alt="">
         </div>
         <div>
-          <a href="/product_details">Apple Watch 2 <sup class="text-warning">New</sup></a>
+          <a href="/product-details">Apple Watch 2 <sup class="text-warning">New</sup></a>
         </div>
         <div>
           <small>Color : Black ,White</small>
@@ -415,7 +415,7 @@
           <img src="./assets/71K6mroOBJL._SL1500_.jpg" class="img-fluid w-50" alt="">
         </div>
         <div>
-          <a href="/product_details">Bluetooth Speaker <sup class="text-warning">New</sup></a>
+          <a href="/product-details">Bluetooth Speaker <sup class="text-warning">New</sup></a>
         </div>
         <div>
           <small>Storage : 64GB , 128GB, 512GB</small>
@@ -442,7 +442,7 @@
           <img src="./assets/OIP (2).jpeg" class="img-fluid w-50" alt="">
         </div>
         <div>
-          <a href="/product_details">Apple Airpot 1 <sup class="text-warning">New</sup></a>
+          <a href="/product-details">Apple Airpot 1 <sup class="text-warning">New</sup></a>
         </div>
         <div>
           <small>Storage : 64GB , 128GB, 512GB</small>
@@ -469,7 +469,7 @@
           <img src="./assets/71LfnkRgZ4L._AC_UF894,1000_QL80_.jpg" class="img-fluid w-50" alt="">
         </div>
         <div>
-          <a href="/product_details">Gaming Earphone <sup class="text-warning">New</sup></a>
+          <a href="/product-details">Gaming Earphone <sup class="text-warning">New</sup></a>
         </div>
         <div>
           <small>Storage : 64GB , 128GB, 512GB</small>
