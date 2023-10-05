@@ -3,7 +3,7 @@
 <div class="row">
  <div class="col-md-8">
   <div id="formGrid" class="mb-5">
-   <h4>Storage Create <span> <a href="{{ route('admin.storages.index') }}" class="btn btn-primary">Back To
+   <h4>Storage Edit <span> <a href="{{ route('admin.storages.index') }}" class="btn btn-primary">Back To
       Storage Dashboard</a></span></h4>
    <p></p>
    <div class="card">

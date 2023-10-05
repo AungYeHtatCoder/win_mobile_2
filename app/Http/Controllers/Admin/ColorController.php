@@ -13,7 +13,7 @@ class ColorController extends Controller
      */
     public function index()
     {
-        $colors = Color::all();
+        $colors = Color::latest()->get();
         return view('admin.color.index', compact('colors'));
     }
 

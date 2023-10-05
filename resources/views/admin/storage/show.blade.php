@@ -24,7 +24,7 @@
      </ul>
 
      <h1 class="page-header">
-      Stroage Dashboard
+      Stroage Detail
      </h1>
 
      <hr class="mb-4">
