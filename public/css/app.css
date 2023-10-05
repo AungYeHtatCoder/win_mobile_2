@@ -929,8 +929,18 @@ form.search-box button {
   color: red;
 }
 
+.fa-heart,.fa-cart-arrow-down{
+  font-size: 17px;
+}
+
 @media (min-width: 576px) {
   .custom-hide {
+    display: none;
+  }
+}
+
+@media (max-width:576px){
+  .fa-heart,.fa-cart-arrow-down{
     display: none;
   }
 }
