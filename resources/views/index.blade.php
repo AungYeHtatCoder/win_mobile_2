@@ -101,7 +101,7 @@
             <div class="mb-3 card">
               <div class="d-flex flex-column">
                 <img src="./assets/OIP (1).jpeg" class="img-fluid mx-auto" alt="Avatar">
-                <a href="product_details.html" class="text-dark fw-bold">Cara Mengatasi Mic Headphone</a>
+                <a href="product_details.html" class="text-dark fw-bold ">Cara Mengatasi Mic Headphone</a>
               </div>
               <div class="d-flex justify-content-between">
                 <div>
