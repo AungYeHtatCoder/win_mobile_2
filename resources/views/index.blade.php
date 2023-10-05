@@ -281,6 +281,9 @@
             <span class="fas fa-star-half"></span>
             <span class="fas fa-star-half"></span>
           </div> -->
+          <div class="custom-hide text-end">
+            <a href="#" class="btn btn-warning text-white">Add to cart</a>
+          </div>
         </div>
       </div>
       <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded">
@@ -312,6 +315,9 @@
             <span class="fas fa-star-half"></span>
             <span class="fas fa-star-half"></span>
           </div> -->
+          <div class="custom-hide text-end">
+            <a href="#" class="btn btn-warning text-white">Add to cart</a>
+          </div>
         </div>
       </div>
       <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded">
@@ -343,6 +349,9 @@
             <span class="fas fa-star-half"></span>
             <span class="fas fa-star-half"></span>
           </div> -->
+          <div class="custom-hide text-end">
+            <a href="#" class="btn btn-warning text-white">Add to cart</a>
+          </div>
         </div>
       </div>
       <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded">
@@ -374,6 +383,9 @@
             <span class="fas fa-star-half"></span>
             <span class="fas fa-star-half"></span>
           </div> -->
+          <div class="custom-hide text-end">
+            <a href="#" class="btn btn-warning text-white">Add to cart</a>
+          </div>
         </div>
       </div>
       <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded">
@@ -405,6 +417,9 @@
             <span class="fas fa-star-half"></span>
             <span class="fas fa-star-half"></span>
           </div> -->
+          <div class="custom-hide text-end">
+            <a href="#" class="btn btn-warning text-white">Add to cart</a>
+          </div>
         </div>
       </div>
       <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded">
@@ -436,6 +451,9 @@
             <span class="fas fa-star-half"></span>
             <span class="fas fa-star-half"></span>
           </div> -->
+          <div class="custom-hide text-end">
+            <a href="#" class="btn btn-warning text-white">Add to cart</a>
+          </div>
         </div>
       </div>
       <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded">
@@ -467,6 +485,9 @@
             <span class="fas fa-star-half"></span>
             <span class="fas fa-star-half"></span>
           </div> -->
+          <div class="custom-hide text-end">
+            <a href="#" class="btn btn-warning text-white">Add to cart</a>
+          </div>
         </div>
       </div>
     </div>
@@ -522,6 +543,9 @@
               <span class="fas fa-star-half"></span>
               <span class="fas fa-star-half"></span>
             </div> -->
+            <div class="custom-hide text-end">
+            <a href="#" class="btn btn-warning text-white">Add to cart</a>
+          </div>
           </div>
         </div>
         <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded">
@@ -550,6 +574,9 @@
               <span class="fas fa-star-half"></span>
               <span class="fas fa-star-half"></span>
             </div> -->
+            <div class="custom-hide text-end">
+            <a href="#" class="btn btn-warning text-white">Add to cart</a>
+          </div>
           </div>
         </div>
         <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded">
@@ -578,6 +605,9 @@
               <span class="fas fa-star-half"></span>
               <span class="fas fa-star-half"></span>
             </div> -->
+            <div class="custom-hide text-end">
+            <a href="#" class="btn btn-warning text-white">Add to cart</a>
+          </div>
           </div>
         </div>
         <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded">
@@ -606,6 +636,9 @@
               <span class="fas fa-star-half"></span>
               <span class="fas fa-star-half"></span>
             </div> -->
+            <div class="custom-hide text-end">
+            <a href="#" class="btn btn-warning text-white">Add to cart</a>
+          </div>
           </div>
         </div>
         <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded">
@@ -634,6 +667,9 @@
               <span class="fas fa-star-half"></span>
               <span class="fas fa-star-half"></span>
             </div> -->
+            <div class="custom-hide text-end">
+            <a href="#" class="btn btn-warning text-white">Add to cart</a>
+          </div>
           </div>
         </div>
         <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded">
@@ -662,6 +698,9 @@
               <span class="fas fa-star-half"></span>
               <span class="fas fa-star-half"></span>
             </div> -->
+            <div class="custom-hide text-end">
+            <a href="#" class="btn btn-warning text-white">Add to cart</a>
+          </div>
           </div>
         </div>
         <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded">
@@ -690,6 +729,9 @@
               <span class="fas fa-star-half"></span>
               <span class="fas fa-star-half"></span>
             </div> -->
+            <div class="custom-hide text-end">
+            <a href="#" class="btn btn-warning text-white">Add to cart</a>
+          </div>
           </div>
         </div>
         <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded">
@@ -718,6 +760,9 @@
               <span class="fas fa-star-half"></span>
               <span class="fas fa-star-half"></span>
             </div> -->
+            <div class="custom-hide text-end">
+            <a href="#" class="btn btn-warning text-white">Add to cart</a>
+          </div>
           </div>
         </div>
       </div>
