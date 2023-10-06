@@ -273,6 +273,51 @@ hr {
 }
 
 
+/* owl model box in product details page  */
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 99;
+}
+
+#modal-carousel img {
+  max-width: 50%;
+  /* Adjust this value to control the maximum width */
+  max-height: 50%;
+  /* Adjust this value to control the maximum height */
+  display: block;
+  /* Ensures the image takes up the available space */
+  margin: 0 auto;
+  /* Center the image horizontally */
+}
+
+.modal-content {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  max-width: 50%;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: #fff;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+
+
 /* my cart section end  */
 
 /* Hide the default number input arrows */

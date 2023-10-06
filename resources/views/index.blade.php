@@ -4,38 +4,23 @@
   <section class="container mt-lg-5">
     <div class="row d-flex justify-content-center">
       <div class="col-lg-6 col-sm-12">
-        <div id="carouselExampleIndicators" class="carousel slide">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-              aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-              aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-              aria-label="Slide 3"></button>
-          </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <!-- <h4>This is the title.</h4> -->
-              <img src="./assets/amazonsale2022.png" class="d-block w-100" alt="...">
+        <div class="owl-carousel owl-theme" id="landing-page-carousel">
+            <div class="item">
+              <div class="card">
+                <img src="./assets/amazonsale2022.png" class="d-block w-100" alt="...">
+              </div>
             </div>
-            <div class="carousel-item">
-              <img src="./assets/side8.jpg" class="d-block w-100" alt="...">
+            <div class="item">
+              <div class="card">
+                <img src="./assets/side8.jpg" class="d-block w-100" alt="...">
+              </div>
             </div>
-            <div class="carousel-item">
-              <img src="./assets/R.png" class="d-block w-100" alt="...">
+            <div class="item">
+              <div class="card">
+                <img src="./assets/R.png" class="d-block w-100" alt="...">
+              </div>
             </div>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
       </div>
 
       <div class="col-lg-6 col-sm-12">

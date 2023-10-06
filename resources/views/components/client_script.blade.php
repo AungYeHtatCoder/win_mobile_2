@@ -16,33 +16,142 @@
   <!-- script section section end  -->
 
   <script>
-    var owl = $('.owl-carousel');
-    owl.owlCarousel({
-      items: 4,
-      loop: true,
-      margin: 10,
-      autoplay: true,
-      autoplayTimeout: 3000,
-      autoplayHoverPause: true,
-      nav: true,
-    });
-    $('.play').on('click', function () {
-      owl.trigger('play.owl.autoplay', [1000])
-    })
-    $('.stop').on('click', function () {
-      owl.trigger('stop.owl.autoplay')
-    })
 
-    $(document).ready(function () {
-      $(" #nav > ul > li.dropdowns").click(function (e) {
-        if ($(window).width() > 1400) {
-          $(this).parent("ul").parent('div').siblings('div').fadeToggle(150);
-          e.preventDefault();
-        }
-      });
+  //landing page carousel 
+
+  $(document).ready(function () {
+  // Initialize Landing Page Carousel
+  var landingPageCarousel = $('#landing-page-carousel');
+  landingPageCarousel.owlCarousel({
+    items: 1,
+    loop: true,
+    autoplay: true,
+    autoplayTimeout: 3000,
+  });
+
+  // Other code specific to the landing page carousel
+
+});
+
+// Product Details Page Carousel
+// $(document).ready(function () {
+//   var owl = $('.owl-carousel');
+//     owl.owlCarousel({
+//       items: 4,
+//       loop: true,
+//       margin: 10,
+//       autoplay: true,
+//       autoplayTimeout: 3000,
+//       autoplayHoverPause: true,
+//       nav: true,
+//     });
+//     $('.play').on('click', function () {
+//       owl.trigger('play.owl.autoplay', [1000])
+//     })
+//     $('.stop').on('click', function () {
+//       owl.trigger('stop.owl.autoplay')
+//     })
+
+//     $(document).ready(function () {
+//       $(" #nav > ul > li.dropdowns").click(function (e) {
+//         if ($(window).width() > 1400) {
+//           $(this).parent("ul").parent('div').siblings('div').fadeToggle(150);
+//           e.preventDefault();
+//         }
+//       });
+//     });
+// });
+
+$(document).ready(function () {
+  var productDetailsCarousel = $('#product-details-carousel');
+  var modal = $('#carousel-modal');
+  var modalCarousel = $('#modal-carousel');
+  var currentItemIndex = 0; // Track the currently displayed item index
+  var clonedItems = null; // Store cloned items
+
+  // Initialize the main Owl Carousel for product details
+  productDetailsCarousel.owlCarousel({
+    items: 4,
+    loop: true,
+    margin: 10,
+    autoplay: true,
+    autoplayTimeout: 3000,
+    autoplayHoverPause: true,
+    nav: false,
+  });
+
+  // Initialize the modal Owl Carousel for manual navigation
+  modalCarousel.owlCarousel({
+    items: 1,
+    loop: true,
+    autoplay: false,
+    nav: true,
+    dots: true,
+  });
+
+  // Handle click on a carousel item to open the modal
+  productDetailsCarousel.on('click', '.item', function () {
+    var itemId = $(this).data('item-id');
+    var items = productDetailsCarousel.find('.item');
+
+    // Find the index of the selected item and set it as the current item index
+    items.each(function(index) {
+      if ($(this).data('item-id') === itemId) {
+        currentItemIndex = index;
+        return false; // Exit the loop
+      }
     });
 
-    // product details page
+    // If clonedItems is null, clone the items from productDetailsCarousel
+    if (clonedItems === null) {
+      clonedItems = items.clone();
+    }
+
+    // Clear the modal carousel and add the selected item
+    modalCarousel.trigger('replace.owl.carousel', [clonedItems]);
+
+    // Set the current item in the modal carousel
+    modalCarousel.trigger('to.owl.carousel', [currentItemIndex, 0, true]);
+
+    // Show the modal
+    modal.css('display', 'block');
+  });
+
+  // Handle next button click in the modal
+  modal.on('click', '.owl-next', function () {
+    currentItemIndex++;
+    modalCarousel.trigger('to.owl.carousel', [currentItemIndex, 0, true]);
+  });
+
+  // Handle previous button click in the modal
+  modal.on('click', '.owl-prev', function () {
+    currentItemIndex--;
+    modalCarousel.trigger('to.owl.carousel', [currentItemIndex, 0, true]);
+  });
+
+  // Close the modal when the close button or outside the modal is clicked
+  modal.on('click', function (e) {
+    if (e.target === modal[0] || $(e.target).hasClass('close')) {
+      modal.css('display', 'none');
+    }
+  });
+});
+
+
+
+// Common code that doesn't depend on the carousels can stay outside of the above blocks
+$(document).ready(function () {
+  $("#nav > ul > li.dropdowns").click(function (e) {
+    if ($(window).width() > 1400) {
+      $(this).parent("ul").parent('div').siblings('div').fadeToggle(150);
+      e.preventDefault();
+    }
+  });
+
+  // Other common code
+});
+
+ 
 
     // Get the input element
     const numberInput = document.getElementById("numberInput");
@@ -61,31 +170,6 @@
       }
     }
 
-    // Hero slider 
-
-    document.addEventListener("DOMContentLoaded", function () {
-      // Reference to your carousel element
-      var myCarousel = document.getElementById('carouselExampleIndicators');
-
-      // Create a function to advance the carousel to the next slide
-      function nextSlide() {
-        var carousel = new bootstrap.Carousel(myCarousel);
-        carousel.next();
-      }
-
-      // Set an interval to automatically advance the carousel every 2 seconds
-      var carouselInterval = setInterval(nextSlide, 3000);
-
-      // Pause the carousel when the mouse hovers over it
-      myCarousel.addEventListener('mouseenter', function () {
-        clearInterval(carouselInterval);
-      });
-
-      // Resume the carousel when the mouse leaves it
-      myCarousel.addEventListener('mouseleave', function () {
-        carouselInterval = setInterval(nextSlide, 3000);
-      });
-    });
 
     $(document).ready(function () {
       $('#getyear').text(new Date().getUTCFullYear());
