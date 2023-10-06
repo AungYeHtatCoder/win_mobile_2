@@ -28,7 +28,10 @@
 
 								<!-- BEGIN #datatable -->
 								<div id="datatable" class="mb-5">
-									<h4 class="text-end"><a href="{{ url('/admin/products/prices/create/'.$product->id) }}" class="btn btn-primary"><i class="fas fa-plus me-1"></i>Product Price Create</a></h4>
+									<h4 class="text-end">
+                                        <a href="{{ route('admin.products.index') }}" class="btn btn-outline-theme"><i class="fas fa-arrow-left me-2"></i>Back</a>
+                                        <a href="{{ url('/admin/products/prices/create/'.$product->id) }}" class="btn btn-primary"><i class="fas fa-plus me-1"></i>Product Price Create</a>
+                                    </h4>
 									<p></p>
 									<div class="card">
 										<div class="card-body">
@@ -73,18 +76,18 @@
                                                             {{ $price->qty }} pcs
                                                         </td>
                                                         <td>
-                                                            {{ $price->normal_price }} MMK
+                                                            {{ number_format($price->normal_price) }} MMK
                                                         </td>
                                                         <td>
-                                                            {{ $price->discount_price ? $price->discount_price." MMK" : "" }}
+                                                            {{ $price->discount_price ? number_format($price->discount_price)." MMK" : "" }}
                                                         </td>
                                                         <td>
                                                             {{ $price->created_at->format('j M, Y') }}
                                                         </td>
                                                         <td>
-                                                            <a href="{{ route('admin.products.edit', $price->id) }}" class="btn btn-sm btn-primary">Edit</a>
-                                                            <a href="{{ route('admin.products.show', $price->id) }}" class="btn btn-sm btn-info">Show</a>
-                                                            <form action="{{ route('admin.products.destroy', $price->id) }}" class="d-inline" method="POST">
+                                                            <a href="{{ url('/admin/products/prices/edit/'.$price->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                                                            {{-- <a href="{{ url('/admin/products/prices/show/'.$price->id) }}" class="btn btn-sm btn-info">Show</a> --}}
+                                                            <form action="{{ url('/admin/products/prices/delete/'.$price->id) }}" class="d-inline" method="POST">
                                                                 @csrf
                                                                 @method('DELETE')
                                                                 <button type="submit" class="btn btn-danger btn-sm">Del</button>

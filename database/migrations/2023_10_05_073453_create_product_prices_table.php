@@ -19,8 +19,8 @@ return new class extends Migration
             $table->unsignedBigInteger('ram_id');
             $table->unsignedBigInteger('category_id');
             $table->integer('qty');
-            $table->float('normal_price');
-            $table->float('discount_price')->nullable();
+            $table->double('normal_price');
+            $table->double('discount_price')->nullable();
 
             $table->timestamps();
 

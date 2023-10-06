@@ -308,4 +308,48 @@ class ProductController extends Controller
         ]);
         return redirect('/admin/products/prices/'.$product->id)->with('success', "New Price of $product->name has been created.");
     }
+
+    public function priceEdit($id){
+        $price = ProductPrice::find($id);
+        // return $price;
+        $categories = Category::where('name', '!=', 'Accessory')->get();
+        if(!$price){
+            return redirect()->back()->with('error', "Product Price Not Found.");
+        }
+        return view('admin.product_prices.edit', compact('price', 'categories'));
+    }
+
+    public function priceUpdate(Request $request, $id){
+        $price = ProductPrice::find($id);
+        if(!$price){
+            return redirect()->back()->with('error', "Product Price Not Found.");
+        }
+        $request->validate([
+            'color_id' => 'required',
+            'storage_id' => 'required',
+            'ram_id' => 'required',
+            'category_id' => 'required',
+            'qty' => 'required',
+            'normal_price' => 'required',
+        ]);
+        $price->update([
+            'color_id' => $request->color_id,
+            'storage_id' => $request->storage_id,
+            'ram_id' => $request->ram_id,
+            'category_id' => $request->category_id,
+            'qty' => $request->qty,
+            'normal_price' => $request->normal_price,
+            'discount_price' => $request->discount_price ?? NULL,
+        ]);
+        return redirect('/admin/products/prices/'.$price->product_id)->with('success', $price->product->name." has been updated.");
+    }
+
+    public function priceDelete($id){
+        $price = ProductPrice::find($id);
+        if(!$price){
+            return redirect()->back()->with('error', "Product Price Not Found.");
+        }
+        $price->delete();
+        return redirect('/admin/products/prices/'.$price->product_id)->with('success', $price->product->name." has been removed.");
+    }
 }
