@@ -12,4 +12,16 @@ class Color extends Model
     protected $fillable = [
         'name',
     ];
+
+    public function product_prices(){
+        return $this->hasMany(ProductPrice::class);
+    }
+
+    public function products(){
+        return $this->belongsToMany(Product::class);
+    }
+
+    public function accessories(){
+        return $this->belongsToMany(Accessory::class);
+    }
 }

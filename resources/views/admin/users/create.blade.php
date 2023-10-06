@@ -53,10 +53,10 @@
 															<select name="roles[]" class="selectpicker form-control" id="ex-multiselect" multiple>
 																<optgroup label="Picnic">
 																	 @foreach($roles as $id => $roles)
-                <option value="{{ $id }}"
-                 {{ (in_array($id, old('roles', [])) || isset($user) && $user->roles->contains($id)) ? 'selected' : '' }}>
-                 {{ $roles }}</option>
-                @endforeach
+                                                                        <option value="{{ $id }}"
+                                                                        {{ (in_array($id, old('roles', [])) || isset($user) && $user->roles->contains($id)) ? 'selected' : '' }}>
+                                                                        {{ $roles }}</option>
+                                                                        @endforeach
 																</optgroup>
 															</select>
 														</div>
@@ -70,7 +70,7 @@
 									</div>
 								</div>
    </div>
-            
+
       </div>
      </div>
     </div>

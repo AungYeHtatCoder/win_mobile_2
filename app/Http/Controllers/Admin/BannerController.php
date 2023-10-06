@@ -15,6 +15,7 @@ class BannerController extends Controller
     public function index()
     {
         $banners = Banner::latest()->get();
+        // return $banners;
         return view('admin.banners.index', compact('banners'));
     }
 
