@@ -23,20 +23,19 @@
                 <div class="col-md-12">
                     <div id="formGrid" class="mb-5">
                         <div class="d-flex justify-content-between">
-                            <h4>Product Edit</h4>
-                            <p><a href="{{ route('admin.products.index') }}" class="btn btn-primary"><i class="fas fa-arrow-left me-1"></i>Back</a></p>
+                            <h4>Product Price Edit</h4>
+                            <p><a href="{{ url('/admin/products/prices/'.$price->product_id) }}" class="btn btn-primary"><i class="fas fa-arrow-left me-1"></i>Back</a></p>
                         </div>
                         <div class="card">
                             <div class="card-body">
-                                <form action="{{ route('admin.products.update', $product->id) }}" method="post" enctype="multipart/form-data">
+                                <form action="{{ url('/admin/products/prices/edit/'.$price->id) }}" method="post">
                                     @csrf
-                                    @method('PUT')
                                     <div class="row">
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-6 mt-2">
                                             <div class="mb-3 row">
-                                                <label for="inputEmail1" class="col-sm-2 col-form-label">Name</label>
+                                                <label for="inputEmail1" class="col-sm-2 col-form-label">Product</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="inputEmail1" name="name" placeholder="Enter Product Name" value="{{ $product->name }}">
+                                                    <input type="text" class="form-control" id="inputEmail1" name="name" disabled placeholder="Enter Product Name" value="{{ $price->product->name }}">
                                                     @error('name')
                                                     <span class="text-danger">*{{ "The product name field is required." }}</span>
                                                     @enderror
@@ -45,112 +44,86 @@
                                             <div class="mb-3 row">
                                                 <label for="inputEmail1" class="col-sm-2 col-form-label">Brand</label>
                                                 <div class="col-sm-10">
-                                                    <select name="brand_id" id="" class="form-select form-control">
-                                                        <option value="">Choose Brand</option>
-                                                        @foreach ($brands as $brand)
-                                                        <option value="{{ $brand->id }}" {{ $brand->id == $product->brand_id ? "selected" : "" }}>{{ $brand->name }}</option>
-                                                        @endforeach
-                                                    </select>
+                                                    <input type="text" class="form-control" name="" id="" disabled  value="{{ $price->product->brand->name }}">
                                                     @error('brand_id')
                                                     <span class="text-danger">*{{ "The product brand field is required." }}</span>
                                                     @enderror
                                                 </div>
                                             </div>
-
-
                                             <div class="mb-3 row">
-                                                <label for="inputEmail2" class="col-sm-2 col-form-label">Image 1</label>
-                                                <div class="col-sm-10">
-                                                    <input type="file" class="form-control" id="inputEmail2" name="img1">
-                                                    <img src="{{ $product->img1_url }}" alt="" width="100px" class="img-thumbnail">
+                                                <label for="inputEmail1" class="col-sm-2 col-form-label">Category</label>
+                                                <div class="col-sm-10 mt-2">
+                                                    <div class="d-flex">
+                                                        @foreach ($categories as $category)
+                                                        <div class="me-3">
+                                                            <input type="radio" class="me-1" name="category_id" id="cat{{ $category->id }}"  value="{{ $category->id }}" {{ $category->id == $price->category_id ? "checked" : "" }}>
+                                                            <label for="cat{{ $category->id }}" class="form-label">{{ $category->name }}</label>
+                                                        </div>
+                                                        @endforeach
+                                                    </div>
+                                                    @error('category_id')
+                                                    <span class="text-danger">*{{ "The product category field is required." }}</span>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">
-                                                <label for="inputEmail3" class="col-sm-2 col-form-label">Image 2</label>
+                                                <label for="inputEmail1" class="col-sm-2 col-form-label">Qty</label>
                                                 <div class="col-sm-10">
-                                                    <input type="file" class="form-control" id="inputEmail3" name="img2">
-                                                    @isset($product->img2_url)
-                                                    <img src="{{ $product->img2_url }}" alt="" width="100px" class="img-thumbnail">
-                                                    @endisset
+                                                    <input type="number" class="form-control" id="inputEmail1" name="qty" placeholder="Enter Product Qty" value="{{ $price->qty }}">
+                                                    @error('qty')
+                                                    <span class="text-danger">*{{ "The product qty field is required." }}</span>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">
-                                                <label for="inputEmail4" class="col-sm-2 col-form-label">Image 3</label>
+                                                <label for="inputEmail1" class="col-sm-2 col-form-label">Price</label>
                                                 <div class="col-sm-10">
-                                                    <input type="file" class="form-control" id="inputEmail4" name="img3">
-                                                    @isset($product->img3_url)
-                                                    <img src="{{ $product->img3_url }}" alt="" width="100px" class="img-thumbnail">
-                                                    @endisset
+                                                    <input type="number" class="form-control" id="inputEmail1" name="normal_price" placeholder="Enter Normal Price" value="{{ $price->normal_price }}">
+                                                    @error('normal_price')
+                                                    <span class="text-danger">*{{ "The price field is required." }}</span>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">
-                                                <label for="inputEmail5" class="col-sm-2 col-form-label">Image 4</label>
-                                                <div class="col-sm-10">
-                                                    <input type="file" class="form-control" id="inputEmail5" name="img4">
-                                                    @isset($product->img4_url)
-                                                    <img src="{{ $product->img4_url }}" alt="" width="100px" class="img-thumbnail">
-                                                    @endisset
+                                                <label for="inputEmail1" class="col-sm-2 col-form-label">Discount (Optional)</label>
+                                                <div class="col-sm-10 mt-2">
+                                                    <input type="number" class="form-control" id="inputEmail1" name="discount_price" placeholder="Enter Discount Price" value="{{ $price->discount_price }}">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
-                                            <div class="mb-3">
-                                                <label class="form-label">Choose Color <span class="text-danger">*</span></label>
-                                                <select name="colors[]" class="selectpicker form-control" id="ex-multiselect" multiple>
-                                                    <optgroup label="Picnic">
-                                                         @foreach($colors as $color)
-                                                            <option value="{{ $color->id }}"
-                                                            @foreach($product->colors as $c)
-                                                                @if ($color->id == $c->id)
-                                                                @selected(true)
-                                                                @endif
-                                                            @endforeach
-                                                            >{{ $color->name }}</option>
-                                                            @endforeach
-                                                    </optgroup>
-                                                </select>
-                                                @error('colors[]')
-                                                    <span class="text-danger">*{{ "The color field is required." }}</span>
-                                                @enderror
-                                            </div>
-                                            <div class="mb-3">
-                                                <label class="form-label">Choose Storage <span class="text-danger">*</span></label>
-                                                <select name="storages[]" class="selectpicker form-control" id="ex-search" multiple>
-                                                    @foreach ($storages as $storage)
-                                                    <option value="{{ $storage->id }}"
-                                                        @foreach($product->storages as $s)
-                                                            @if ($storage->id == $s->id)
-                                                            @selected(true)
-                                                            @endif
+                                            <div class="mb-2">
+                                                <label for="inputEmail1" class="col-sm-2 col-form-label">Color</label>
+                                                <div class="col-sm-10">
+                                                    <select name="color_id" id="" class="form-select">
+                                                        <option value="">Choose Color</option>
+                                                        @foreach ($price->product->colors as $color)
+                                                        <option value="{{ $color->id }}" {{ $color->id == $price->color_id ? "selected" : "" }}>{{ $color->name }}</option>
                                                         @endforeach
-                                                        >{{ $storage->name }}</option>
-                                                    @endforeach
-                                                </select>
-                                                @error('storages[]')
-                                                    <span class="text-danger">*{{ "The storage field is required." }}</span>
-                                                @enderror
-                                            </div>
-                                            <div class="form-group mb-3">
-                                                <label for="" class="form-label d-block">Choose RAM</label>
-                                                @foreach ($rams as $ram)
-                                                <div class="form-check form-check-inline">
-                                                    <input name="rams[]"
-                                                    @foreach($product->rams as $r)
-                                                        @if ($ram->id == $r->id)
-                                                            {{ "checked" }}
-                                                        @endif
-                                                    @endforeach
-                                                    class="form-check-input" type="checkbox" id="ram{{ $ram->id }}" value="{{ $ram->id }}">
-                                                    <label class="form-check-label" for="ram{{ $ram->id }}">{{ $ram->name }}</label>
+                                                    </select>
                                                 </div>
-                                                @endforeach
-                                                @error('rams[]')
-                                                    <span class="text-danger">*{{ "The RAM field is required." }}</span>
-                                                @enderror
                                             </div>
-                                            <div class="form-group mb-3">
-                                                <label for="" class="form-label d-block">Product Description</label>
-                                                <textarea name="description" id="desc" cols="30" rows="10" >{!! $product->description !!}</textarea>
+                                            <div class="mb-2">
+                                                <label for="inputEmail1" class="col-sm-2 col-form-label">Storage</label>
+                                                <div class="col-sm-10">
+                                                    <select name="storage_id" id="" class="form-select">
+                                                        <option value="">Choose Storage</option>
+                                                        @foreach ($price->product->storages as $storage)
+                                                        <option value="{{ $storage->id }}" {{ $storage->id == $price->storage_id ? "selected" : "" }}>{{ $storage->name }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="mb-2">
+                                                <label for="inputEmail1" class="col-sm-2 col-form-label">RAM</label>
+                                                <div class="col-sm-10">
+                                                    <select name="ram_id" id="" class="form-select">
+                                                        <option value="">Choose RAM</option>
+                                                        @foreach ($price->product->rams as $ram)
+                                                        <option value="{{ $ram->id }}" {{ $ram->id == $price->ram_id ? 'selected' : '' }}>{{ $ram->name }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

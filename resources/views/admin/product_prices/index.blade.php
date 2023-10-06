@@ -46,47 +46,50 @@
                                                         <th>Price</th>
                                                         <th>Discount</th>
                                                         <th>Created_at</th>
-														<th>Action</th>
+														{{-- <th>Action</th> --}}
 													</tr>
 												</thead>
                                                 <tbody>
-                                                    @foreach ($products as $key => $product)
+                                                    @foreach ($prices as $key => $price)
                                                     <tr>
                                                         <td>{{ ++$key }}</td>
-                                                        <td>{{ $product->name }}</td>
+                                                        <td>{{ $price->product->name }}</td>
                                                         <td>
-                                                            <img width="100px" class="img-thumbnail" src="{{ $product->img1_url }}" alt="">
+                                                            {{ $price->product->brand->name }}
                                                         </td>
                                                         <td>
-                                                            {{ $product->brand->name }}
+                                                            {{ $price->color->name }}
                                                         </td>
                                                         <td>
-                                                            @foreach ($product->colors as $color)
-                                                            <span class="badge text-bg-info">{{ $color->name }}</span>
-                                                            @endforeach
+                                                            {{ $price->storage->name }}
                                                         </td>
                                                         <td>
-                                                            @foreach ($product->storages as $storage)
-                                                            <span class="badge text-bg-secondary">{{ $storage->name }}</span>
-                                                            @endforeach
+                                                            {{ $price->ram->name }}
                                                         </td>
                                                         <td>
-                                                            @foreach ($product->rams as $ram)
-                                                            <span class="badge text-bg-theme">{{ $ram->name }}</span>
-                                                            @endforeach
+                                                            {{ $price->category->name }}
                                                         </td>
                                                         <td>
-                                                            {{ $product->created_at->format('j M, Y') }}
+                                                            {{ $price->qty }}
                                                         </td>
                                                         <td>
-                                                            <a href="{{ route('admin.products.edit', $product->id) }}" class="btn btn-sm btn-primary">Edit</a>
-                                                            <a href="{{ route('admin.products.show', $product->id) }}" class="btn btn-sm btn-info">Show</a>
-                                                            <form action="{{ route('admin.products.destroy', $product->id) }}" class="d-inline" method="POST">
+                                                            {{ number_format($price->normal_price) }} MMK
+                                                        </td>
+                                                        <td>
+                                                            {{ $price->discount_price ? number_format($price->discount_price)." MMK" : "" }}
+                                                        </td>
+                                                        <td>
+                                                            {{ $price->created_at->format('j M, Y') }}
+                                                        </td>
+                                                        {{-- <td>
+                                                            <a href="{{ route('admin.products.edit', $price->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                                                            <a href="{{ route('admin.products.show', $price->id) }}" class="btn btn-sm btn-info">Show</a>
+                                                            <form action="{{ route('admin.products.destroy', $price->id) }}" class="d-inline" method="POST">
                                                                 @csrf
                                                                 @method('DELETE')
                                                                 <button type="submit" class="btn btn-danger btn-sm">Del</button>
                                                             </form>
-                                                        </td>
+                                                        </td> --}}
                                                     </tr>
                                                     @endforeach
                                                 </tbody>

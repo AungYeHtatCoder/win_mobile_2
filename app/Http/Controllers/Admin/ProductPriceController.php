@@ -13,8 +13,8 @@ class ProductPriceController extends Controller
      */
     public function index()
     {
-        $products = ProductPrice::latest()->get();
-        return view('admin.product_prices.index', compact('products'));
+        $prices = ProductPrice::latest()->get();
+        return view('admin.product_prices.index', compact('prices'));
     }
 
     /**
@@ -22,7 +22,7 @@ class ProductPriceController extends Controller
      */
     public function create()
     {
-        
+
         return view('admin.product_prices.create');
     }
 
