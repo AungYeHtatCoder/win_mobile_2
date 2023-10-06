@@ -13,7 +13,7 @@ class PhoneRAMController extends Controller
      */
     public function index()
     {
-        $rams = Ram::all();
+        $rams = Ram::latest()->get();
         return view('admin.ram.index', compact('rams'));
     }
 

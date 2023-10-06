@@ -1,6 +1,6 @@
 <x-layout>
 <!-- content section start  -->
-  <section class="registers " style="padding-top: 5rem;">
+  <section class="registers ">
     <div class="row d-flex flex-column justify-content-center align-items-center">
       <form class="col-md-6 shadow p-3 bg-body rounded mt-5 mb-5 d-flex flex-column justify-content-center align-items-center">
 

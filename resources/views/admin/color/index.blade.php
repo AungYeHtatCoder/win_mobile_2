@@ -24,7 +24,7 @@
      </ul>
 
      <h1 class="page-header">
-      Color Dashboard
+      Color
      </h1>
 
      <hr class="mb-4">

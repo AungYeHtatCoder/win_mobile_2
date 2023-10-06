@@ -3,7 +3,7 @@
 <div class="row">
  <div class="col-md-8">
   <div id="formGrid" class="mb-5">
-   <h4>Color Create <span> <a href="{{ route('admin.colors.index') }}" class="btn btn-primary">Back To
+   <h4>Color Edit <span> <a href="{{ route('admin.colors.index') }}" class="btn btn-primary">Back To
       Color Dashboard</a></span></h4>
    <p></p>
    <div class="card">

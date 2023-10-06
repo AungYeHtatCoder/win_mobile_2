@@ -1,7 +1,7 @@
 <x-layout>
 
       <!-- profile section start -->
-    <section style="padding-top: 10rem;">
+    <section>
       <div class="container">
         <div class="row">
         <aside class="col-md-4 border p-3">

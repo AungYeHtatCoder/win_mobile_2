@@ -4,6 +4,7 @@
     <div class="row">
       <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded">
         <div class="text-end">
+        <a href="my_cart.html"><i class="fas fa-cart-arrow-down text-dark"></i></a>
           <a href="#"><i class="fas fa-heart text-dark"></i></a>
         </div>
         <div class="text-center mb-4">
@@ -23,17 +24,21 @@
             <h6>Ks - 300000</h6>
             <strong class="text-decoration-line-through text-danger">$20</strong>
           </div>
-          <div class="">
+          <!-- <div class="">
             <span class="fas fa-star"></span>
             <span class="fas fa-star"></span>
             <span class="fas fa-star"></span>
             <span class="fas fa-star-half"></span>
             <span class="fas fa-star-half"></span>
+          </div> -->
+          <div class="custom-hide text-end">
+            <a href="#" class="btn btn-warning text-white">Add to cart</a>
           </div>
         </div>
       </div>
       <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded">
         <div class="text-end">
+        <a href="my_cart.html"><i class="fas fa-cart-arrow-down text-dark"></i></a>
           <a href="#"><i class="fas fa-heart text-dark"></i></a>
         </div>
         <div class="text-center mb-4">
@@ -53,17 +58,21 @@
             <h6>Ks - 300000</h6>
             <strong class="text-decoration-line-through text-danger">$20</strong>
           </div>
-          <div class="">
+          <!-- <div class="">
             <span class="fas fa-star"></span>
             <span class="fas fa-star"></span>
             <span class="fas fa-star"></span>
             <span class="fas fa-star-half"></span>
             <span class="fas fa-star-half"></span>
+          </div> -->
+          <div class="custom-hide text-end">
+            <a href="#" class="btn btn-warning text-white">Add to cart</a>
           </div>
         </div>
       </div>
       <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded">
         <div class="text-end">
+        <a href="my_cart.html"><i class="fas fa-cart-arrow-down text-dark"></i></a>
           <a href="#"><i class="fas fa-heart text-dark"></i></a>
         </div>
         <div class="text-center mb-4">
@@ -83,17 +92,21 @@
             <h6>Ks - 300000</h6>
             <strong class="text-decoration-line-through text-danger">$20</strong>
           </div>
-          <div class="">
+          <!-- <div class="">
             <span class="fas fa-star"></span>
             <span class="fas fa-star"></span>
             <span class="fas fa-star"></span>
             <span class="fas fa-star-half"></span>
             <span class="fas fa-star-half"></span>
+          </div> -->
+          <div class="custom-hide text-end">
+            <a href="#" class="btn btn-warning text-white">Add to cart</a>
           </div>
         </div>
       </div>
       <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded">
         <div class="text-end">
+        <a href="my_cart.html"><i class="fas fa-cart-arrow-down text-dark"></i></a>
           <a href="#"><i class="fas fa-heart text-dark"></i></a>
         </div>
         <div class="text-center mb-4">
@@ -113,17 +126,21 @@
             <h6>Ks - 300000</h6>
             <strong class="text-decoration-line-through text-danger">$20</strong>
           </div>
-          <div class="">
+          <!-- <div class="">
             <span class="fas fa-star"></span>
             <span class="fas fa-star"></span>
             <span class="fas fa-star"></span>
             <span class="fas fa-star-half"></span>
             <span class="fas fa-star-half"></span>
+          </div> -->
+          <div class="custom-hide text-end">
+            <a href="#" class="btn btn-warning text-white">Add to cart</a>
           </div>
         </div>
       </div>
       <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded">
         <div class="text-end">
+        <a href="my_cart.html"><i class="fas fa-cart-arrow-down text-dark"></i></a>
           <a href="#"><i class="fas fa-heart text-dark"></i></a>
         </div>
         <div class="text-center mb-4">
@@ -143,17 +160,21 @@
             <h6>Ks - 300000</h6>
             <strong class="text-decoration-line-through text-danger">$20</strong>
           </div>
-          <div class="">
+          <!-- <div class="">
             <span class="fas fa-star"></span>
             <span class="fas fa-star"></span>
             <span class="fas fa-star"></span>
             <span class="fas fa-star-half"></span>
             <span class="fas fa-star-half"></span>
+          </div> -->
+          <div class="custom-hide text-end">
+            <a href="#" class="btn btn-warning text-white">Add to cart</a>
           </div>
         </div>
       </div>
       <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded">
         <div class="text-end">
+        <a href="my_cart.html"><i class="fas fa-cart-arrow-down text-dark"></i></a>
           <a href="#"><i class="fas fa-heart text-dark"></i></a>
         </div>
         <div class="text-center mb-4">
@@ -173,17 +194,21 @@
             <h6>Ks - 300000</h6>
             <strong class="text-decoration-line-through text-danger">$20</strong>
           </div>
-          <div class="">
+          <!-- <div class="">
             <span class="fas fa-star"></span>
             <span class="fas fa-star"></span>
             <span class="fas fa-star"></span>
             <span class="fas fa-star-half"></span>
             <span class="fas fa-star-half"></span>
+          </div> -->
+          <div class="custom-hide text-end">
+            <a href="#" class="btn btn-warning text-white">Add to cart</a>
           </div>
         </div>
       </div>
       <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded">
         <div class="text-end">
+        <a href="my_cart.html"><i class="fas fa-cart-arrow-down text-dark"></i></a>
           <a href="#"><i class="fas fa-heart text-dark"></i></a>
         </div>
         <div class="text-center mb-4">
@@ -203,17 +228,21 @@
             <h6>Ks - 300000</h6>
             <strong class="text-decoration-line-through text-danger">$20</strong>
           </div>
-          <div class="">
+          <!-- <div class="">
             <span class="fas fa-star"></span>
             <span class="fas fa-star"></span>
             <span class="fas fa-star"></span>
             <span class="fas fa-star-half"></span>
             <span class="fas fa-star-half"></span>
+          </div> -->
+          <div class="custom-hide text-end">
+            <a href="#" class="btn btn-warning text-white">Add to cart</a>
           </div>
         </div>
       </div>
       <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded">
         <div class="text-end">
+        <a href="my_cart.html"><i class="fas fa-cart-arrow-down text-dark"></i></a>
           <a href="#"><i class="fas fa-heart text-dark"></i></a>
         </div>
         <div class="text-center mb-4">
@@ -233,17 +262,21 @@
             <h6>Ks - 300000</h6>
             <strong class="text-decoration-line-through text-danger">$20</strong>
           </div>
-          <div class="">
+          <!-- <div class="">
             <span class="fas fa-star"></span>
             <span class="fas fa-star"></span>
             <span class="fas fa-star"></span>
             <span class="fas fa-star-half"></span>
             <span class="fas fa-star-half"></span>
+          </div> -->
+          <div class="custom-hide text-end">
+            <a href="#" class="btn btn-warning text-white">Add to cart</a>
           </div>
         </div>
       </div>
       <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded">
         <div class="text-end">
+        <a href="my_cart.html"><i class="fas fa-cart-arrow-down text-dark"></i></a>
           <a href="#"><i class="fas fa-heart text-dark"></i></a>
         </div>
         <div class="text-center mb-4">
@@ -263,17 +296,21 @@
             <h6>Ks - 300000</h6>
             <strong class="text-decoration-line-through text-danger">$20</strong>
           </div>
-          <div class="">
+          <!-- <div class="">
             <span class="fas fa-star"></span>
             <span class="fas fa-star"></span>
             <span class="fas fa-star"></span>
             <span class="fas fa-star-half"></span>
             <span class="fas fa-star-half"></span>
+          </div> -->
+          <div class="custom-hide text-end">
+            <a href="#" class="btn btn-warning text-white">Add to cart</a>
           </div>
         </div>
       </div>
       <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded">
         <div class="text-end">
+        <a href="my_cart.html"><i class="fas fa-cart-arrow-down text-dark"></i></a>
           <a href="#"><i class="fas fa-heart text-dark"></i></a>
         </div>
         <div class="text-center mb-4">
@@ -290,17 +327,21 @@
             <h6>Ks - 300000</h6>
             <strong class="text-decoration-line-through text-danger">$20</strong>
           </div>
-          <div class="d-flex">
+          <!-- <div class="d-flex">
             <span class="fas fa-star"></span>
             <span class="fas fa-star"></span>
             <span class="fas fa-star"></span>
             <span class="fas fa-star-half"></span>
             <span class="fas fa-star-half"></span>
+          </div> -->
+          <div class="custom-hide text-end">
+            <a href="#" class="btn btn-warning text-white">Add to cart</a>
           </div>
         </div>
       </div>
       <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded">
         <div class="text-end">
+        <a href="my_cart.html"><i class="fas fa-cart-arrow-down text-dark"></i></a>
           <a href="#"><i class="fas fa-heart text-dark"></i></a>
         </div>
         <div class="text-center mb-4">
@@ -317,17 +358,21 @@
             <h6>Ks - 300000</h6>
             <strong class="text-decoration-line-through text-danger">$20</strong>
           </div>
-          <div class="d-flex">
+          <!-- <div class="d-flex">
             <span class="fas fa-star"></span>
             <span class="fas fa-star"></span>
             <span class="fas fa-star"></span>
             <span class="fas fa-star-half"></span>
             <span class="fas fa-star-half"></span>
+          </div> -->
+          <div class="custom-hide text-end">
+            <a href="#" class="btn btn-warning text-white">Add to cart</a>
           </div>
         </div>
       </div>
       <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded">
         <div class="text-end">
+        <a href="my_cart.html"><i class="fas fa-cart-arrow-down text-dark"></i></a>
           <a href="#"><i class="fas fa-heart text-dark"></i></a>
         </div>
         <div class="text-center mb-4">
@@ -344,17 +389,21 @@
             <h6>Ks - 300000</h6>
             <strong class="text-decoration-line-through text-danger">$20</strong>
           </div>
-          <div class="d-flex">
+          <!-- <div class="d-flex">
             <span class="fas fa-star"></span>
             <span class="fas fa-star"></span>
             <span class="fas fa-star"></span>
             <span class="fas fa-star-half"></span>
             <span class="fas fa-star-half"></span>
+          </div> -->
+          <div class="custom-hide text-end">
+            <a href="#" class="btn btn-warning text-white">Add to cart</a>
           </div>
         </div>
       </div>
       <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded">
         <div class="text-end">
+        <a href="my_cart.html"><i class="fas fa-cart-arrow-down text-dark"></i></a>
           <a href="#"><i class="fas fa-heart text-dark"></i></a>
         </div>
         <div class="text-center mb-4">
@@ -371,17 +420,21 @@
             <h6>Ks - 300000</h6>
             <strong class="text-decoration-line-through text-danger">$20</strong>
           </div>
-          <div class="d-flex">
+          <!-- <div class="d-flex">
             <span class="fas fa-star"></span>
             <span class="fas fa-star"></span>
             <span class="fas fa-star"></span>
             <span class="fas fa-star-half"></span>
             <span class="fas fa-star-half"></span>
+          </div> -->
+          <div class="custom-hide text-end">
+            <a href="#" class="btn btn-warning text-white">Add to cart</a>
           </div>
         </div>
       </div>
       <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded">
         <div class="text-end">
+        <a href="my_cart.html"><i class="fas fa-cart-arrow-down text-dark"></i></a>
           <a href="#"><i class="fas fa-heart text-dark"></i></a>
         </div>
         <div class="text-center mb-4">
@@ -398,17 +451,21 @@
             <h6>Ks - 300000</h6>
             <strong class="text-decoration-line-through text-danger">$20</strong>
           </div>
-          <div class="d-flex">
+          <!-- <div class="d-flex">
             <span class="fas fa-star"></span>
             <span class="fas fa-star"></span>
             <span class="fas fa-star"></span>
             <span class="fas fa-star-half"></span>
             <span class="fas fa-star-half"></span>
+          </div> -->
+          <div class="custom-hide text-end">
+            <a href="#" class="btn btn-warning text-white">Add to cart</a>
           </div>
         </div>
       </div>
       <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded">
         <div class="text-end">
+        <a href="my_cart.html"><i class="fas fa-cart-arrow-down text-dark"></i></a>
           <a href="#"><i class="fas fa-heart text-dark"></i></a>
         </div>
         <div class="text-center mb-4">
@@ -425,17 +482,21 @@
             <h6>Ks - 300000</h6>
             <strong class="text-decoration-line-through text-danger">$20</strong>
           </div>
-          <div class="d-flex">
+          <!-- <div class="d-flex">
             <span class="fas fa-star"></span>
             <span class="fas fa-star"></span>
             <span class="fas fa-star"></span>
             <span class="fas fa-star-half"></span>
             <span class="fas fa-star-half"></span>
+          </div> -->
+          <div class="custom-hide text-end">
+            <a href="#" class="btn btn-warning text-white">Add to cart</a>
           </div>
         </div>
       </div>
       <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded">
         <div class="text-end">
+        <a href="my_cart.html"><i class="fas fa-cart-arrow-down text-dark"></i></a>
           <a href="#"><i class="fas fa-heart text-dark"></i></a>
         </div>
         <div class="text-center mb-4">
@@ -452,17 +513,21 @@
             <h6>Ks - 300000</h6>
             <strong class="text-decoration-line-through text-danger">$20</strong>
           </div>
-          <div class="d-flex">
+          <!-- <div class="d-flex">
             <span class="fas fa-star"></span>
             <span class="fas fa-star"></span>
             <span class="fas fa-star"></span>
             <span class="fas fa-star-half"></span>
             <span class="fas fa-star-half"></span>
+          </div> -->
+          <div class="custom-hide text-end">
+            <a href="#" class="btn btn-warning text-white">Add to cart</a>
           </div>
         </div>
       </div>
       <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded">
         <div class="text-end">
+        <a href="my_cart.html"><i class="fas fa-cart-arrow-down text-dark"></i></a>
           <a href="#"><i class="fas fa-heart text-dark"></i></a>
         </div>
         <div class="text-center mb-4">
@@ -479,12 +544,15 @@
             <h6>Ks - 300000</h6>
             <strong class="text-decoration-line-through text-danger">$20</strong>
           </div>
-          <div class="d-flex">
+          <!-- <div class="d-flex">
             <span class="fas fa-star"></span>
             <span class="fas fa-star"></span>
             <span class="fas fa-star"></span>
             <span class="fas fa-star-half"></span>
             <span class="fas fa-star-half"></span>
+          </div> -->
+          <div class="custom-hide text-end">
+            <a href="#" class="btn btn-warning text-white">Add to cart</a>
           </div>
         </div>
       </div>

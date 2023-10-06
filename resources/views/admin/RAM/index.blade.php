@@ -24,7 +24,7 @@
      </ul>
 
      <h1 class="page-header">
-      RAM Dashboard
+      RAM
      </h1>
 
      <hr class="mb-4">
