@@ -12,6 +12,8 @@ use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RAMController;
 use App\Http\Controllers\Admin\StorageController;
 use App\Http\Controllers\Admin\PhoneRAMController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\ProductPriceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -123,6 +125,19 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'App\Http\Co
 
     // RAM resource route
     Route::resource('rams', PhoneRAMController::class);
+
+    // Product resource route
+    Route::resource('products', ProductController::class);
+    Route::get('/products/prices/{id}', [ProductController::class, 'pricelist'])->name('products.prices');
+    Route::get('/products/prices/create/{id}', [ProductController::class, 'priceCreate']);
+    Route::post('/products/prices/create/{id}', [ProductController::class, 'priceStore']);
+
+
+    //Product Price resource route
+    Route::resource('product_prices', ProductPriceController::class);
+
+    // Accessory resource route
+    Route::resource('accessories', AccessoryController::class);
 });
 
 // csrf token error fix

@@ -12,4 +12,13 @@ class Storage extends Model
     protected $fillable = [
         'name'
     ];
+
+
+    public function product_prices(){
+        return $this->hasMany(ProductPrice::class);
+    }
+
+    public function products(){
+        return $this->belongsToMany(Product::class);
+    }
 }

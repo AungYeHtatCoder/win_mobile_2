@@ -114,6 +114,22 @@
 						</a>
 						<div class="menu-submenu">
                             <div class="menu-item">
+								<a href="{{ route('admin.products.index') }}" class="menu-link">
+									<div class="menu-text">Products</div>
+								</a>
+							</div>
+                            <div class="menu-item">
+								<a href="{{ route('admin.product_prices.index') }}" class="menu-link">
+									<div class="menu-text">Product Stocks</div>
+								</a>
+							</div>
+                            <div class="menu-item">
+								<a href="{{ route('admin.accessories.index') }}" class="menu-link">
+									<div class="menu-text">Accessories</div>
+								</a>
+							</div>
+
+                            <div class="menu-item">
 								<a href="{{ route('admin.categories.index') }}" class="menu-link">
 									<div class="menu-text">Categories</div>
 								</a>
@@ -123,7 +139,7 @@
 									<div class="menu-text">Brands</div>
 								</a>
 							</div>
-                            
+
                             <div class="menu-item">
                                 <a href="{{ route('admin.colors.index') }}" target="_blank" class="menu-link">
                                  <div class="menu-text">Color</div>
@@ -140,11 +156,7 @@
                                 </a>
                             </div>
 
-							<div class="menu-item">
-								<a href="pos_counter_checkout.html" class="menu-link">
-									<div class="menu-text">Products</div>
-								</a>
-							</div>
+
 						</div>
 					</div>
                     {{-- Product Management --}}
