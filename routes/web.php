@@ -131,6 +131,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'App\Http\Co
     Route::get('/products/prices/{id}', [ProductController::class, 'pricelist'])->name('products.prices');
     Route::get('/products/prices/create/{id}', [ProductController::class, 'priceCreate']);
     Route::post('/products/prices/create/{id}', [ProductController::class, 'priceStore']);
+    Route::get('/products/prices/edit/{id}', [ProductController::class, 'priceEdit']);
+    Route::post('/products/prices/edit/{id}', [ProductController::class, 'priceUpdate']);
+    Route::delete('/products/prices/delete/{id}', [ProductController::class, 'priceDelete']);
 
 
     //Product Price resource route
