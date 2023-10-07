@@ -1,7 +1,7 @@
 <!-- primary navbar section start -->
   <section class="container row">
     <nav class="navbar navbar-expand-md fixed-top">
-      <a href="#!" class="navbar-brand col-lg-1 col-md-1">
+      <a href="{{ url('/') }}" class="navbar-brand col-lg-1 col-md-1">
         <span class="logo"> Win <small class="d-block">Mobile</small></span>
       </a>
 
