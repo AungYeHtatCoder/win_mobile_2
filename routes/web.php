@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AccessoryController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ColorController;
@@ -125,6 +126,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'App\Http\Co
 
     // RAM resource route
     Route::resource('rams', PhoneRAMController::class);
+
+    //Accessory resource route
+    Route::resource('accessories', AccessoryController::class);
 
     // Product resource route
     Route::resource('products', ProductController::class);
