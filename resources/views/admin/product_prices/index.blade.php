@@ -28,7 +28,7 @@
 
 								<!-- BEGIN #datatable -->
 								<div id="datatable" class="mb-5">
-									<h4 class="text-end"><a href="{{ route('admin.product_prices.create') }}" class="btn btn-primary"><i class="fas fa-plus me-1"></i>Product Stock Create</a></h4>
+									{{-- <h4 class="text-end"><a href="{{ route('admin.product_prices.create') }}" class="btn btn-primary"><i class="fas fa-plus me-1"></i>Product Stock Create</a></h4> --}}
 									<p></p>
 									<div class="card">
 										<div class="card-body">
