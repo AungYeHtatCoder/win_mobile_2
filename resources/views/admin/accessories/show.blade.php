@@ -13,86 +13,89 @@
  <!-- BEGIN row -->
  <div class="row justify-content-center">
   <!-- BEGIN col-10 -->
-  <div class="col-xl-12">
+  <div class="col-xl-10">
    <!-- BEGIN row -->
    <div class="row">
     <!-- BEGIN col-9 -->
     <div class="col-xl-12">
      <ul class="breadcrumb">
       <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
-      <li class="breadcrumb-item active">Products</li>
+      <li class="breadcrumb-item active">Accessory Dashboard</li>
      </ul>
 
      <h1 class="page-header">
-      Products
+      Accessory Detail
      </h1>
 
      <hr class="mb-4">
 
      <!-- BEGIN #datatable -->
      <div id="datatable" class="mb-5">
-      <h4 class="text-end"><a href="{{ route('admin.products.create') }}" class="btn btn-primary"><i
-         class="fas fa-plus me-1"></i>Product Create</a></h4>
-      <p></p>
+      <h4 class="text-end"><a href="{{ route('admin.accessories.index') }}" class="btn btn-primary"><i
+         class="fas fa-arrow-left me-1"></i>Back</a></h4>
       <div class="card">
        <div class="card-body">
-        <table id="datatableDefault" class="table text-nowrap w-100">
-         <thead>
-          <tr>
-           <th>#</th>
-           <th>Name</th>
-           <th>Image1</th>
-           <th>Brand</th>
-           <th>Colors</th>
-           <th>Storages</th>
-           <th>RAM</th>
-           <th>Created_at</th>
-           <th>Action</th>
-          </tr>
-         </thead>
-         <tbody>
-          @foreach ($products as $key => $product)
-          <tr>
-           <td>{{ ++$key }}</td>
-           <td>{{ $product->name }}</td>
-           <td>
-            <img width="100px" class="img-thumbnail" src="{{ $product->img1_url }}" alt="">
-           </td>
-           <td>
-            {{ $product->brand->name }}
-           </td>
-           <td>
-            @foreach ($product->colors as $color)
-            <span class="badge text-bg-info">{{ $color->name }}</span>
-            @endforeach
-           </td>
-           <td>
-            @foreach ($product->storages as $storage)
-            <span class="badge text-bg-secondary">{{ $storage->name }}</span>
-            @endforeach
-           </td>
-           <td>
-            @foreach ($product->rams as $ram)
-            <span class="badge text-bg-theme">{{ $ram->name }}</span>
-            @endforeach
-           </td>
-           <td>
-            {{ $product->created_at->format('j M, Y') }}
-           </td>
-           <td>
-            <a href="{{ url('/admin/products/prices/'.$product->id) }}" class="btn btn-sm btn-secondary">Pricing</a>
-            <a href="{{ route('admin.products.edit', $product->id) }}" class="btn btn-sm btn-primary">Edit</a>
-            <a href="{{ route('admin.products.show', $product->id) }}" class="btn btn-sm btn-info">Show</a>
-            <form action="{{ route('admin.products.destroy', $product->id) }}" class="d-inline" method="POST">
-             @csrf
-             @method('DELETE')
-             <button type="submit" class="btn btn-danger btn-sm">Del</button>
-            </form>
-           </td>
-          </tr>
-          @endforeach
-         </tbody>
-        </table>
+        <p><i class="fas fa-calendar me-2"></i>- {{ $accessory->created_at->format('j M, Y') }}</p>
+        <h4>{{ $accessory->name }}</h4>
+        <h5 class="mt-3">Brand - {{ $accessory->brand->name }}</h5>
+        <div class="my-3">
+         <div>
+          <table class="table text-nowrap w-100">
+           <tr>
+            <th>Colors</th>
+            <th>Qty</th>
+            <th>Price</th>
+            <th>Discount</th>
+           </tr>
+           @forelse ($accessory->colors as $color)
+           @php
+           $pivotData = $color->pivot;
+           $qty = $pivotData->qty;
+           $normalPrice = $pivotData->normal_price;
+           $discountPrice = $pivotData->discount_price;
+           @endphp
+
+           <tr>
+            <td><span class="badge text-bg-info">{{ $color->name }}</span></td>
+            <td>
+             <p>{{ $qty }}</p>
+            </td>
+            <td>
+             <p>{{ $normalPrice }} MMK</p>
+            </td>
+            <td>
+             <p>{{ $discountPrice }} MMK</p>
+            </td>
+           </tr>
+           @empty
+           <p>No colors associated with this accessory.</p>
+           @endforelse
+          </table>
+         </div>
+        </div>
+        <div class="row">
+         <div class="col-md-3 mb-3">
+          <p>Image-1</p>
+          <img src="{{ $accessory->img1_url }}" class="w-75 img-thumbnail" alt="">
+         </div>
+         <div class="col-md-3 mb-3">
+          <p>Image-2</p>
+          <img src="{{ $accessory->img2_url }}" class="w-75 img-thumbnail" alt="">
+         </div>
+         <div class="col-md-3 mb-3">
+          <p>Image-3</p>
+          <img src="{{ $accessory->img3_url }}" class="w-75 img-thumbnail" alt="">
+         </div>
+         <div class="col-md-3 mb-3">
+          <p>Image-4</p>
+          <img src="{{ $accessory->img4_url }}" class="w-75 img-thumbnail" alt="">
+         </div>
+        </div>
+
+        <div class="my-3">
+         <h5>Accessory Description</h5>
+         {!! $accessory->description !!}
+        </div>
        </div>
       </div>
      </div>
@@ -110,7 +113,7 @@
   <!-- END col-10 -->
  </div>
  <!-- END row -->
- @include('sweetalert::alert')
+ {{-- @include('sweetalert::alert') --}}
 
 </div>
 @endsection

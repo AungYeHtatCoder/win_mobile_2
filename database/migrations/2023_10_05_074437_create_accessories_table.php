@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('accessories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->unsignedBigInteger('brand_id');
             $table->string('img1')->nullable();
             $table->string('img2')->nullable();
             $table->string('img3')->nullable();

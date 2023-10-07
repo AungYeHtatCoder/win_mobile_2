@@ -20,19 +20,19 @@
     <div class="col-xl-12">
      <ul class="breadcrumb">
       <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
-      <li class="breadcrumb-item active">Products</li>
+      <li class="breadcrumb-item active">Accessories</li>
      </ul>
 
      <h1 class="page-header">
-      Products
+      Accessories
      </h1>
 
      <hr class="mb-4">
 
      <!-- BEGIN #datatable -->
      <div id="datatable" class="mb-5">
-      <h4 class="text-end"><a href="{{ route('admin.products.create') }}" class="btn btn-primary"><i
-         class="fas fa-plus me-1"></i>Product Create</a></h4>
+      <h4 class="text-end"><a href="{{ route('admin.accessories.create') }}" class="btn btn-primary"><i
+         class="fas fa-plus me-1"></i>Accessory Create</a></h4>
       <p></p>
       <div class="card">
        <div class="card-body">
@@ -44,46 +44,45 @@
            <th>Image1</th>
            <th>Brand</th>
            <th>Colors</th>
-           <th>Storages</th>
-           <th>RAM</th>
+           <!-- <th>Qty</th>
+           <th>Price</th>
+           <th>Discount</th> -->
            <th>Created_at</th>
            <th>Action</th>
           </tr>
          </thead>
          <tbody>
-          @foreach ($products as $key => $product)
+          @foreach ($accessories as $key => $accessory)
           <tr>
            <td>{{ ++$key }}</td>
-           <td>{{ $product->name }}</td>
+           <td>{{ $accessory->name }}</td>
            <td>
-            <img width="100px" class="img-thumbnail" src="{{ $product->img1_url }}" alt="">
+            <img width="100px" class="img-thumbnail" src="{{ $accessory->img1_url }}" alt="">
            </td>
            <td>
-            {{ $product->brand->name }}
+            {{ $accessory->brand->name }}
            </td>
            <td>
-            @foreach ($product->colors as $color)
+            @foreach ($accessory->colors as $color)
             <span class="badge text-bg-info">{{ $color->name }}</span>
             @endforeach
            </td>
-           <td>
-            @foreach ($product->storages as $storage)
-            <span class="badge text-bg-secondary">{{ $storage->name }}</span>
-            @endforeach
+           <!-- <td>
+            {{ $accessory->qty }}
            </td>
            <td>
-            @foreach ($product->rams as $ram)
-            <span class="badge text-bg-theme">{{ $ram->name }}</span>
-            @endforeach
+            {{ $accessory->normal_price }}
            </td>
            <td>
-            {{ $product->created_at->format('j M, Y') }}
+            {{ $accessory->discount_price }}
+           </td> -->
+           <td>
+            {{ $accessory->created_at->format('j M, Y') }}
            </td>
            <td>
-            <a href="{{ url('/admin/products/prices/'.$product->id) }}" class="btn btn-sm btn-secondary">Pricing</a>
-            <a href="{{ route('admin.products.edit', $product->id) }}" class="btn btn-sm btn-primary">Edit</a>
-            <a href="{{ route('admin.products.show', $product->id) }}" class="btn btn-sm btn-info">Show</a>
-            <form action="{{ route('admin.products.destroy', $product->id) }}" class="d-inline" method="POST">
+            <a href="{{ route('admin.accessories.edit', $accessory->id) }}" class="btn btn-sm btn-primary">Edit</a>
+            <a href="{{ route('admin.accessories.show', $accessory->id) }}" class="btn btn-sm btn-info">Show</a>
+            <form action="{{ route('admin.accessories.destroy', $accessory->id) }}" class="d-inline" method="POST">
              @csrf
              @method('DELETE')
              <button type="submit" class="btn btn-danger btn-sm">Del</button>
