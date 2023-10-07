@@ -60,11 +60,7 @@
             <div class="mb-3 card">
               <div class="d-flex flex-column">
                 <img src="./assets/71K6mroOBJL._SL1500_.jpg" class="img-fluid mx-auto" alt="Avatar">
-<<<<<<< HEAD
                 <a href="product_details.html" class=" fw-bold text-dark ">Master Louder</a>
-=======
-                <a href="/product-details" class="text-dark fw-bold">Master Louder</a>
->>>>>>> myomin
               </div>
               <div class="d-flex justify-content-between">
                 <div>
@@ -90,11 +86,7 @@
             <div class="mb-3 card">
               <div class="d-flex flex-column">
                 <img src="./assets/OIP (1).jpeg" class="img-fluid mx-auto" alt="Avatar">
-<<<<<<< HEAD
                 <a href="product_details.html" class="fw-bold text-dark ">Cara Mengatasi Mic Headphone</a>
-=======
-                <a href="/product-details" class="fw-bold">Cara Mengatasi Mic Headphone</a>
->>>>>>> myomin
               </div>
               <div class="d-flex justify-content-between">
                 <div>
@@ -123,11 +115,7 @@
             <div class="mb-3 card">
               <div class="d-flex flex-column">
                 <img src="./assets/R.jpeg" class="img-fluid mx-auto" alt="">
-<<<<<<< HEAD
                 <a href="product_details.html" class="fw-bold text-dark ">Gaming Earphone</a>
-=======
-                <a href="/product-details" class="fw-bold">Gaming Earphone</a>
->>>>>>> myomin
               </div>
               <div class="d-flex justify-content-between">
                 <div>
@@ -155,11 +143,7 @@
             <div class="mb-3 card">
               <div class="d-flex flex-column">
                 <img src="./assets/OIP (2).jpeg" class="img-fluid mx-auto" alt="">
-<<<<<<< HEAD
                 <a href="product_details.html" class="fw-bold text-dark ">Power Bank</a>
-=======
-                <a href="/product-details" class="fw-bold">Power Bank</a>
->>>>>>> myomin
               </div>
               <div class="d-flex justify-content-between">
                 <div>
@@ -188,11 +172,7 @@
               <div class="d-flex flex-column">
                 <img src="./assets/H33b9cc895f3844fd948467beb797def81.jpg_300x300.png" class="img-fluid mx-auto"
                   alt="Avatar">
-<<<<<<< HEAD
                 <a href="product_details.html" class="fw-bold text-dark ">Apple Watch 5</a>
-=======
-                <a href="/product-details" class="fw-bold">Apple Watch 5</a>
->>>>>>> myomin
               </div>
               <div class="d-flex justify-content-between">
                 <div>
