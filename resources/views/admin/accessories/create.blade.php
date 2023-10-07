@@ -23,27 +23,25 @@
   <div class="col-xl-12">
    <!-- BEGIN row -->
    <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-10">
      <div id="formGrid" class="mb-5">
       <div class="d-flex justify-content-between">
-       <h4>Product Edit</h4>
-       <p><a href="{{ route('admin.products.index') }}" class="btn btn-primary"><i
+       <h4>Accessory Create</h4>
+       <p><a href="{{ route('admin.accessories.index') }}" class="btn btn-primary"><i
           class="fas fa-arrow-left me-1"></i>Back</a></p>
       </div>
       <div class="card">
        <div class="card-body">
-        <form action="{{ route('admin.products.update', $product->id) }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('admin.accessories.store') }}" method="post" enctype="multipart/form-data">
          @csrf
-         @method('PUT')
          <div class="row">
-          <div class="col-lg-6">
+          <div class="col-lg-12">
            <div class="mb-3 row">
             <label for="inputEmail1" class="col-sm-2 col-form-label">Name</label>
             <div class="col-sm-10">
-             <input type="text" class="form-control" id="inputEmail1" name="name" placeholder="Enter Product Name"
-              value="{{ $product->name }}">
+             <input type="text" class="form-control" id="inputEmail1" name="name" placeholder="Enter Accessory Name">
              @error('name')
-             <span class="text-danger">*{{ "The product name field is required." }}</span>
+             <span class="text-danger">*{{ "The accessory name field is required." }}</span>
              @enderror
             </div>
            </div>
@@ -53,12 +51,11 @@
              <select name="brand_id" id="" class="form-select form-control">
               <option value="">Choose Brand</option>
               @foreach ($brands as $brand)
-              <option value="{{ $brand->id }}" {{ $brand->id == $product->brand_id ? "selected" : "" }}>
-               {{ $brand->name }}</option>
+              <option value="{{ $brand->id }}">{{ $brand->name }}</option>
               @endforeach
              </select>
              @error('brand_id')
-             <span class="text-danger">*{{ "The product brand field is required." }}</span>
+             <span class="text-danger">*{{ "The accesssory brand field is required." }}</span>
              @enderror
             </div>
            </div>
@@ -68,98 +65,82 @@
             <label for="inputEmail2" class="col-sm-2 col-form-label">Image 1</label>
             <div class="col-sm-10">
              <input type="file" class="form-control" id="inputEmail2" name="img1">
-             <img src="{{ $product->img1_url }}" alt="" width="100px" class="img-thumbnail">
+             @error('img1')
+             <span class="text-danger">*{{ $message }}</span>
+             @enderror
             </div>
            </div>
            <div class="mb-3 row">
             <label for="inputEmail3" class="col-sm-2 col-form-label">Image 2</label>
             <div class="col-sm-10">
              <input type="file" class="form-control" id="inputEmail3" name="img2">
-             @isset($product->img2_url)
-             <img src="{{ $product->img2_url }}" alt="" width="100px" class="img-thumbnail">
-             @endisset
             </div>
            </div>
            <div class="mb-3 row">
             <label for="inputEmail4" class="col-sm-2 col-form-label">Image 3</label>
             <div class="col-sm-10">
              <input type="file" class="form-control" id="inputEmail4" name="img3">
-             @isset($product->img3_url)
-             <img src="{{ $product->img3_url }}" alt="" width="100px" class="img-thumbnail">
-             @endisset
             </div>
            </div>
            <div class="mb-3 row">
             <label for="inputEmail5" class="col-sm-2 col-form-label">Image 4</label>
             <div class="col-sm-10">
              <input type="file" class="form-control" id="inputEmail5" name="img4">
-             @isset($product->img4_url)
-             <img src="{{ $product->img4_url }}" alt="" width="100px" class="img-thumbnail">
-             @endisset
             </div>
-           </div>
-          </div>
-          <div class="col-lg-6">
-           <div class="mb-3">
-            <label class="form-label">Choose Color <span class="text-danger">*</span></label>
-            <select name="colors[]" class="selectpicker form-control" id="ex-multiselect" multiple>
-             <optgroup label="Picnic">
-              @foreach($colors as $color)
-              <option value="{{ $color->id }}" @foreach($product->colors as $c)
-               @if ($color->id == $c->id)
-               @selected(true)
-               @endif
-               @endforeach
-               >{{ $color->name }}</option>
-              @endforeach
-             </optgroup>
-            </select>
-            @error('colors[]')
-            <span class="text-danger">*{{ "The color field is required." }}</span>
-            @enderror
-           </div>
-           <div class="mb-3">
-            <label class="form-label">Choose Storage <span class="text-danger">*</span></label>
-            <select name="storages[]" class="selectpicker form-control" id="ex-search" multiple>
-             @foreach ($storages as $storage)
-             <option value="{{ $storage->id }}" @foreach($product->storages as $s)
-              @if ($storage->id == $s->id)
-              @selected(true)
-              @endif
-              @endforeach
-              >{{ $storage->name }}</option>
-             @endforeach
-            </select>
-            @error('storages[]')
-            <span class="text-danger">*{{ "The storage field is required." }}</span>
-            @enderror
-           </div>
-           <div class="form-group mb-3">
-            <label for="" class="form-label d-block">Choose RAM</label>
-            @foreach ($rams as $ram)
-            <div class="form-check form-check-inline">
-             <input name="rams[]" @foreach($product->rams as $r)
-             @if ($ram->id == $r->id)
-             {{ "checked" }}
-             @endif
-             @endforeach
-             class="form-check-input" type="checkbox" id="ram{{ $ram->id }}" value="{{ $ram->id }}">
-             <label class="form-check-label" for="ram{{ $ram->id }}">{{ $ram->name }}</label>
-            </div>
-            @endforeach
-            @error('rams[]')
-            <span class="text-danger">*{{ "The RAM field is required." }}</span>
-            @enderror
-           </div>
-           <div class="form-group mb-3">
-            <label for="" class="form-label d-block">Product Description</label>
-            <textarea name="description" id="desc" cols="30" rows="10">{!! $product->description !!}</textarea>
            </div>
           </div>
          </div>
+         <div class="row">
+          <div class="form-group mb-3">
+           <label for="" class="form-label d-block">Accessory Description</label>
+           <textarea name="description" id="desc" cols="30" rows="10"></textarea>
+          </div>
+         </div>
+         <div class="row">
+          <div class="form-group col-12 mb-2">
+           <label for="Color">colors:</label><br>
+           <div class="form-check form-check-inline">
+            @foreach($colors as $color)
+            <div class="d-flex justify-content-between mb-1">
+             @php
+             $inputName = "colors[{$color->id}]";
+             $colorValue = $color->value ?? null;
+             $qtyValue = $color->value ?? null;
+             $priceValue = $color->value ?? null;
+             $discountValue = $color->value ?? null;
+             @endphp
+             <div style="margin-right: 20px;">
+              <input {{ $color->value ? 'checked' : null }} data-id="{{ $color->id }}" type="checkbox"
+               class="service-enable form-check-input" id="color-{{ $color->id }}" value="{{ $color->id }}"
+               name="{{ $inputName }}[color_id]">
+              <label for="color-{{ $color->id }}" class="form-label">{{ $color->name }}</label>
+             </div>
+
+             <div>
+              <input value="{{ $qtyValue }}" {{ $qtyValue ? null : 'disabled' }} data-id="{{ $color->id }}"
+               name="{{ $inputName }}[qty]" type="number" class="color-qty form-control" placeholder="Quantity">
+             </div>
+             <div>
+              <input value="{{ $priceValue }}" {{ $priceValue ? null : 'disabled' }} data-id="{{ $color->id }}"
+               name="{{ $inputName }}[normal_price]" type="number" class="color-price form-control"
+               placeholder="Normal Price">
+             </div>
+             <div>
+              <input value="{{ $discountValue }}" {{ $discountValue ? null : 'disabled' }} data-id="{{ $color->id }}"
+               name="{{ $inputName }}[discount_price]" type="number" class="color-discount form-control"
+               placeholder="Discount Price">
+             </div>
+            </div>
+            @endforeach
+           </div>
+
+
+          </div>
+         </div>
+
          <div class="form-group row">
           <div class="col-sm-2 offset-sm-5">
-           <button type="submit" class="btn btn-outline-theme"><i class="fas fa-pen-to-square me-1"></i>Edit</button>
+           <button type="submit" class="btn btn-outline-theme"><i class="fas fa-plus me-1"></i>Create</button>
           </div>
          </div>
         </form>
@@ -226,6 +207,23 @@ $('#desc').summernote({
   // ['insert', ['link', 'picture', 'video']],
   ['view', ['fullscreen', 'codeview', 'help']]
  ]
+});
+</script>
+
+<script>
+$('document').ready(function() {
+ $('.service-enable').on('click', function() {
+  let id = $(this).attr('data-id')
+  let enabled = $(this).is(":checked")
+  $('.color-qty[data-id="' + id + '"]').attr('disabled', !enabled)
+  $('.color-qty[data-id="' + id + '"]').val(null)
+
+  $('.color-price[data-id="' + id + '"]').attr('disabled', !enabled)
+  $('.color-price[data-id="' + id + '"]').val(null)
+
+  $('.color-discount[data-id="' + id + '"]').attr('disabled', !enabled)
+  $('.color-discount[data-id="' + id + '"]').val(null)
+ })
 });
 </script>
 @endsection

@@ -22,6 +22,6 @@ class Color extends Model
     }
 
     public function accessories(){
-        return $this->belongsToMany(Accessory::class);
+        return $this->belongsToMany(Accessory::class)->withPivot(['qty', 'normal_price', 'discount_price']);;
     }
 }
