@@ -21,7 +21,7 @@
 								</ul>
 
 								<h1 class="page-header">
-									Product Pricing
+									{{ $product->name }}
 								</h1>
 
 								<hr class="mb-4">
