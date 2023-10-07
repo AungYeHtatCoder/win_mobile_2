@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('img4')->nullable();
             $table->longText('description');
             $table->timestamps();
+
+            $table->foreign('brand_id')->references('id')->on('brands')->onDelete('Cascade');
         });
     }
 
