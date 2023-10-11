@@ -17,7 +17,7 @@
 
   <script>
 
-  //landing page carousel 
+  //landing page carousel
 
   $(document).ready(function () {
   // Initialize Landing Page Carousel
@@ -151,7 +151,7 @@ $(document).ready(function () {
   // Other common code
 });
 
- 
+
 
     // Get the input element
     const numberInput = document.getElementById("numberInput");
