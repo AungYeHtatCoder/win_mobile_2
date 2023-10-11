@@ -1,23 +1,26 @@
 <?php
 
-use App\Http\Controllers\Admin\AccessoryController;
-use App\Http\Controllers\Admin\BannerController;
-use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\ColorController;
+use App\Http\Controllers\Admin\AccessoryCategoryController;
+use App\Models\Admin\Product;
+use App\Models\Admin\Accessory;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\RolesController;
-use App\Http\Controllers\Admin\UsersController;
-use App\Http\Controllers\Admin\ProfileController;
-use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RAMController;
-use App\Http\Controllers\Admin\StorageController;
-use App\Http\Controllers\Admin\PhoneRAMController;
-use App\Http\Controllers\Admin\ProductController;
-use App\Http\Controllers\Admin\ProductPriceController;
 use App\Http\Controllers\Home\AuthController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\Home\ShopController;
+use App\Http\Controllers\Admin\ColorController;
+use App\Http\Controllers\Admin\RolesController;
+use App\Http\Controllers\Admin\UsersController;
+use App\Http\Controllers\Admin\BannerController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\StorageController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\PhoneRAMController;
+use App\Http\Controllers\Admin\AccessoryController;
+use App\Http\Controllers\Admin\PermissionController;
+use App\Http\Controllers\Admin\ProductPriceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -95,7 +98,8 @@ Route::get('/contact', [HomeController::class, 'contact']);
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::get('/shop', [ShopController::class, 'shop']);
-Route::get('/product_detail/{id}', [ShopController::class, 'productDetail']);
+Route::get('/shop/brands/{id}', [ShopController::class, 'brandfilter']);
+Route::get('/product_detail/{id}', [ShopController::class, 'product_detail']);
 
 Auth::routes();
 
@@ -140,6 +144,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'App\Http\Co
 
     //Accessory resource route
     Route::resource('accessories', AccessoryController::class);
+
+    //Accessory Category resource route
+    Route::resource('accessory_categories', AccessoryCategoryController::class);
 
     // Product resource route
     Route::resource('products', ProductController::class);

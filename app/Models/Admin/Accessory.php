@@ -11,6 +11,7 @@ class Accessory extends Model
     protected $fillable = [
         'name',
         'brand_id',
+        'category_id',
         'img1',
         'img2',
         'img3',
@@ -38,8 +39,12 @@ class Accessory extends Model
         return $this->belongsToMany(Color::class)->withPivot(['qty', 'normal_price', 'discount_price']);;
     }
 
-     public function brand(){
+    public function brand(){
         return $this->belongsTo(Brand::class);
+    }
+
+    public function category(){
+        return $this->belongsTo(AccessoryCategories::class);
     }
 
 }

@@ -28,77 +28,79 @@
      </h1>
 
      <hr class="mb-4">
-								<!-- BEGIN #datatable -->
-								<div id="datatable" class="mb-5">
-									{{-- <h4 class="text-end"><a href="{{ route('admin.product_prices.create') }}" class="btn btn-primary"><i class="fas fa-plus me-1"></i>Product Stock Create</a></h4> --}}
-									<p></p>
-									<div class="card">
-										<div class="card-body">
-											<table id="datatableDefault" class="table text-nowrap w-100">
-												<thead>
-													<tr>
-														<th>#</th>
-														<th>Name</th>
-                                                        <th>Brand</th>
-                                                        <th>Color</th>
-                                                        <th>Storage</th>
-                                                        <th>RAM</th>
-                                                        <th>Category</th>
-                                                        <th>Qty</th>
-                                                        <th>Price</th>
-                                                        <th>Discount</th>
-                                                        <th>Created_at</th>
-														{{-- <th>Action</th> --}}
-													</tr>
-												</thead>
-                                                <tbody>
-                                                    @foreach ($prices as $key => $price)
-                                                    <tr>
-                                                        <td>{{ ++$key }}</td>
-                                                        <td>{{ $price->product->name }}</td>
-                                                        <td>
-                                                            {{ $price->product->brand->name }}
-                                                        </td>
-                                                        <td>
-                                                            {{ $price->color->name }}
-                                                        </td>
-                                                        <td>
-                                                            {{ $price->storage->name }}
-                                                        </td>
-                                                        <td>
-                                                            {{ $price->ram->name }}
-                                                        </td>
-                                                        <td>
-                                                            {{ $price->category->name }}
-                                                        </td>
-                                                        <td>
-                                                            {{ $price->qty }}
-                                                        </td>
-                                                        <td>
-                                                            {{ number_format($price->normal_price) }} MMK
-                                                        </td>
-                                                        <td>
-                                                            {{ $price->discount_price ? number_format($price->discount_price)." MMK" : "" }}
-                                                        </td>
-                                                        <td>
-                                                            {{ $price->created_at->format('j M, Y') }}
-                                                        </td>
-                                                        {{-- <td>
-                                                            <a href="{{ route('admin.products.edit', $price->id) }}" class="btn btn-sm btn-primary">Edit</a>
-                                                            <a href="{{ route('admin.products.show', $price->id) }}" class="btn btn-sm btn-info">Show</a>
-                                                            <form action="{{ route('admin.products.destroy', $price->id) }}" class="d-inline" method="POST">
-                                                                @csrf
-                                                                @method('DELETE')
-                                                                <button type="submit" class="btn btn-danger btn-sm">Del</button>
-                                                            </form>
-                                                        </td> --}}
-                                                    </tr>
-                                                    @endforeach
-                                                </tbody>
-											</table>
-										</div>
-									</div>
-								</div>
+     <!-- BEGIN #datatable -->
+     <div id="datatable" class="mb-5">
+      {{-- <h4 class="text-end"><a href="{{ route('admin.product_prices.create') }}" class="btn btn-primary"><i
+       class="fas fa-plus me-1"></i>Product Stock Create</a></h4> --}}
+      <p></p>
+      <div class="card">
+       <div class="card-body">
+        <table id="datatableDefault" class="table text-nowrap w-100">
+         <thead>
+          <tr>
+           <th>#</th>
+           <th>Name</th>
+           <th>Brand</th>
+           <th>Color</th>
+           <th>Storage</th>
+           <th>RAM</th>
+           <th>Category</th>
+           <th>Qty</th>
+           <th>Price</th>
+           <th>Discount</th>
+           <th>Created_at</th>
+           {{-- <th>Action</th> --}}
+          </tr>
+         </thead>
+         <tbody>
+          @foreach ($prices as $key => $price)
+          <tr>
+           <td>{{ ++$key }}</td>
+           <td>{{ $price->product->name }}</td>
+           <td>
+            {{ $price->product->brand->name }}
+           </td>
+           <td>
+            {{ $price->color->name }}
+           </td>
+           <td>
+            {{ $price->storage->name }}
+           </td>
+           <td>
+            {{ $price->ram->name }}
+           </td>
+           <td>
+            {{ $price->category->name }}
+           </td>
+           <td>
+            {{ $price->qty }}
+           </td>
+           <td>
+            {{ number_format($price->normal_price) }} MMK
+           </td>
+           <td>
+            {{ $price->discount_price ? number_format($price->discount_price)." MMK" : "" }}
+           </td>
+           <td>
+            {{ $price->created_at->format('j M, Y') }}
+           </td>
+           {{-- <td>
+                                                            <a href="{{ route('admin.products.edit', $price->id) }}"
+           class="btn btn-sm btn-primary">Edit</a>
+           <a href="{{ route('admin.products.show', $price->id) }}" class="btn btn-sm btn-info">Show</a>
+           <form action="{{ route('admin.products.destroy', $price->id) }}" class="d-inline" method="POST">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-danger btn-sm">Del</button>
+           </form>
+           </td> --}}
+          </tr>
+          @endforeach
+         </tbody>
+        </table>
+       </div>
+      </div>
+     </div>
 
      <!-- END #datatable -->
 
