@@ -22,7 +22,7 @@
       <div class="mb-3 card">
        <div class="d-flex flex-column">
         <img src="{{ $accessory->img1_url }}" class="img-fluid mx-auto" alt="Avatar">
-        <a href="{{url('/product_detail/'.$accessory->id) }}" class="text-dark mb-3 fw-bold">{{ $accessory->name }}</a
+        <a href="{{url('/accessory_detail/'.$accessory->id) }}" class="text-dark mb-3 fw-bold">{{ $accessory->name }}</a
          href="">
        </div>
        <div>
@@ -139,7 +139,7 @@
       <img src="{{ $ava->img1_url }}" class="img-fluid w-50" alt="">
      </div>
      <div>
-      <a href="/product-details">{{ $ava->name }} <sup class="text-warning">New</sup></a>
+      <a href="{{url('/accessory_detail/'.$ava->id) }}">{{ $ava->name }} <sup class="text-warning">New</sup></a>
      </div>
      <div>
       <small>Color :</small>

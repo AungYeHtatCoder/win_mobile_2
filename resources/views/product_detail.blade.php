@@ -13,7 +13,7 @@
    <div class="row">
     <div class="col-md-6 col-sm-12 border border-1 p-3">
      <div>
-      <h5>Category/Phone/Android</h5>
+      <h5>Category/Phone/{{ $product->brand->name }}</h5>
      </div>
      <div class="text-center my-md-3">
       <img src="{{ $product->img1_url }}" class="img-fluid w-75" alt="">
@@ -103,17 +103,17 @@
         <div class="mt-2 d-flex">
          @if ($price->discount_price)
          <p style="font-size: 17px;">Price : Ks - </p>
-         <h6 style="text-decoration: line-through;">{{ $price->normal_price}}</h5>
+         <h6 style="text-decoration: line-through;">{{ $price->normal_price}}</h6>
 
-          <div class="ms-1">
-           <!-- <p style="font-size: 17px;">Discount : Ks</p> -->
-           <h5 class="ms-1 text-danger">{{ $price->discount_price }}</h5>
-          </div>
+         <div class="ms-1">
+          <!-- <p style="font-size: 17px;">Discount : Ks</p> -->
+          <h5 class="ms-1 text-danger">{{ $price->discount_price }}</h5>
+         </div>
 
-          @else
-          <p style="font-size: 17px;">Price : Ks - </p>
-          <h5>{{ $price->normal_price }}</h5>
-          @endif
+         @else
+         <p style="font-size: 17px;">Price : Ks - </p>
+         <h5>{{ $price->normal_price }}</h5>
+         @endif
         </div>
        </div>
        @if($key === 0)

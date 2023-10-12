@@ -12,8 +12,13 @@
      <img src="{{ $product->img1_url }}" class="img-fluid w-50" alt="">
     </div>
     <div>
+     @if($product->storages || $product->rams)
      <a href="{{url('/product_detail/'.$product->id) }}">{{ $product->name }}
       <sup class="text-warning">New</sup></a>
+     @else
+     <a href="{{url('/accessory_detail/'.$product->id) }}">{{ $product->name }}
+      <sup class="text-warning">New</sup></a>
+     @endif
     </div>
     <div>
      <small>Color : </small>
