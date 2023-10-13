@@ -26,13 +26,31 @@ class ShopController extends Controller
         return view('shop', compact('mergedProducts'));
     }
 
+    public function accessorycategory($id) {    
+        $mergedProducts = Accessory::where('category_id', $id)->get();
+        // return $mergedProducts;
+        return view('shop', compact('mergedProducts'));
+    }
+
+    public function accessorybrand($id) {    
+        $mergedProducts = Accessory::where('brand_id', $id)->get();
+        // return $mergedProducts;
+        return view('shop', compact('mergedProducts'));
+    }
 
     public function product_detail($id){
-        $accessory = Accessory::find($id);
+        // $accessory = Accessory::find($id);
         $product = Product::find($id);
         $prices = ProductPrice::where('product_id', $id)->get();
 
         //  return $prices;
-        return view('product_detail', compact('product', 'accessory', 'prices'));
+        return view('product_detail', compact('product', 'prices'));
     }
+
+    public function accessory_detail($id){
+        $accessory = Accessory::find($id);
+        return view('accessory_detail', compact('accessory'));
+    }
+
+    
 }

@@ -99,7 +99,10 @@ Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::get('/shop', [ShopController::class, 'shop']);
 Route::get('/shop/brands/{id}', [ShopController::class, 'brandfilter']);
+Route::get('/shop/accessorycategories/{id}', [ShopController::class, 'accessorycategory']);
+Route::get('/shop/accessorybrands/{id}', [ShopController::class, 'accessorybrand']);
 Route::get('/product_detail/{id}', [ShopController::class, 'product_detail']);
+Route::get('/accessory_detail/{id}', [ShopController::class, 'accessory_detail']);
 
 Auth::routes();
 

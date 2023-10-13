@@ -112,21 +112,19 @@
       <ul class="row">
        <li><a href="#">Accessory</a>
         <ul>
-         <li><a href="#"><span class="fas fa-greater-than me-2"></span>Airpod</a></li>
-         <li><a href="#"><span class="fas fa-greater-than me-2"></span>Watch</a></li>
-         <li><a href="#"><span class="fas fa-greater-than me-2"></span>Power bank</a></li>
-         <li><a href="#"><span class="fas fa-greater-than me-2"></span>Speaker</a></li>
-         <li><a href="#"><span class="fas fa-greater-than me-2"></span>Headphone</a></li>
+         @foreach($accessory_cats as $cat)
+         <li><a href="{{ url('/shop/accessorycategories/'.$cat->id) }}"><span
+            class="fas fa-greater-than me-2"></span>{{ $cat->name }}</a></li>
+         @endforeach
         </ul>
        </li>
 
-       <li><a href="#">Cover</a>
+       <li><a href="#">Brand</a>
         <ul>
-         <li><a href="#"><span class="fas fa-greater-than me-2"></span>Apple</a></li>
-         <li><a href="#"><span class="fas fa-greater-than me-2"></span>Samsung</a></li>
-         <li><a href="#"><span class="fas fa-greater-than me-2"></span>Xiaomi</a></li>
-         <li><a href="#"><span class="fas fa-greater-than me-2"></span>Vivo</a></li>
-         <li><a href="#"><span class="fas fa-greater-than me-2"></span>Oppo</a></li>
+         @foreach($brands as $brand)
+         <li><a href="{{ url('/shop/accessorybrands/'.$brand->id) }}"><span
+            class="fas fa-greater-than me-2"></span>{{ $brand->name }}</a></li>
+         @endforeach
         </ul>
        </li>
 

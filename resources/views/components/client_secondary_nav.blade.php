@@ -14,8 +14,9 @@
 
   <select name="category" id="category" class="col-lg-2 d-lg-block d-none select-box">
    <option value="choose">Choose Brands..</option>
-   @foreach($brands as $category)
-   <option value="{{ $category->name }}"><span class="fas fa-greater-than"></span>{{ $category->name }}</option>
+   @foreach($brands as $brand)
+   <option value="{{ $brand->name }}"><span class="fas fa-greater-than"></span><a href="">{{ $brand->name }}</a>
+   </option>
    @endforeach
   </select>
  </div>

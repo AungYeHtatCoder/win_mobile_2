@@ -13,7 +13,7 @@
    <div class="row">
     <div class="col-md-6 col-sm-12 border border-1 p-3">
      <div>
-      <h5>Category/Phone/Android</h5>
+      <h5>{{ $product->brand->name }}/{{ $product->name }}</h5>
      </div>
      <div class="text-center my-md-3">
       <img src="{{ $product->img1_url }}" class="img-fluid w-75" alt="">
@@ -62,6 +62,21 @@
     <div class="col-md-6 col-sm-12 p-3">
      <h3 class="text-warning">{{ $product->name }}</h3>
      <h4 class="text-info fw-bold">Brand - {{ $product->brand->name }}</h4>
+     <p class="fw-bold">Color -
+      @foreach ($product->colors as $color)
+      <span class="badge text-bg-primary">{{ $color->name }}</span>
+      @endforeach
+     </p>
+     <p class="fw-bold">Storage -
+      @foreach ($product->storages as $storage)
+      <span class="badge text-bg-secondary">{{ $storage->name }}</span>
+      @endforeach
+     </p>
+     <p class="fw-bold">RAM -
+      @foreach ($product->rams as $ram)
+      <span class="badge text-bg-info">{{ $ram->name }}</span>
+      @endforeach
+     </p>
 
      <div class="row mt-1">
       <div class="col-1">
@@ -78,8 +93,7 @@
       @foreach($prices as $key => $price)
       <div class="row my-1">
        <div class="col-1 mt-1">
-        <input data-id="{{ $price->id }}" type="radio" name="selected_price" {{ $key === 0 ? 'checked' : null }}
-         class="price-enable">
+        <input id="radio-{{ $price->id }}" type="checkbox" name="selected_price" class="price-enable">
        </div>
        <div class="col-2 choice">
         <span class="border border-warning">{{ $price->color->name }}</span>
@@ -98,72 +112,75 @@
         @endif
        </div>
       </div>
-      <div class="row">
-       <div class="col-12">
-        <div class="mt-2 d-flex">
+      @endforeach
+
+      @foreach($prices as $key=>$price)
+      <div class="row d-none" id="price-{{ $price->id }}">
+       <div class="col-12 mt-2">
+        <div class="d-flex">
+         <p style="font-size: 17px;">Price : </p>
          @if ($price->discount_price)
-         <p style="font-size: 17px;">Price : Ks - </p>
-         <h6 style="text-decoration: line-through;">{{ $price->normal_price}}</h5>
-
-          <div class="ms-1">
-           <!-- <p style="font-size: 17px;">Discount : Ks</p> -->
-           <h5 class="ms-1 text-danger">{{ $price->discount_price }}</h5>
-          </div>
-
-          @else
-          <p style="font-size: 17px;">Price : Ks - </p>
-          <h5>{{ $price->normal_price }}</h5>
-          @endif
-        </div>
-       </div>
-       @if($key === 0)
-       <div class="row price-qty" data-id="{{ $price->id }}" style="display: block">
-        @else
-        <div class="row price-qty" data-id="{{ $price->id }}" style="display: none">
+         <h6 style="text-decoration: line-through;">{{ number_format($price->normal_price) }} MMK</h6>
+         <div class="ms-1">
+          <h5 class="text-danger">{{ number_format($price->discount_price) }} MMK</h5>
+         </div>
+         @else
+         <h5>{{ number_format($price->normal_price) }} MMK</h5>
          @endif
-         <form>
-          <div class="d-flex">
-           <div class="col-sm-3">
-            <div class="input-group">
-             <span class="input-group-prepend">
-              <button class="btn btn-outline-warning rounded-left" type="button" onclick="decreaseValue()">-</button>
-             </span>
-             <input id="numberInput" type="number" class="form-control text-dark text-center px-3"
-              style="border-top-left-radius: 0; border-bottom-left-radius: 0;" min="1" max="10" value="1">
-             <span class="input-group-append">
-              <button class="btn btn-outline-warning rounded-right" type="button" onclick="increaseValue()">+</button>
-             </span>
-            </div>
-           </div>
-           <div class="input-group">
-            <a href="#!" class="btn bg-warning p-2 mx-2">Add To Cart</a>
-           </div>
-          </div>
-         </form>
         </div>
-
        </div>
-       @endforeach
+       <form>
+        <div class="d-flex">
+         <div class="col-sm-3">
+          <div class="input-group">
+           <span class="input-group-prepend">
+            <button class="btn btn-outline-warning rounded-left" type="button"
+             onclick="changeValue(this, -1)">-</button>
+           </span>
+           <input type="number" class="form-control text-dark text-center px-3"
+            style="border-top-left-radius: 0; border-bottom-left-radius: 0;" min="1" max="10" value="1">
+           <span class="input-group-append">
+            <button class="btn btn-outline-warning rounded-right" type="button"
+             onclick="changeValue(this, 1)">+</button>
+           </span>
+          </div>
+         </div>
+         <div class="input-group">
+          <a href="#!" class="btn bg-warning p-2 mx-2">Add To Cart</a>
+         </div>
+        </div>
+       </form>
+       <div class="row price-qty" data-id="{{ $price->id }}" style="display: none">
+        <!-- Add content for price-qty section here -->
+       </div>
       </div>
-      <div>
 
-      </div>
-      <div class="mt-2">
-       <p>{!! $product->description !!}</p>
-      </div>
-      <!-- <div class="my-3">
-      <h6>Specification</h6>
-      <ul>
-       <li>Status : New</li>
-       <li>Storage : 64GB</li>
-       <li>RAM : 4GB</li>
-       <li>Camera : 12px Main, 5MP Front, 64 Altra Wide</li>
-       <li>Battery : 45000 mah</li>
-       <li>Color : Skyblue</li>
-      </ul>
-     </div> -->
+      {{-- <script>
+                $(document).ready(function(){
+                    $("#radio-{{ $price->id }}").click(function(){
+      $("#price-{{ $price->id }}").toggleClass('d-none');
+      $(".price-qty[data-id={{ $price->id }}]").toggle();
+      });
+      });
+
+      function changeValue(button, value) {
+      let input = $(button).closest('.input-group').find('input');
+      let currentValue = parseInt(input.val());
+      let newValue = currentValue + value;
+
+      if (newValue >= parseInt(input.attr('min')) && newValue <= parseInt(input.attr('max'))) { input.val(newValue); } }
+       </script> --}}
+       @endforeach
+
+     </div>
+     <div>
+
+     </div>
+     <div class="mt-2">
+      <p>{!! $product->description !!}</p>
      </div>
     </div>
+   </div>
   </section>
 
   <section class="bg-body-secondary mt-md-5 mt-sm-5">
@@ -267,17 +284,32 @@
 
  </x-layout>
 
+
+
  <script>
 $(document).ready(function() {
- $('.price-enable').on('click', function() {
-  var id = $(this).data('id');
-  $('.price-qty').hide();
-  $('.price-qty-input').prop('disabled', true);
+ // Use event delegation for radio button click
+ $(document).on('click', '.price-enable', function() {
+  let priceId = $(this).attr('id').split('-')[1];
+  $("#price-" + priceId).toggleClass('d-none');
+  $(".price-qty[data-id=" + priceId + "]").toggle();
+ });
 
-  if ($(this).is(":checked")) {
-   $('.price-qty[data-id="' + id + '"]').show();
-   $('.price-qty[data-id="' + id + '"] .price-qty-input').prop('disabled', false);
+ // Change value function
+ function changeValue(button, value) {
+  let input = $(button).closest('.input-group').find('input');
+  let currentValue = parseInt(input.val());
+  let newValue = currentValue + value;
+
+  if (newValue >= parseInt(input.attr('min')) && newValue <= parseInt(input.attr('max'))) {
+   input.val(newValue);
   }
+ }
+
+ // Attach changeValue function to buttons
+ $('.input-group').on('click', 'button', function() {
+  let value = $(this).hasClass('rounded-left') ? -1 : 1;
+  changeValue(this, value);
  });
 });
  </script>
