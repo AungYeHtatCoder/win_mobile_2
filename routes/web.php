@@ -1,18 +1,25 @@
 <?php
 
-use App\Http\Controllers\Admin\BannerController;
-use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\ColorController;
+use App\Http\Controllers\Admin\AccessoryCategoryController;
+use App\Models\Admin\Product;
+use App\Models\Admin\Accessory;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\RAMController;
+use App\Http\Controllers\Home\AuthController;
+use App\Http\Controllers\Home\HomeController;
+use App\Http\Controllers\Home\ShopController;
+use App\Http\Controllers\Admin\ColorController;
 use App\Http\Controllers\Admin\RolesController;
 use App\Http\Controllers\Admin\UsersController;
-use App\Http\Controllers\Admin\ProfileController;
-use App\Http\Controllers\Admin\PermissionController;
-use App\Http\Controllers\Admin\RAMController;
-use App\Http\Controllers\Admin\StorageController;
-use App\Http\Controllers\Admin\PhoneRAMController;
+use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\StorageController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\PhoneRAMController;
+use App\Http\Controllers\Admin\AccessoryController;
+use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\ProductPriceController;
 
 /*
@@ -26,29 +33,29 @@ use App\Http\Controllers\Admin\ProductPriceController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
 
 // Login page
-Route::get('/login',function(){
-    return view('login');
-});
+// Route::get('/login',function(){
+//     return view('login');
+// });
 
 // Register page
-Route::get('/register',function(){
-    return view('register');
-});
+// Route::get('/register',function(){
+//     return view('register');
+// });
 
 // Shop page
-Route::get('/shop',function(){
-    return view('shop');
-});
+// Route::get('/shop',function(){
+//     return view('shop');
+// });
 
 //product details page
-Route::get('/product-details',function(){
-    return view('product_details');
-});
+// Route::get('/product-details',function(){
+//     return view('product_details');
+// });
 
 // my-cart page
 Route::get('/my-cart',function(){
@@ -61,9 +68,9 @@ Route::get('/payment',function(){
 });
 
 // contact
-Route::get('/contact',function(){
-    return view('contact');
-});
+// Route::get('/contact',function(){
+//     return view('contact');
+// });
 
 // profile
 Route::get('/profile',function(){
@@ -84,6 +91,15 @@ Route::get('/change-password',function(){
 Route::get('/order-history',function(){
     return view('order_history');
 });
+
+//Frontend Routes
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/contact', [HomeController::class, 'contact']);
+Route::get('/login', [AuthController::class, 'login'])->name('login');
+Route::get('/register', [AuthController::class, 'register'])->name('register');
+Route::get('/shop', [ShopController::class, 'shop']);
+Route::get('/shop/brands/{id}', [ShopController::class, 'brandfilter']);
+Route::get('/product_detail/{id}', [ShopController::class, 'product_detail']);
 
 Auth::routes();
 
@@ -125,6 +141,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'App\Http\Co
 
     // RAM resource route
     Route::resource('rams', PhoneRAMController::class);
+
+    //Accessory resource route
+    Route::resource('accessories', AccessoryController::class);
+
+    //Accessory Category resource route
+    Route::resource('accessory_categories', AccessoryCategoryController::class);
 
     // Product resource route
     Route::resource('products', ProductController::class);

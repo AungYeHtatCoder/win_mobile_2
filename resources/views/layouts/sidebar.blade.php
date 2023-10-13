@@ -101,99 +101,104 @@
 		   </div>
 		   {{-- User Interface --}}
 
-            {{-- Product Management --}}
-                <div class="menu-header">Product Management</div>
-					<div class="menu-item has-sub">
-						<a href="javascript:;" class="menu-link">
-							<div class="menu-icon">
-								<i class="bi bi-grid-3x3"></i>
-								{{-- <span class="w-5px h-5px rounded-3 bg-theme position-absolute top-0 end-0 mt-3px me-3px"></span> --}}
-							</div>
-							<div class="menu-text d-flex align-items-center">Product Data</div>
-							<span class="menu-caret"><b class="caret"></b></span>
-						</a>
-						<div class="menu-submenu">
-                            <div class="menu-item">
-								<a href="{{ route('admin.products.index') }}" class="menu-link">
-									<div class="menu-text">Products</div>
-								</a>
-							</div>
-                            <div class="menu-item">
-								<a href="{{ route('admin.product_prices.index') }}" class="menu-link">
-									<div class="menu-text">Product Stocks</div>
-								</a>
-							</div>
-                            <div class="menu-item">
-								<a href="{{ route('admin.accessories.index') }}" class="menu-link">
-									<div class="menu-text">Accessories</div>
-								</a>
-							</div>
-
-                            <div class="menu-item">
-								<a href="{{ route('admin.categories.index') }}" class="menu-link">
-									<div class="menu-text">Categories</div>
-								</a>
-							</div>
-							<div class="menu-item">
-								<a href="{{ route('admin.brands.index') }}" class="menu-link">
-									<div class="menu-text">Brands</div>
-								</a>
-							</div>
-
-                            <div class="menu-item">
-                                <a href="{{ route('admin.colors.index') }}" target="_blank" class="menu-link">
-                                 <div class="menu-text">Color</div>
-                                </a>
-                            </div>
-                            <div class="menu-item">
-                                <a href="{{ route('admin.storages.index') }}" target="_blank" class="menu-link">
-                                 <div class="menu-text">Storage</div>
-                                </a>
-                            </div>
-                            <div class="menu-item">
-                                <a href="{{ route('admin.rams.index') }}" target="_blank" class="menu-link">
-                                 <div class="menu-text">RAM</div>
-                                </a>
-                            </div>
-						</div>
-					</div>
-		        </div>
 		   {{-- Product Management --}}
-           
-           <div class="menu">
-                <div class="menu-divider"></div>
-                <div class="menu-header">Users</div>
-                <div class="menu-item">
-                        @if(Auth::user()->id === 1)
-                        <a href="{{ route('admin.profiles.index') }}" class="menu-link">
-                        <span class="menu-icon"><i class="bi bi-people"></i></span>
-                        <span class="menu-text">AdminProfile</span>
-                        </a>
-                        @else
-                        <a href="{{ route('admin.profiles.index') }}" class="menu-link">
-                        <span class="menu-icon"><i class="bi bi-people"></i></span>
-                        <span class="menu-text">UserProfile</span>
-                        </a>
-                        @endif
-                </div>
-                <div class="menu-item">
-                        <a href="calendar.html" class="menu-link">
-                        <span class="menu-icon"><i class="bi bi-calendar4"></i></span>
-                        <span class="menu-text">Calendar</span>
-                        </a>
-                </div>
-                <div class="menu-item">
-                        <a href="settings.html" class="menu-link">
-                        <span class="menu-icon"><i class="bi bi-gear"></i></span>
-                        <span class="menu-text">Settings</span>
-                        </a>
-                </div>
-                <div class="menu-item">
-                        <a href="helper.html" class="menu-link">
-                        <span class="menu-icon"><i class="bi bi-gem"></i></span>
-                        <span class="menu-text">Helper</span>
-                        </a>
-                </div>
+		   <div class="menu-header">Product Management</div>
+		   <div class="menu-item has-sub">
+		    <a href="javascript:;" class="menu-link">
+		     <div class="menu-icon">
+		      <i class="bi bi-grid-3x3"></i>
+		      {{-- <span class="w-5px h-5px rounded-3 bg-theme position-absolute top-0 end-0 mt-3px me-3px"></span> --}}
+		     </div>
+		     <div class="menu-text d-flex align-items-center">Product Data</div>
+		     <span class="menu-caret"><b class="caret"></b></span>
+		    </a>
+		    <div class="menu-submenu">
+		     <div class="menu-item">
+		      <a href="{{ route('admin.products.index') }}" class="menu-link">
+		       <div class="menu-text">Products</div>
+		      </a>
+		     </div>
+		     <div class="menu-item">
+		      <a href="{{ route('admin.product_prices.index') }}" class="menu-link">
+		       <div class="menu-text">Product Stocks</div>
+		      </a>
+		     </div>
+		     <div class="menu-item">
+		      <a href="{{ route('admin.accessories.index') }}" class="menu-link">
+		       <div class="menu-text">Accessories</div>
+		      </a>
+		     </div>
+		     <div class="menu-item">
+		      <a href="{{ route('admin.accessory_categories.index') }}" class="menu-link">
+		       <div class="menu-text">Accessory Categories</div>
+		      </a>
+		     </div>
+
+		     <div class="menu-item">
+		      <a href="{{ route('admin.categories.index') }}" class="menu-link">
+		       <div class="menu-text">Categories</div>
+		      </a>
+		     </div>
+		     <div class="menu-item">
+		      <a href="{{ route('admin.brands.index') }}" class="menu-link">
+		       <div class="menu-text">Brands</div>
+		      </a>
+		     </div>
+
+		     <div class="menu-item">
+		      <a href="{{ route('admin.colors.index') }}" target="_blank" class="menu-link">
+		       <div class="menu-text">Color</div>
+		      </a>
+		     </div>
+		     <div class="menu-item">
+		      <a href="{{ route('admin.storages.index') }}" target="_blank" class="menu-link">
+		       <div class="menu-text">Storage</div>
+		      </a>
+		     </div>
+		     <div class="menu-item">
+		      <a href="{{ route('admin.rams.index') }}" target="_blank" class="menu-link">
+		       <div class="menu-text">RAM</div>
+		      </a>
+		     </div>
+		    </div>
+		   </div>
+		  </div>
+		  {{-- Product Management --}}
+
+		  <div class="menu">
+		   <div class="menu-divider"></div>
+		   <div class="menu-header">Users</div>
+		   <div class="menu-item">
+		    @if(Auth::user()->id === 1)
+		    <a href="{{ route('admin.profiles.index') }}" class="menu-link">
+		     <span class="menu-icon"><i class="bi bi-people"></i></span>
+		     <span class="menu-text">AdminProfile</span>
+		    </a>
+		    @else
+		    <a href="{{ route('admin.profiles.index') }}" class="menu-link">
+		     <span class="menu-icon"><i class="bi bi-people"></i></span>
+		     <span class="menu-text">UserProfile</span>
+		    </a>
+		    @endif
+		   </div>
+		   <div class="menu-item">
+		    <a href="calendar.html" class="menu-link">
+		     <span class="menu-icon"><i class="bi bi-calendar4"></i></span>
+		     <span class="menu-text">Calendar</span>
+		    </a>
+		   </div>
+		   <div class="menu-item">
+		    <a href="settings.html" class="menu-link">
+		     <span class="menu-icon"><i class="bi bi-gear"></i></span>
+		     <span class="menu-text">Settings</span>
+		    </a>
+		   </div>
+		   <div class="menu-item">
+		    <a href="helper.html" class="menu-link">
+		     <span class="menu-icon"><i class="bi bi-gem"></i></span>
+		     <span class="menu-text">Helper</span>
+		    </a>
+		   </div>
 		  </div>
 		  <!-- END menu -->
 		  <div class="p-3 px-4 mt-auto">
