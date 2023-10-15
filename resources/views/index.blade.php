@@ -29,7 +29,7 @@
         <div class="d-flex justify-content-between">
          <div>
           <div class="d-flex justify-content-between">
-           <h6 class="me-3">Ks - {{ $accessory->colors->first()->pivot->normal_price }}</h6>
+           <h6 class="me-3">Ks - {{ $accessory->colors->first()->pivot->discount_price ? number_format($accessory->colors->first()->pivot->discount_price) : number_format($accessory->colors->first()->pivot->normal_price) }}</h6>
            <small class="text-danger text-decoration-line-through">-20%</small>
           </div>
           <div class="d-flex justify-content-between">
@@ -66,7 +66,7 @@
     <div>
      <small>Color : </small>
      @foreach($product->colors as $color)
-     <small>{{ $color->name }},</small>
+     <small class="badge text-bg-info"> {{ $color->name }}</small>
      @endforeach
     </div>
     <div>
@@ -83,8 +83,20 @@
     </div>
     <div>
      <div class="d-flex justify-content-between">
-      <h6>Ks - {{ $product->normal_price }}</h6>
-      <strong class="text-decoration-line-through text-danger">$20</strong>
+        <h6>
+            Ks -
+            @php
+                $prices = $product->product_prices;
+            @endphp
+            @isset($prices[0])
+            {{ $prices[0]->discount_price ? number_format($prices[0]->discount_price) : number_format($prices[0]->normal_price) }}
+            @endisset
+        </h6>
+        <small class="text-decoration-line-through text-danger">
+            @isset ($prices[0])
+            {{ $prices[0]->discount_price ? number_format($prices[0]->normal_price) : "" }} Ks
+            @endisset
+        </small>
      </div>
      <!-- <div class="d-flex">
             <span class="fas fa-star"></span>
@@ -144,21 +156,14 @@
      <div>
       <small>Color :</small>
       @foreach($ava->colors as $color)
-      <small> {{ $color->name }},</small>
+      <small class="badge text-bg-info"> {{ $color->name }}</small>
       @endforeach
      </div>
      <div>
       <div class="d-flex justify-content-between">
-       <h6>Ks - {{ $ava->colors->first()->pivot->normal_price }}</h6>
-       <strong class="text-decoration-line-through text-danger">$20</strong>
+       <h6>Ks - {{ $ava->colors->first()->pivot->discount_price ? number_format($ava->colors->first()->pivot->discount_price) : number_format($ava->colors->first()->pivot->normal_price) }}</h6>
+       <small class="text-decoration-line-through text-danger">{{ $ava->colors->first()->pivot->discount_price ? number_format($ava->colors->first()->pivot->normal_price) : "" }} {{ $ava->colors->first()->pivot->discount_price ? " Ks" : '' }}</small>
       </div>
-      <!-- <div class="d-flex">
-              <span class="fas fa-star"></span>
-              <span class="fas fa-star"></span>
-              <span class="fas fa-star"></span>
-              <span class="fas fa-star-half"></span>
-              <span class="fas fa-star-half"></span>
-            </div> -->
       <div class="custom-hide text-end">
        <a href="#" class="btn btn-warning text-white">Add to cart</a>
       </div>

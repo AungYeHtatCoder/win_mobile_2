@@ -15,8 +15,9 @@ class HomeController extends Controller
         $categories = Category::all();
         $banners = Banner::latest()->get();
         $accessories = Accessory::latest()->take(6)->get();
-        $products = Product::latest()->get();
+        $products = Product::with('product_prices')->latest()->get();
         $available_accessories = Accessory::all();
+        // return $products;
         return view('index', compact('categories', 'banners', 'accessories', 'products', 'available_accessories'));
     }
 
@@ -24,5 +25,5 @@ class HomeController extends Controller
         return view('contact');
     }
 
-    
+
 }
