@@ -30,21 +30,21 @@
        <div class="item" data-item-id="2">
         <div class="card">
          <div class="card-body d-flex justify-content-center">
-          <img src="{{ $product->img2_url }}" class="img-fluid card-image-top w-75" alt="">
+          <img src="{{ $product->img2_url ?? '' }}" class="img-fluid card-image-top w-75" alt="">
          </div>
         </div>
        </div>
        <div class="item" data-item-id="3">
         <div class="card">
          <div class="card-body d-flex justify-content-center">
-          <img src="{{ $product->img3_url}}" class="img-fluid card-image-top w-75" alt="">
+          <img src="{{ $product->img3_url ?? ''}}" class="img-fluid card-image-top w-75" alt="">
          </div>
         </div>
        </div>
        <div class="item" data-item-id="4">
         <div class="card">
          <div class="card-body d-flex justify-content-center">
-          <img src="{{ $product->img4_url }}" class="img-fluid card-image-top w-75" alt="">
+          <img src="{{ $product->img4_url ?? '' }}" class="img-fluid card-image-top w-75" alt="">
          </div>
         </div>
        </div>
@@ -127,7 +127,7 @@
          @endif
         </div>
        </div>
-       <form>
+       <form method="">
         <div class="row">
           <div class="col-6">
             <div class="input-group">
@@ -136,7 +136,7 @@
                 onclick="changeValue(this, -1)">-</button>
               </span>
               <input type="number" class="form-control text-dark text-center px-3"
-               style="border-top-left-radius: 0; border-bottom-left-radius: 0;" min="1" max="10" value="1">
+               style="border-top-left-radius: 0; border-bottom-left-radius: 0;" min="1" max="10" value="1" name="qty">
               <span class="input-group-append">
                <button class="btn btn-outline-warning rounded-right" type="button"
                 onclick="changeValue(this, 1)">+</button>
