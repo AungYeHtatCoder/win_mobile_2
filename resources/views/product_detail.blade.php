@@ -79,29 +79,27 @@
      </p>
 
      <div class="row mt-1">
-      <div class="col-1">
-      </div>
-      <div class="col-2">
+      <div class="col-3">
        <h6 class="text-warning">Color</h6>
       </div>
-      <div class="col-2">
+      <div class="col-3">
        <h6 class="text-warning">RAM</h6>
       </div>
-      <div class="col-2">
+      <div class="col-3">
        <h6 class="text-warning">Storage</h6>
       </div>
       @foreach($prices as $key => $price)
       <div class="row my-1">
-       <div class="col-1 mt-1">
-        <input id="radio-{{ $price->id }}" type="checkbox" name="selected_price" class="price-enable">
+       <div class="col-3 choice">
+        <div class="d-flex">
+          <input id="radio-{{ $price->id }}" type="checkbox" name="selected_price" class="price-enable me-2">
+          <span class="border border-warning d-inline-block">{{ $price->color->name }}</span>
+        </div>
        </div>
-       <div class="col-2 choice">
-        <span class="border border-warning">{{ $price->color->name }}</span>
-       </div>
-       <div class="col-2 choice">
+       <div class="col-3 choice">
         <span class="border border-warning">{{ $price->ram->name }}</span>
        </div>
-       <div class="col-2 choice">
+       <div class="col-3 choice">
         <span class="border border-warning">{{ $price->storage->name }}</span>
        </div>
        <div class="col-3">
@@ -130,46 +128,32 @@
         </div>
        </div>
        <form>
-        <div class="d-flex">
-         <div class="col-sm-3">
-          <div class="input-group">
-           <span class="input-group-prepend">
-            <button class="btn btn-outline-warning rounded-left" type="button"
-             onclick="changeValue(this, -1)">-</button>
-           </span>
-           <input type="number" class="form-control text-dark text-center px-3"
-            style="border-top-left-radius: 0; border-bottom-left-radius: 0;" min="1" max="10" value="1">
-           <span class="input-group-append">
-            <button class="btn btn-outline-warning rounded-right" type="button"
-             onclick="changeValue(this, 1)">+</button>
-           </span>
+        <div class="row">
+          <div class="col-6">
+            <div class="input-group">
+              <span class="input-group-prepend">
+               <button class="btn btn-outline-warning rounded-left" type="button"
+                onclick="changeValue(this, -1)">-</button>
+              </span>
+              <input type="number" class="form-control text-dark text-center px-3"
+               style="border-top-left-radius: 0; border-bottom-left-radius: 0;" min="1" max="10" value="1">
+              <span class="input-group-append">
+               <button class="btn btn-outline-warning rounded-right" type="button"
+                onclick="changeValue(this, 1)">+</button>
+              </span>
+             </div>
           </div>
-         </div>
-         <div class="input-group">
-          <a href="#!" class="btn bg-warning p-2 mx-2">Add To Cart</a>
-         </div>
+          <div class="col-6">
+            <div class="input-group">
+              <a href="#!" class="btn bg-warning p-2 mx-2">Add To Cart</a>
+             </div>
+          </div>
         </div>
        </form>
        <div class="row price-qty" data-id="{{ $price->id }}" style="display: none">
         <!-- Add content for price-qty section here -->
        </div>
       </div>
-
-      {{-- <script>
-                $(document).ready(function(){
-                    $("#radio-{{ $price->id }}").click(function(){
-      $("#price-{{ $price->id }}").toggleClass('d-none');
-      $(".price-qty[data-id={{ $price->id }}]").toggle();
-      });
-      });
-
-      function changeValue(button, value) {
-      let input = $(button).closest('.input-group').find('input');
-      let currentValue = parseInt(input.val());
-      let newValue = currentValue + value;
-
-      if (newValue >= parseInt(input.attr('min')) && newValue <= parseInt(input.attr('max'))) { input.val(newValue); } }
-       </script> --}}
        @endforeach
 
      </div>
