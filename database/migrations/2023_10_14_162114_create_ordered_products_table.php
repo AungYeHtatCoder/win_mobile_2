@@ -20,7 +20,6 @@ return new class extends Migration
             $table->integer('qty')->nullable();
             $table->float('unit_price')->nullable();
             $table->float('total_price');
-            $table->timestamps();
 
             $table->foreign('product_id')->references('id')->on('products')->onDelete('Cascade');
             $table->foreign('accessory_id')->references('id')->on('accessories')->onDelete('Cascade');

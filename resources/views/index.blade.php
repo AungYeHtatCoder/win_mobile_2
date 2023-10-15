@@ -52,7 +52,7 @@
  <section class="container mt-md-5">
   <div class="row">
    @foreach($products as $product)
-   <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded">
+   <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded product-card">
     <div class="text-end">
      <a href="my_cart.html"><i class="fas fa-cart-arrow-down text-dark"></i></a>
      {{-- <a href="#"><i class="fas fa-heart text-dark"></i></a> --}}

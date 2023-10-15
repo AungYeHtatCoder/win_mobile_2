@@ -986,6 +986,10 @@ form.search-box button {
   transition: all .3s;
 }
 
+.product-card:hover {
+  border: 1px solid silver;
+}
+
 .side_img img {
   width: 90px;
   height: 90px;
@@ -1003,7 +1007,7 @@ form.search-box button {
   color: red;
 }
 
-.fa-heart,.fa-cart-arrow-down{
+.fa-heart, .fa-cart-arrow-down {
   font-size: 17px;
 }
 
@@ -1013,8 +1017,8 @@ form.search-box button {
   }
 }
 
-@media (max-width:576px){
-  .fa-heart,.fa-cart-arrow-down{
+@media (max-width:576px) {
+  .fa-heart, .fa-cart-arrow-down {
     display: none;
   }
 }
@@ -1055,8 +1059,8 @@ footer {
   background: linear-gradient(-10deg, #f0f0f0, transparent, #f0f0f0, transparent, #f0f0f0);
 }
 
-@media(max-width:768px){
-  footer{
+@media(max-width:768px) {
+  footer {
     text-align: center;
   }
 }
