@@ -1,10 +1,10 @@
 <?php
 
-use App\Http\Controllers\Admin\AccessoryCategoryController;
 use App\Models\Admin\Product;
 use App\Models\Admin\Accessory;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Admin\RAMController;
 use App\Http\Controllers\Home\AuthController;
 use App\Http\Controllers\Home\HomeController;
@@ -21,6 +21,7 @@ use App\Http\Controllers\Admin\PhoneRAMController;
 use App\Http\Controllers\Admin\AccessoryController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\ProductPriceController;
+use App\Http\Controllers\Admin\AccessoryCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,6 +57,13 @@ use App\Http\Controllers\Admin\ProductPriceController;
 // Route::get('/product-details',function(){
 //     return view('product_details');
 // });
+
+// admin profile image retrieve 
+Route::get('storage/{path}', function ($path) {
+    return response()->file(storage_path('app/public/' . $path));
+})->where('path', '.*');
+
+
 
 // my-cart page
 Route::get('/my-cart',function(){
