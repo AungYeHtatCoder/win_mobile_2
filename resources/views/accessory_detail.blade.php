@@ -9,7 +9,7 @@
     <div class="text-center my-md-3">
      <img src="{{ $accessory->img1_url }}" class="img-fluid w-75" alt="">
     </div>
-    <div class="row">
+    <div class="row" style="z-index: 100;">
      <div class="owl-carousel owl-theme mt-4 p-5" id="product-details-carousel">
       <div class="item" data-item-id="1">
        <div class="card">
