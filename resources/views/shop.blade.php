@@ -1,6 +1,18 @@
 <x-layout>
+
+  <!-- start sub menu bar -->
+  <section class="container mt-3">
+    <ul class="fw-bold py-3">
+      <li class="d-inline">shop /</li>
+      <li class="d-inline">Android /</li>
+      <li class="d-inline">All </li>
+    </ul>
+  </section>
+  <!-- end sub menu bar -->
+
+
   <!-- content section start -->
-  <section class="container mt-md-5">
+  <section class="container mt-md-3">
     <div class="row">
       <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded">
         <div class="text-end">

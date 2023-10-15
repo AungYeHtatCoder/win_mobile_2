@@ -20,10 +20,9 @@
 
       <div id="nav" class="navbar navbar-collapse collapse justify-content-center align-items-center menu-lg-bars">
         <ul class="navbar-nav">
-          <li class="nav-item dropdowns">
-            <a href="/" class="nav-link" data-bs-target="#phone" data-bs-toggle="collapse">Phone
-              <i class="fas fa-plus plus-icons"></i>
-            </a>
+          <li class="nav-item">
+            <a href="/shop" class="nav-link d-inline" >Phone</a>
+            <i class="fas fa-plus plus-icons " data-bs-target="#phone" data-bs-toggle="collapse"></i>
             <!-- dropdown menu -->
             <div class="menu container-fluid dropdown-contents">
               <ul class="row">
@@ -109,10 +108,9 @@
             </ul>
             <!-- end mobile menu -->
           </li> --}}
-          <li class="nav-item dropdowns">
-            <a href="#" class="nav-link" data-bs-target="#accessory" data-bs-toggle="collapse">Accessory
-              <i class="fas fa-plus plus-icons"></i>
-            </a>
+          <li class="nav-item">
+          <a href="/shop" class="nav-link d-inline" >Accessory</a>
+            <i class="fas fa-plus plus-icons " data-bs-target="#accessory" data-bs-toggle="collapse"></i>
             <!-- dropdown menu -->
             <div class="menu container-fluid dropdown-contents">
               <ul class="row">
@@ -155,11 +153,11 @@
             <!-- end mobile menu -->
           </li>
 
-          <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a href="/contact" class="nav-link d-inline">Contact</a></li>
 
           <li class="mobile-view">
-            <a href="#" class="nav-link" data-bs-target="#account" data-bs-toggle="collapse">Account
-              <i class="fas fa-plus plus-icons"></i>
+            <a href="#" class="nav-link d-inline" >Account</a>
+              <i class="fas fa-plus plus-icons" data-bs-target="#account" data-bs-toggle="collapse"></i>
               <!-- mobile menu -->
               <ul id="account" class="collapse sub-menus">
                 <li>

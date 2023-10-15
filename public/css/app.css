@@ -209,7 +209,7 @@ nav {
   }
 }
 
-.mobile-search {
+.mobile-search,.mobile-search-box {
   display: none;
 }
 
@@ -599,6 +599,7 @@ nav {
     font-size: 12px;
     position: absolute;
     right: 25px;
+    padding: 5px;
 
     margin-top: 10px;
   }
@@ -626,6 +627,7 @@ nav {
     font-size: 12px;
     position: absolute;
     right: 30px;
+    padding: 5px;
 
     margin-top: 10px;
   }
@@ -653,6 +655,7 @@ nav {
     font-size: 16px;
     position: absolute;
     right: 30px;
+    padding: 5px;
 
     margin-top: 10px;
   }
@@ -679,6 +682,7 @@ nav {
     font-size: 16px;
     position: absolute;
     right: 30px;
+    padding: 5px;
 
     margin-top: 10px;
   }
@@ -707,6 +711,7 @@ nav {
     font-size: 16px;
     position: absolute;
     right: 3rem;
+    padding: 5px;
 
     margin-top: 10px;
   }
@@ -735,6 +740,7 @@ nav {
     font-size: 16px;
     position: absolute;
     right: 3rem;
+    padding: 5px;
 
     margin-top: 10px;
   }
@@ -763,6 +769,7 @@ nav {
     font-size: 16px;
     position: absolute;
     right: 3rem;
+    padding: 5px;
 
     margin-top: 10px;
   }
@@ -791,6 +798,7 @@ nav {
     font-size: 16px;
     position: absolute;
     right: 3rem;
+    padding: 5px;
 
     margin-top: 10px;
   }
@@ -819,6 +827,7 @@ nav {
     font-size: 16px;
     position: absolute;
     right: 3rem;
+    padding: 5px;
 
     margin-top: 10px;
   }
@@ -847,6 +856,7 @@ nav {
     font-size: 16px;
     position: absolute;
     right: 3rem;
+    padding: 5px;
 
     margin-top: 10px;
   }
@@ -860,7 +870,7 @@ nav {
 
 /* for plus icon */
 @media (min-width:766px) {
-  .plus-icons {
+  #nav>ul>li>i{
     display: none;
   }
 
@@ -872,7 +882,7 @@ nav {
 /* for plus icon */
 
 
-.nav>ul>li>a {
+#nav>ul>li>a {
   position: relative;
 }
 

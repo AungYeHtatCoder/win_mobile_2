@@ -45,9 +45,9 @@ use App\Http\Controllers\Home\ShopController;
 // });
 
 // Shop page
-// Route::get('/shop',function(){
-//     return view('shop');
-// });
+Route::get('/shop',function(){
+    return view('shop');
+});
 
 //product details page
 // Route::get('/product-details',function(){
