@@ -20,27 +20,53 @@
      </div>
      <div class="row">
       <div class="owl-carousel owl-theme mt-4 p-5" id="product-details-carousel">
-       <div class="item" data-item-id="1">
+        @if($product->img1_url !== NULL)
+        <div class="item" data-item-id="1">
+            <div class="card">
+             <div class="card-body d-flex justify-content-center">
+              <img src="{{ $product->img1_url }}" class="img-fluid card-image-top w-75" alt="">
+             </div>
+            </div>
+        </div>
+        @endif
+
+       @if($product->img2_url !== NULL)
+       <div class="item" data-item-id="2">
+        <div class="card">
+         <div class="card-body d-flex justify-content-center">
+          <img src="{{ $product->img2_url  }}" class="img-fluid card-image-top w-75" alt="">
+         </div>
+        </div>
+       </div>
+       @else
+       <div class="item" data-item-id="4">
         <div class="card">
          <div class="card-body d-flex justify-content-center">
           <img src="{{ $product->img1_url }}" class="img-fluid card-image-top w-75" alt="">
          </div>
         </div>
        </div>
-       <div class="item" data-item-id="2">
-        <div class="card">
-         <div class="card-body d-flex justify-content-center">
-          <img src="{{ $product->img2_url }}" class="img-fluid card-image-top w-75" alt="">
-         </div>
-        </div>
-       </div>
+       @endif
+
+       @if($product->img3_url !== NULL)
        <div class="item" data-item-id="3">
         <div class="card">
          <div class="card-body d-flex justify-content-center">
-          <img src="{{ $product->img3_url}}" class="img-fluid card-image-top w-75" alt="">
+          <img src="{{ $product->img3_url }}" class="img-fluid card-image-top w-75" alt="">
          </div>
         </div>
        </div>
+       @else
+       <div class="item" data-item-id="4">
+        <div class="card">
+         <div class="card-body d-flex justify-content-center">
+          <img src="{{ $product->img1_url }}" class="img-fluid card-image-top w-75" alt="">
+         </div>
+        </div>
+       </div>
+       @endif
+
+       @if($product->img4_url !== NULL)
        <div class="item" data-item-id="4">
         <div class="card">
          <div class="card-body d-flex justify-content-center">
@@ -48,6 +74,16 @@
          </div>
         </div>
        </div>
+       @else
+       <div class="item" data-item-id="4">
+        <div class="card">
+         <div class="card-body d-flex justify-content-center">
+          <img src="{{ $product->img1_url }}" class="img-fluid card-image-top w-75" alt="">
+         </div>
+        </div>
+       </div>
+       @endif
+
       </div>
       <div class="row">
        <div class="col-md-8 col-sm-10 modal p-3 my-2" id="carousel-modal">
@@ -80,31 +116,29 @@
 
      <div class="row mt-1">
       <div class="col-1">
+       <h6 class="text-warning"></h6>
       </div>
-      <div class="col-2">
-       <h6 class="text-warning">Color</h6>
-      </div>
-      <div class="col-2">
+      <div class="col-3">
        <h6 class="text-warning">RAM</h6>
       </div>
-      <div class="col-2">
+      <div class="col-3">
        <h6 class="text-warning">Storage</h6>
       </div>
       @foreach($prices as $key => $price)
       <div class="row my-1">
-       <div class="col-1 mt-1">
-        <input id="radio-{{ $price->id }}" type="checkbox" name="selected_price" class="price-enable">
+       <div class="col-1 choice">
+        <div class="d-flex">
+          <input id="radio-{{ $price->id }}" type="checkbox" name="selected_price" class="price-enable me-2">
+          {{-- <span class="border border-warning d-inline-block">{{ $price->color->name }}</span> --}}
+        </div>
        </div>
-       <div class="col-2 choice">
-        <span class="border border-warning">{{ $price->color->name }}</span>
-       </div>
-       <div class="col-2 choice">
+       <div class="col-3 choice">
         <span class="border border-warning">{{ $price->ram->name }}</span>
        </div>
-       <div class="col-2 choice">
+       <div class="col-3 choice">
         <span class="border border-warning">{{ $price->storage->name }}</span>
        </div>
-       <div class="col-3">
+       <div class="col-5">
         @if($price->category->name == 'Brand New')
         <p class="text-success">({{ $price->category->name }})</p>
         @else
@@ -129,47 +163,36 @@
          @endif
         </div>
        </div>
-       <form>
-        <div class="d-flex">
-         <div class="col-sm-3">
-          <div class="input-group">
-           <span class="input-group-prepend">
-            <button class="btn btn-outline-warning rounded-left" type="button"
-             onclick="changeValue(this, -1)">-</button>
-           </span>
-           <input type="number" class="form-control text-dark text-center px-3"
-            style="border-top-left-radius: 0; border-bottom-left-radius: 0;" min="1" max="10" value="1">
-           <span class="input-group-append">
-            <button class="btn btn-outline-warning rounded-right" type="button"
-             onclick="changeValue(this, 1)">+</button>
-           </span>
+       <form method="POST" action="{{ url('/addToCart/') }}">
+        @csrf
+        <input type="hidden" name="product_prices_id" value="{{ $price->id }}">
+        <div class="row">
+          <div class="col-6">
+            <div class="input-group">
+              <span class="input-group-prepend">
+               <button class="btn btn-outline-warning rounded-left" type="button"
+                onclick="changeValue(this, -1)">-</button>
+              </span>
+              <input type="number" class="form-control text-dark text-center px-3"
+               style="border-top-left-radius: 0; border-bottom-left-radius: 0;" min="1" max="10" value="1" name="qty">
+              <span class="input-group-append">
+               <button class="btn btn-outline-warning rounded-right" type="button"
+                onclick="changeValue(this, 1)">+</button>
+              </span>
+             </div>
           </div>
-         </div>
-         <div class="input-group">
-          <a href="#!" class="btn bg-warning p-2 mx-2">Add To Cart</a>
-         </div>
+          <div class="col-6">
+            <div class="input-group">
+                <button class="btn bg-warning p-2 mx-2" type="submit">Add To Cart</button>
+              {{-- <a href="#!" class="btn bg-warning p-2 mx-2">Add To Cart</a> --}}
+             </div>
+          </div>
         </div>
        </form>
        <div class="row price-qty" data-id="{{ $price->id }}" style="display: none">
         <!-- Add content for price-qty section here -->
        </div>
       </div>
-
-      {{-- <script>
-                $(document).ready(function(){
-                    $("#radio-{{ $price->id }}").click(function(){
-      $("#price-{{ $price->id }}").toggleClass('d-none');
-      $(".price-qty[data-id={{ $price->id }}]").toggle();
-      });
-      });
-
-      function changeValue(button, value) {
-      let input = $(button).closest('.input-group').find('input');
-      let currentValue = parseInt(input.val());
-      let newValue = currentValue + value;
-
-      if (newValue >= parseInt(input.attr('min')) && newValue <= parseInt(input.attr('max'))) { input.val(newValue); } }
-       </script> --}}
        @endforeach
 
      </div>
@@ -183,7 +206,7 @@
    </div>
   </section>
 
-  <section class="bg-body-secondary mt-md-5 mt-sm-5">
+  {{-- <section class="bg-body-secondary mt-md-5 mt-sm-5">
    <div class="container">
     <div class="col-md-12 mt-sm-2 p-4 text-center">
      <h6>201 <span>Reviews</span> - 4.5 Rating (Overall)</h6>
@@ -279,7 +302,7 @@
      </form>
     </div>
    </div>
-  </section>
+  </section> --}}
   <!-- content section end  -->
 
  </x-layout>

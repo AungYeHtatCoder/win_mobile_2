@@ -158,7 +158,7 @@
         <a href="/profile"><i class="fas fa-user me-2"></i>Account</a>
        </li>
        <li>
-        <a href="#"><i class="fas fa-heart me-2"></i>wishlist</a>
+        {{-- <a href="#"><i class="fas fa-heart me-2"></i>wishlist</a> --}}
        </li>
        <li>
         <a href="/my-cart"><i class="fas fa-shopping-bag me-2"></i>Cart</a>
@@ -173,13 +173,23 @@
   <div class="d-none d-md-block d-lg-block icons">
    <ul class="d-flex">
     <li>
-     <a href="#!" class="text-dark"><i class="far fa-heart mx-2"></i></a>
+     {{-- <a href="#!" class="text-dark"><i class="far fa-heart mx-2"></i></a> --}}
     </li>
     <li>
      <a href="/profile" class="text-dark"><i class="far fa-user mx-2"></i></a>
     </li>
     <li>
-     <a href="/my-cart" class="text-dark"><i class="fa fa-shopping-bag mx-2"></i></a>
+        <a href="/my-cart" class="text-dark position-relative">
+            <i class="fa fa-shopping-bag mx-2"></i>
+            @auth
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{ $carts ? $carts->count() : '0' }}</span>
+            @else
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+            @endauth
+            @guest
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+            @endguest
+        </a>
     </li>
    </ul>
   </div>
