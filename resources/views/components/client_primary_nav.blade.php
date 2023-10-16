@@ -1,30 +1,32 @@
 <!-- primary navbar section start -->
-  <section class="container row">
-    <nav class="navbar navbar-expand-md fixed-top">
-      <a href="{{ url('/') }}" class="navbar-brand col-lg-1 col-md-1">
-        <span class="logo"> Win <small class="d-block">Mobile</small></span>
-      </a>
+<section class="container row">
+ <nav class="navbar navbar-expand-md fixed-top">
+  <a href="{{ url('/') }}" class="navbar-brand col-lg-1 col-md-1 d-flex justify-content-start">
+    <img src="./assets/logo_1.png" class="d-inline" alt="" style="width:60px;height:auto"/>
+   <!-- <span  class="logo d-inline fw-bold"> Win <br/> <small>Mobile</small></span> -->
+  </a>
 
-      <div class="col-md-10 mobile-search">
-        <form class="mobile-search-box">
-          <input type="search" placeholder="Search.." name="search" class="search form-rounded">
-          <button type="submit" class="search-btn border-0 search-btn"><i class="fa fa-search"></i></button>
-        </form>
-      </div>
+  <div class="col-md-10 mobile-search">
+   <form class="mobile-search-box">
+    <input type="search" placeholder="Search.." name="search" class="search form-rounded">
+    <button type="submit" class="search-btn border-0 search-btn"><i class="fa fa-search"></i></button>
+   </form>
+  </div>
 
-      <button type="button" class="navbar-toggler me-2 navbuttons" data-bs-toggle="collapse" data-bs-target="#nav">
-        <div class="bg-dark lines1"></div>
-        <div class="bg-dark lines2"></div>
-        <div class="bg-dark lines3"></div>
-      </button>
+  <button type="button" class="navbar-toggler navbuttons" data-bs-toggle="collapse" data-bs-target="#nav">
+   <div class="bg-dark lines1"></div>
+   <div class="bg-dark lines2"></div>
+   <div class="bg-dark lines3"></div>
+  </button>
 
       <div id="nav" class="navbar navbar-collapse collapse justify-content-center align-items-center menu-lg-bars">
         <ul class="navbar-nav">
+          <li class="nav-item"><a href="/" class="nav-link d-inline fw-bold">Home</a></li>
           <li class="nav-item">
-            <a href="/shop" class="nav-link d-inline" >Phone</a>
-            <i class="fas fa-plus plus-icons " data-bs-target="#phone" data-bs-toggle="collapse"></i>
+            <a href="/shop" class="nav-link d-inline fw-bold">Shop</a> 
+            <!-- <i class="fas fa-plus plus-icons " data-bs-target="#phone" data-bs-toggle="collapse"></i> -->
             <!-- dropdown menu -->
-            <div class="menu container-fluid dropdown-contents">
+            <!-- <div class="menu container-fluid dropdown-contents">
               <ul class="row">
                 <li><a href="#">Brand New</a>
                   <ul>
@@ -48,20 +50,20 @@
                   <img src="./assets/side8.jpg" alt="">
                 </li>
 
-              </ul>
-            </div>
-            <!-- end dropdown menu -->
+      </ul>
+     </div> -->
+     <!-- end dropdown menu -->
 
-            <!-- mobile menu -->
-            <ul id="phone" class="collapse sub-menus">
-              <li><a href="#"><i class="fas fa-greater-than me-2"></i>IOS</a></li>
-              <li><a href="#"><i class="fas fa-greater-than me-2"></i>Android</a></li>
-              <li><a href="#"><i class="fas fa-greater-than me-2"></i>Tablet</a></li>
-              <li><a href="#"><i class="fas fa-greater-than me-2"></i>Keypad</a></li>
-            </ul>
-            <!-- end mobile menu -->
-          </li>
-          {{-- <li class="nav-item dropdowns">
+     <!-- mobile menu -->
+     <!-- <ul id="phone" class="collapse sub-menus">
+      <li><a href="#"><i class="fas fa-greater-than me-2"></i>IOS</a></li>
+      <li><a href="#"><i class="fas fa-greater-than me-2"></i>Android</a></li>
+      <li><a href="#"><i class="fas fa-greater-than me-2"></i>Tablet</a></li>
+      <li><a href="#"><i class="fas fa-greater-than me-2"></i>Keypad</a></li>
+     </ul> -->
+     <!-- end mobile menu -->
+    </li>
+    {{-- <li class="nav-item dropdowns">
             <a href="#" class="nav-link" data-bs-target="#brand" data-bs-toggle="collapse">Brand
               <i class="fas fa-plus plus-icons"></i>
             </a>
@@ -109,8 +111,8 @@
             <!-- end mobile menu -->
           </li> --}}
           <li class="nav-item">
-          <a href="/shop" class="nav-link d-inline" >Accessory</a>
-            <i class="fas fa-plus plus-icons " data-bs-target="#accessory" data-bs-toggle="collapse"></i>
+            <a href="/contact" class="nav-link d-inline fw-bold">Contact</a>
+            <!-- <i class="fas fa-plus plus-icons"  data-bs-target="#accessory" data-bs-toggle="collapse"></i> -->
             <!-- dropdown menu -->
             <div class="menu container-fluid dropdown-contents">
               <ul class="row">
@@ -124,48 +126,47 @@
                   </ul>
                 </li>
 
-                <li><a href="#">Cover</a>
-                  <ul>
-                    <li><a href="#"><span class="fas fa-greater-than me-2"></span>Apple</a></li>
-                    <li><a href="#"><span class="fas fa-greater-than me-2"></span>Samsung</a></li>
-                    <li><a href="#"><span class="fas fa-greater-than me-2"></span>Xiaomi</a></li>
-                    <li><a href="#"><span class="fas fa-greater-than me-2"></span>Vivo</a></li>
-                    <li><a href="#"><span class="fas fa-greater-than me-2"></span>Oppo</a></li>
-                  </ul>
-                </li>
+       <li><a href="#">Brand</a>
+        <ul>
+         @foreach($brands as $brand)
+         <li><a href="{{ url('/shop/accessorybrands/'.$brand->id) }}"><span
+            class="fas fa-greater-than me-2"></span>{{ $brand->name }}</a></li>
+         @endforeach
+        </ul>
+       </li>
 
-                <li>
-                  <img src="./assets/side8.jpg" alt="">
-                </li>
+       <li>
+        <img src="./assets/side8.jpg" alt="">
+       </li>
 
-              </ul>
-            </div>
-            <!-- end dropdown menu -->
-            <!-- mobile menu -->
-            <ul id="accessory" class="collapse sub-menus">
-              <li><a href="#"><i class="fas fa-greater-than me-2"></i>Airpod</a></li>
-              <li><a href="#"><i class="fas fa-greater-than me-2"></i>Watch</a></li>
-              <li><a href="#"><i class="fas fa-greater-than me-2"></i>Power bank</a></li>
-              <li><a href="#"><i class="fas fa-greater-than me-2"></i>Speaker</a></li>
-              <li><a href="#"><i class="fas fa-greater-than me-2"></i>Headphone</a></li>
-              <li><a href="#"><i class="fas fa-greater-than me-2"></i>Cover</a></li>
-            </ul>
-            <!-- end mobile menu -->
-          </li>
+      </ul>
+     </div>
+     <!-- end dropdown menu -->
+     <!-- mobile menu -->
+     <!-- <ul id="accessory" class="collapse sub-menus">
+      <li><a href="#"><i class="fas fa-greater-than me-2"></i>Airpod</a></li>
+      <li><a href="#"><i class="fas fa-greater-than me-2"></i>Watch</a></li>
+      <li><a href="#"><i class="fas fa-greater-than me-2"></i>Power bank</a></li>
+      <li><a href="#"><i class="fas fa-greater-than me-2"></i>Speaker</a></li>
+      <li><a href="#"><i class="fas fa-greater-than me-2"></i>Headphone</a></li>
+      <li><a href="#"><i class="fas fa-greater-than me-2"></i>Cover</a></li>
+     </ul> -->
+     <!-- end mobile menu -->
+    </li>
 
-          <li class="nav-item"><a href="/contact" class="nav-link d-inline">Contact</a></li>
+          <li class="nav-item"><a href="/aboutus.html" class="nav-link d-inline fw-bold">About Us</a></li>
 
           <li class="mobile-view">
-            <a href="#" class="nav-link d-inline" >Account</a>
-              <i class="fas fa-plus plus-icons" data-bs-target="#account" data-bs-toggle="collapse"></i>
+            <a href="#" class="nav-link d-inline fw-bold">Account</a>
+              <i class="fas fa-plus plus-icons"  data-bs-target="#account" data-bs-toggle="collapse"></i>
               <!-- mobile menu -->
               <ul id="account" class="collapse sub-menus">
                 <li>
                   <a href="/profile"><i class="fas fa-user me-2"></i>Account</a>
                 </li>
-                <li>
+                <!-- <li>
                   <a href="#"><i class="fas fa-heart me-2"></i>wishlist</a>
-                </li>
+                </li> -->
                 <li>
                   <a href="/my-cart"><i class="fas fa-shopping-bag me-2"></i>Cart</a>
                 </li>
@@ -176,20 +177,20 @@
         </ul>
       </div>
 
-      <div class="d-none d-md-block d-lg-block icons">
-        <ul class="d-flex">
-          <li>
-            <a href="#!" class="text-dark"><i class="far fa-heart mx-2"></i></a>
-          </li>
-          <li>
-            <a href="/profile" class="text-dark"><i class="far fa-user mx-2"></i></a>
-          </li>
-          <li>
-            <a href="/my-cart" class="text-dark"><i class="fa fa-shopping-bag mx-2"></i></a>
-          </li>
-        </ul>
-      </div>
+  <div class="d-none d-md-block d-lg-block icons">
+   <ul class="d-flex">
+    <li>
+     {{-- <a href="#!" class="text-dark"><i class="far fa-heart mx-2"></i></a> --}}
+    </li>
+    <li>
+     <a href="/profile" class="text-dark"><i class="far fa-user mx-2"></i></a>
+    </li>
+    <li>
+     <a href="/my-cart" class="text-dark"><i class="fa fa-shopping-bag mx-2"></i></a>
+    </li>
+   </ul>
+  </div>
 
-    </nav>
-  </section>
-  <!-- primary navbar section end -->
+ </nav>
+</section>
+<!-- primary navbar section end -->

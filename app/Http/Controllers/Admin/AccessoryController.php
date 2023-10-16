@@ -7,6 +7,7 @@ use App\Models\Admin\Color;
 use Illuminate\Http\Request;
 use App\Models\Admin\Accessory;
 use App\Http\Controllers\Controller;
+use App\Models\Admin\AccessoryCategories;
 use Illuminate\Support\Facades\File;
 
 class AccessoryController extends Controller
@@ -27,7 +28,8 @@ class AccessoryController extends Controller
     {
         $brands = Brand::all();
         $colors = Color::all();
-        return view('admin.accessories.create', compact('brands', 'colors'));
+        $accessory_categories = AccessoryCategories::all();
+        return view('admin.accessories.create', compact('brands', 'colors', 'accessory_categories'));
     }
 
     /**
@@ -38,6 +40,7 @@ class AccessoryController extends Controller
     $request->validate([
         'name' => 'required',
         'brand_id' => 'required',
+        'accessorycat_id' => 'required',
         'img1' => 'required|image|mimes:jpeg,png,jpg,gif', // Add image validation rules here
         'description' => 'required',
     ]);
@@ -82,6 +85,7 @@ class AccessoryController extends Controller
     $accessory = Accessory::create([
         'name' => $request->name,
         'brand_id' => $request->brand_id,
+        'category_id' => $request->accessorycat_id,
         'img1' => $filename1,
         'img2' => $filename2,
         'img3' => $filename3,
@@ -134,6 +138,7 @@ class AccessoryController extends Controller
         $request->validate([
         'name' => 'required',
         'brand_id' => 'required',
+        'accessorycat_id' => 'required',
         'description' => 'required',
     ]);
         //image1
@@ -227,6 +232,7 @@ class AccessoryController extends Controller
         $accessory->update([
             'name' => $request->name,
             'brand_id' => $request->brand_id,
+            'accessorycat_id' => $request->accessorycat_id,
             'img1' => $filename1,
             'img2' => $filename2,
             'img3' => $filename3,

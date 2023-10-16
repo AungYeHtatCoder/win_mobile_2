@@ -43,6 +43,7 @@
            <th>Name</th>
            <th>Image1</th>
            <th>Brand</th>
+           <th>Category</th>
            <th>Colors</th>
            <!-- <th>Qty</th>
            <th>Price</th>
@@ -61,6 +62,9 @@
            </td>
            <td>
             {{ $accessory->brand->name }}
+           </td>
+           <td>
+            {{ $accessory->category->name }}
            </td>
            <td>
             @foreach ($accessory->colors as $color)

@@ -92,7 +92,7 @@
           <div class="col-lg-6">
            <div class="mb-3">
             <label class="form-label">Choose Color <span class="text-danger">*</span></label>
-            <select name="colors[]" class="selectpicker form-control" id="ex-multiselect" multiple>
+            <select name="colors[]" class="selectpicker form-control" id="ex-multiselect">
              <optgroup label="Picnic">
               @foreach($colors as $color)
               <option value="{{ $color->id }}">{{ $color->name }}</option>
