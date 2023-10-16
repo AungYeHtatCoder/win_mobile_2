@@ -5,9 +5,10 @@ namespace App\Http\Controllers\Home;
 use App\Models\Admin\Banner;
 use Illuminate\Http\Request;
 use App\Models\Admin\Product;
+use App\Models\Admin\Category;
 use App\Models\Admin\Accessory;
 use App\Http\Controllers\Controller;
-use App\Models\Admin\Category;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -24,5 +25,7 @@ class HomeController extends Controller
         return view('contact');
     }
 
-    
+    public function aboutus(){
+        return view('aboutus');
+    }      
 }

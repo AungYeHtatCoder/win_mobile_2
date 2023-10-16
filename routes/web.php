@@ -80,15 +80,6 @@ Route::get('/payment',function(){
 //     return view('contact');
 // });
 
-// profile
-Route::get('/profile',function(){
-    return view('profile');
-});
-
-// profile Edit
-Route::get('/profile-edit',function(){
-    return view('profile_edit');
-});
 
 // change-password
 Route::get('/change-password',function(){
@@ -103,6 +94,7 @@ Route::get('/order-history',function(){
 //Frontend Routes
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/contact', [HomeController::class, 'contact']);
+Route::get('/aboutus', [HomeController::class, 'aboutus']);
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::get('/shop', [ShopController::class, 'shop']);

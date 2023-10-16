@@ -15,7 +15,7 @@
 
   <div class="col-lg-3 col-md-4 footer_sections">
    <h5>Useful Links</h6>
-    <span><a href="#">About us</a></span>
+    <span><a href="{{ url('/aboutus') }}">About us</a></span>
     <span><a href="{{ url('/shop') }}">Shop Now</a></span>
     <span><a href="contact.html">Contact us</a></span>
     <span><a href="#">Link 1</a></span>
