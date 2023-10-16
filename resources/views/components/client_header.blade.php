@@ -8,7 +8,7 @@
   <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
   <!-- fontawesome css1 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <script src="https://kit.fontawesome.com/b829c5162c.js" crossorigin="anonymous"></script>
 
   <!-- Owl carousel  -->
   <link rel="stylesheet" href="{{ asset('owl-carousel/css/owl.all.min.css') }}" />

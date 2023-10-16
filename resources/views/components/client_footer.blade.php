@@ -26,7 +26,8 @@
       <span><a href="#">Facebook</a></span>
       <span><a href="#">Tiktok</a></span>
       <span><a href="#">Telegram</a></span>
-    </div>
+
+  </div>
 
 
     </div>
@@ -35,7 +36,7 @@
     <hr class="w-50 mt-sm-5" style="margin: auto;" />
 
     <div class="lower_footer py-sm-3">
-    <p>Copyright © <i id="getyear"></i>All right deserved</p>
+    <p>Copyright © <i id="getyear"></i>All right reserved by <a href="https://delightmyanmar.pro/" target="__blank">Delight Myanmar</a></p>
     </div>
 
  <!-- </div> -->

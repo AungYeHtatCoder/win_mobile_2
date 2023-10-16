@@ -1,10 +1,10 @@
 <?php
 
-use App\Http\Controllers\Admin\AccessoryCategoryController;
 use App\Models\Admin\Product;
 use App\Models\Admin\Accessory;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Admin\RAMController;
 use App\Http\Controllers\Home\AuthController;
 use App\Http\Controllers\Home\HomeController;
@@ -21,6 +21,7 @@ use App\Http\Controllers\Admin\PhoneRAMController;
 use App\Http\Controllers\Admin\AccessoryController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\ProductPriceController;
+use App\Http\Controllers\Admin\AccessoryCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,19 +34,13 @@ use App\Http\Controllers\Admin\ProductPriceController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('index');
-// });
+Auth::routes();
 
-// Login page
-// Route::get('/login',function(){
-//     return view('login');
-// });
+// admin profile image retrieve 
+Route::get('storage/{path}', function ($path) {
+    return response()->file(storage_path('app/public/' . $path));
+})->where('path', '.*');
 
-// Register page
-// Route::get('/register',function(){
-//     return view('register');
-// });
 
 // Shop page
 Route::get('/shop',function(){
@@ -95,8 +90,11 @@ Route::get('/order-history',function(){
 //Frontend Routes
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/contact', [HomeController::class, 'contact']);
+Route::get('/aboutus', [HomeController::class, 'aboutus']);
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::get('/register', [AuthController::class, 'register'])->name('register');
+Route::get('/profile', [AuthController::class, 'profile'])->name('profile');
+
 Route::get('/shop', [ShopController::class, 'shop']);
 Route::get('/shop/brands/{id}', [ShopController::class, 'brandfilter']);
 Route::get('/shop/accessorycategories/{id}', [ShopController::class, 'accessorycategory']);
@@ -104,7 +102,12 @@ Route::get('/shop/accessorybrands/{id}', [ShopController::class, 'accessorybrand
 Route::get('/product_detail/{id}', [ShopController::class, 'product_detail']);
 Route::get('/accessory_detail/{id}', [ShopController::class, 'accessory_detail']);
 
-Auth::routes();
+Route::post('/addToCart', [ShopController::class, 'addToCart']);
+Route::get('/my-cart', [ShopController::class, 'cart']);
+Route::get('/cart/delete/{id}', [ShopController::class, 'cartDelete']);
+Route::post('/cart/update/{id}', [ShopController::class, 'cartUpdate']);
+
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'App\Http\Controllers\Admin', 'middleware' => ['auth']], function () {

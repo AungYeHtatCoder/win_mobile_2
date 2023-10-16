@@ -5,7 +5,7 @@
   <x-client_primary_nav />
   <x-client_secondary_nav />
 {{ $slot }}
-</body>
 <x-client_footer />
+</body>
 <x-client_script />
 </html>
