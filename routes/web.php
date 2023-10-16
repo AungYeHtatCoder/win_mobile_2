@@ -34,29 +34,7 @@ use App\Http\Controllers\Admin\AccessoryCategoryController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('index');
-// });
-
-// Login page
-// Route::get('/login',function(){
-//     return view('login');
-// });
-
-// Register page
-// Route::get('/register',function(){
-//     return view('register');
-// });
-
-// Shop page
-// Route::get('/shop',function(){
-//     return view('shop');
-// });
-
-//product details page
-// Route::get('/product-details',function(){
-//     return view('product_details');
-// });
+Auth::routes();
 
 // admin profile image retrieve 
 Route::get('storage/{path}', function ($path) {
@@ -75,15 +53,7 @@ Route::get('/payment',function(){
     return view('payment');
 });
 
-// contact
-// Route::get('/contact',function(){
-//     return view('contact');
-// });
 
-// profile
-Route::get('/profile',function(){
-    return view('profile');
-});
 
 // profile Edit
 Route::get('/profile-edit',function(){
@@ -103,8 +73,11 @@ Route::get('/order-history',function(){
 //Frontend Routes
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/contact', [HomeController::class, 'contact']);
+
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::get('/register', [AuthController::class, 'register'])->name('register');
+Route::get('/profile', [AuthController::class, 'profile'])->name('profile');
+
 Route::get('/shop', [ShopController::class, 'shop']);
 Route::get('/shop/brands/{id}', [ShopController::class, 'brandfilter']);
 Route::get('/shop/accessorycategories/{id}', [ShopController::class, 'accessorycategory']);
@@ -112,7 +85,12 @@ Route::get('/shop/accessorybrands/{id}', [ShopController::class, 'accessorybrand
 Route::get('/product_detail/{id}', [ShopController::class, 'product_detail']);
 Route::get('/accessory_detail/{id}', [ShopController::class, 'accessory_detail']);
 
-Auth::routes();
+Route::post('/addToCart', [ShopController::class, 'addToCart']);
+Route::get('/my-cart', [ShopController::class, 'cart']);
+Route::get('/cart/delete/{id}', [ShopController::class, 'cartDelete']);
+Route::post('/cart/update/{id}', [ShopController::class, 'cartUpdate']);
+
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'App\Http\Controllers\Admin', 'middleware' => ['auth']], function () {

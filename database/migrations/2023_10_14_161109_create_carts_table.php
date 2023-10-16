@@ -19,8 +19,10 @@ return new class extends Migration
             $table->unsignedBigInteger('product_prices_id')->nullable();
             $table->integer('qty')->nullable();
             $table->float('unit_price')->nullable();
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
 
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('Cascade');
             $table->foreign('product_id')->references('id')->on('products')->onDelete('Cascade');
             $table->foreign('accessory_id')->references('id')->on('accessories')->onDelete('Cascade');
             $table->foreign('color_id')->references('id')->on('colors')->onDelete('Cascade');

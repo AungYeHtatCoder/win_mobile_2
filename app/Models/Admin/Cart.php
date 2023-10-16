@@ -15,5 +15,26 @@ class Cart extends Model
         'product_prices_id',
         'qty',
         'unit_price',
+        'user_id',
     ];
+
+    public function product(){
+        return $this->belongsTo(Product::class);
+    }
+
+    public function accessory(){
+        return $this->belongsTo(Accessory::class);
+    }
+
+    public function color(){
+        return $this->belongsTo(Color::class);
+    }
+
+    public function product_prices(){
+        return $this->belongsTo(ProductPrice::class);
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

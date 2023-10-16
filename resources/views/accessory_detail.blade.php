@@ -52,13 +52,8 @@
    </div>
    <div class="col-md-6 col-sm-12 p-3">
     <h3 class="text-warning">{{ $accessory->name }}</h3>
-
-
-
-
     <div>
      <div class="">
-
       <div class="tab">
        @foreach($accessory->colors as $key => $color)
        <button class="tablinks p-2 rounded" onclick="selectColor(event, '{{ $color->name }}')"
@@ -73,32 +68,33 @@
        <h6>Color : {{ $color->name }}</h6>
        @if($color->pivot->discount_price)
        <h4 class="text-info fw-bold">Price : Ks -<span
-         style="text-decoration:line-through; font-size:20px;">{{ $color->pivot->normal_price }}</span>
-        <span class="text-danger fw-bold">{{ $color->pivot->discount_price }}</span>
+         style="text-decoration:line-through; font-size:20px;">{{ number_format($color->pivot->normal_price) }}</span>
+        <span class="text-danger fw-bold">{{ number_format($color->pivot->discount_price) }}</span>
        </h4>
        @else
-       <h4 class="text-info fw-bold">Price : Ks-{{ $color->pivot->normal_price }}</h4>
+       <h4 class="text-info fw-bold">Price : Ks-{{ number_format($color->pivot->normal_price) }}</h4>
        @endif
-       <!-- <div class="d-flex my-2">
-        <p class="text-success">15 <span>In stock</span></p> &nbsp; / &nbsp;
-        <p class="text-danger">8 <span>Left</span></p>
-       </div> -->
        <div class="d-flex">
         <div class="col-sm-3 my-1">
-         <div class="input-group">
-          <span class="input-group-prepend">
-           <button class="btn btn-outline-warning rounded-left" type="button" onclick="decreaseValue()">-</button>
-          </span>
-          <input id="numberInput" type="number" class="form-control text-dark text-center px-3"
-           style="border-top-left-radius: 0; border-bottom-left-radius: 0;" min="1" max="10" value="1">
-          <span class="input-group-append">
-           <button class="btn btn-outline-warning rounded-right" type="button" onclick="increaseValue()">+</button>
-          </span>
-         </div>
-        </div>
-        <div class="input-group">
-         <a href="#!" class="btn bg-warning p-2 mx-2">Add to cart</a>
-        </div>
+            <form action="{{ url('/addToCart') }}" method="post">
+                @csrf
+                <div class="input-group">
+                    <span class="input-group-prepend">
+                        <button class="btn btn-outline-warning rounded-left" type="button" onclick="decreaseValue()">-</button>
+                    </span>
+                        <input id="numberInput" type="number" class="form-control text-dark text-center px-3"
+                    style="border-top-left-radius: 0; border-bottom-left-radius: 0;" name="qty" min="1" max="10" value="1">
+                    <span class="input-group-append">
+                        <button class="btn btn-outline-warning rounded-right" type="button" onclick="increaseValue()">+</button>
+                    </span>
+                </div>
+                </div>
+                <input type="hidden" name="accessory_id" value="{{ $color->id }}">
+                <input type="hidden" name="color_id" value="{{ $color->id }}">
+                <div class="input-group">
+                <button type="submit" class="btn bg-warning p-2 mx-2">Add to cart</button>
+                </div>
+            </form>
        </div>
       </div>
       @endforeach
@@ -113,17 +109,6 @@
     <div class="mt-2">
      <p>{!! $accessory->description !!}</p>
     </div>
-    <!-- <div class="my-3">
-     <h6>Specification</h6>
-     <ul>
-      <li>Status : New</li>
-      <li>Storage : 64GB</li>
-      <li>RAM : 4GB</li>
-      <li>Camera : 12px Main, 5MP Front, 64 Altra Wide</li>
-      <li>Battery : 45000 mah</li>
-      <li>Color : Skyblue</li>
-     </ul>
-    </div> -->
    </div>
   </div>
  </section>

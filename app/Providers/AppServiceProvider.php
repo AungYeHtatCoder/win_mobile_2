@@ -7,6 +7,9 @@ use App\Models\Admin\Category;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use App\Models\Admin\AccessoryCategories;
+use App\Models\Admin\Cart;
+use Illuminate\Contracts\Pagination\Paginator;
+use Illuminate\Support\Facades\Auth;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -30,6 +33,8 @@ class AppServiceProvider extends ServiceProvider
         $view->with('accessory_cats', $accessory_cats);
         $view->with('categories', $categories);
         $view->with('brands', $brands);
+        $carts = Auth::check() ? Cart::where('user_id', Auth::id())->latest()->get() : null;
+        $view->with('carts', $carts);
         });
     }
 }
