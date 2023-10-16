@@ -63,7 +63,6 @@
      </div>
     </div>
    </div>
-   @endforeach
   </div>
  </section>
  <!-- content section end -->

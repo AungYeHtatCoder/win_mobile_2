@@ -23,6 +23,7 @@ var linkElements = document.getElementsByClassName("myshop");
 // Attach a click event listener to each element
 for (var i = 0; i < linkElements.length; i++) {
   linkElements[i].addEventListener("click", function(event) {
+    // console.log('hi');
     event.preventDefault(); // Prevent the default behavior (opening the modal)
     window.location.href = this.getAttribute("href"); // Manually navigate to the href URL
   });

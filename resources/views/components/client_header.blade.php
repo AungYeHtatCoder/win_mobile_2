@@ -1,7 +1,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mobile Project</title>
+  <link href="./assets/logo.jpg" rel="icon">
+  <title>Win Mobile</title>
 
   <!-- bootstrap css1 js1 -->
   <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">

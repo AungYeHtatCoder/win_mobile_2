@@ -42,6 +42,15 @@ Route::get('storage/{path}', function ($path) {
 })->where('path', '.*');
 
 
+// Shop page
+Route::get('/shop',function(){
+    return view('shop');
+});
+
+//product details page
+// Route::get('/product-details',function(){
+//     return view('product_details');
+// });
 
 // my-cart page
 Route::get('/my-cart',function(){
