@@ -22,23 +22,27 @@
       <div class="mb-3 card">
        <div class="d-flex flex-column">
         <img src="{{ $accessory->img1_url }}" class="img-fluid mx-auto" alt="Avatar">
-        <a href="{{url('/accessory_detail/'.$accessory->id) }}" class="text-dark mb-3 fw-bold">{{ $accessory->name }}</a
+        <a href="{{url('/accessory_detail/'.$accessory->id) }}" class="text-dark fw-bold">{{ $accessory->name }}</a
          href="">
        </div>
        <div>
-        <div class="d-flex justify-content-between">
+        <div class="mt-0 pt-0">
+            <small>Color :</small>
+            @foreach($accessory->colors as $color)
+            <small class="badge text-bg-info"> {{ $color->name }}</small>
+            @endforeach
          <div>
-          <div class="d-flex justify-content-between">
+          <div class="">
            <h6 class="me-3">Ks - {{ $accessory->colors->first()->pivot->discount_price ? number_format($accessory->colors->first()->pivot->discount_price) : number_format($accessory->colors->first()->pivot->normal_price) }}</h6>
-           <small class="text-danger text-decoration-line-through">-20%</small>
-          </div>
-          <div class="d-flex justify-content-between">
+           <small class="text-danger text-decoration-line-through">
+            {{ $accessory->colors->first()->pivot->discount_price ? "Ks - " : '' }} {{ $accessory->colors->first()->pivot->discount_price ? number_format($accessory->colors->first()->pivot->normal_price) : "" }}
+           </small>
           </div>
          </div>
 
-         <div class="custom-hide">
+         {{-- <div class="custom-hide">
           <a href="#" class="btn btn-warning text-white">Add to cart</a>
-         </div>
+         </div> --}}
         </div>
        </div>
       </div>
@@ -54,7 +58,7 @@
    @foreach($products as $product)
    <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded">
     <div class="text-end">
-     <a href="my_cart.html"><i class="fas fa-cart-arrow-down text-dark"></i></a>
+     <a href="{{url('/product_detail/'.$product->id) }}"><i class="fas fa-cart-arrow-down text-dark"></i></a>
      {{-- <a href="#"><i class="fas fa-heart text-dark"></i></a> --}}
     </div>
     <div class="text-center mb-4">
@@ -94,20 +98,13 @@
         </h6>
         <small class="text-decoration-line-through text-danger">
             @isset ($prices[0])
-            {{ $prices[0]->discount_price ? number_format($prices[0]->normal_price) : "" }} Ks
+            {{ $prices[0]->discount_price ? number_format($prices[0]->normal_price) : "" }} {{ $prices[0]->discount_price ? " Ks" : "" }}
             @endisset
         </small>
      </div>
-     <!-- <div class="d-flex">
-            <span class="fas fa-star"></span>
-            <span class="fas fa-star"></span>
-            <span class="fas fa-star"></span>
-            <span class="fas fa-star-half"></span>
-            <span class="fas fa-star-half"></span>
-          </div> -->
-     <div class="custom-hide text-end">
+     {{-- <div class="custom-hide text-end">
       <a href="#" class="btn btn-warning text-white">Add to cart</a>
-     </div>
+     </div> --}}
     </div>
    </div>
    @endforeach
@@ -164,9 +161,9 @@
        <h6>Ks - {{ $ava->colors->first()->pivot->discount_price ? number_format($ava->colors->first()->pivot->discount_price) : number_format($ava->colors->first()->pivot->normal_price) }}</h6>
        <small class="text-decoration-line-through text-danger">{{ $ava->colors->first()->pivot->discount_price ? number_format($ava->colors->first()->pivot->normal_price) : "" }} {{ $ava->colors->first()->pivot->discount_price ? " Ks" : '' }}</small>
       </div>
-      <div class="custom-hide text-end">
+      {{-- <div class="custom-hide text-end">
        <a href="#" class="btn btn-warning text-white">Add to cart</a>
-      </div>
+      </div> --}}
      </div>
     </div>
     @endforeach

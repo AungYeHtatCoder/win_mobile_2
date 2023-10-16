@@ -5,8 +5,8 @@
    @foreach($mergedProducts as $product)
    <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded">
     <div class="text-end">
-     <a href="my_cart.html"><i class="fas fa-cart-arrow-down text-dark"></i></a>
-     <a href="#"><i class="fas fa-heart text-dark"></i></a>
+     <a href="{{url('/product_detail/'.$product->id) }}"><i class="fas fa-cart-arrow-down text-dark"></i></a>
+     {{-- <a href="#"><i class="fas fa-heart text-dark"></i></a> --}}
     </div>
     <div class="text-center mb-4">
      <img src="{{ $product->img1_url }}" class="img-fluid w-50" alt="">
