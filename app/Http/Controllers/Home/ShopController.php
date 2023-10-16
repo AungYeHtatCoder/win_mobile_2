@@ -70,15 +70,30 @@ class ShopController extends Controller
                 'user_id' => Auth::user()->id,
             ]);
             return redirect()->back()->with('success', "Cart Added.");
-        }elseif($request->color_id){
-            $accessory = Accessory::where('color_id', $request->color_id)->first();
-            Cart::create([
-                'accessory_id' => $accessory->accessory_id,
+        }elseif($request->accessory_id){
+            // return $request->all();
+            $accessory = Accessory::with(['colors' => function($query) use ($request) {
+                $query->where('color_id', $request->color_id);
+            }])->find($request->accessory_id);
+
+            $price = $accessory->colors->first()->pivot->price;
+
+            $cart = Cart::where('accessory_id', $request->accessory_id)->where('color_id', $request->color_id)->first();
+            if($cart){
+                return redirect()->back()->with('error', "Already in cart.");
+            }
+
+            // return $accessory;
+
+            $cart = Cart::create([
+                'accessory_id' => $request->accessory_id,
                 'color_id' => $request->color_id,
                 'qty' => $request->qty,
-                'unit_price' => $accessory->discount_price ? $accessory->discount_price : $accessory->normal_price,
+                'unit_price' => $accessory->colors[0]->pivot->discount_price ? $accessory->colors[0]->pivot->discount_price : $accessory->colors[0]->pivot->normal_price,
                 'user_id' => Auth::user()->id,
             ]);
+            // return $cart;
+            return redirect()->back()->with('success', "Cart Added.");
         }
     }
 
@@ -107,6 +122,10 @@ class ShopController extends Controller
             'qty' => $request->qty
         ]);
         return redirect()->back()->with('success', "Cart Updated");
+    }
+
+    public function checkoutlist(){
+        
     }
 
 

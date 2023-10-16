@@ -179,7 +179,7 @@
                <button class="btn btn-outline-warning rounded-right" type="button"
                 onclick="changeValue(this, 1)">+</button>
               </span>
-             </div>
+            </div>
           </div>
           <div class="col-6">
             <div class="input-group">
@@ -310,29 +310,29 @@
 
 
  <script>
-$(document).ready(function() {
- // Use event delegation for radio button click
- $(document).on('click', '.price-enable', function() {
-  let priceId = $(this).attr('id').split('-')[1];
-  $("#price-" + priceId).toggleClass('d-none');
-  $(".price-qty[data-id=" + priceId + "]").toggle();
- });
+    $(document).ready(function() {
+    // Use event delegation for radio button click
+    $(document).on('click', '.price-enable', function() {
+    let priceId = $(this).attr('id').split('-')[1];
+    $("#price-" + priceId).toggleClass('d-none');
+    $(".price-qty[data-id=" + priceId + "]").toggle();
+    });
 
- // Change value function
- function changeValue(button, value) {
-  let input = $(button).closest('.input-group').find('input');
-  let currentValue = parseInt(input.val());
-  let newValue = currentValue + value;
+    // Change value function
+    function changeValue(button, value) {
+    let input = $(button).closest('.input-group').find('input');
+    let currentValue = parseInt(input.val());
+    let newValue = currentValue + value;
 
-  if (newValue >= parseInt(input.attr('min')) && newValue <= parseInt(input.attr('max'))) {
-   input.val(newValue);
-  }
- }
+    if (newValue >= parseInt(input.attr('min')) && newValue <= parseInt(input.attr('max'))) {
+    input.val(newValue);
+    }
+    }
 
- // Attach changeValue function to buttons
- $('.input-group').on('click', 'button', function() {
-  let value = $(this).hasClass('rounded-left') ? -1 : 1;
-  changeValue(this, value);
- });
-});
+    // Attach changeValue function to buttons
+    $('.input-group').on('click', 'button', function() {
+    let value = $(this).hasClass('rounded-left') ? -1 : 1;
+    changeValue(this, value);
+    });
+    });
  </script>
