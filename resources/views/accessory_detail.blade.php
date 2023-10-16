@@ -80,16 +80,18 @@
                 @csrf
                 <div class="input-group">
                     <span class="input-group-prepend">
-                        <button class="btn btn-outline-warning rounded-left" type="button" onclick="decreaseValue()">-</button>
+                     <button class="btn btn-outline-warning rounded-left" type="button"
+                      onclick="changeValue(this, -1)">-</button>
                     </span>
-                        <input id="numberInput" type="number" class="form-control text-dark text-center px-3"
-                    style="border-top-left-radius: 0; border-bottom-left-radius: 0;" name="qty" min="1" max="10" value="1">
+                    <input type="number" class="form-control text-dark text-center px-3"
+                     style="border-top-left-radius: 0; border-bottom-left-radius: 0;" min="1" max="10" value="1" name="qty">
                     <span class="input-group-append">
-                        <button class="btn btn-outline-warning rounded-right" type="button" onclick="increaseValue()">+</button>
+                     <button class="btn btn-outline-warning rounded-right" type="button"
+                      onclick="changeValue(this, 1)">+</button>
                     </span>
+                  </div>
                 </div>
-                </div>
-                <input type="hidden" name="accessory_id" value="{{ $color->id }}">
+                <input type="hidden" name="accessory_id" value="{{ $accessory->id }}">
                 <input type="hidden" name="color_id" value="{{ $color->id }}">
                 <div class="input-group">
                 <button type="submit" class="btn bg-warning p-2 mx-2">Add to cart</button>
@@ -115,6 +117,33 @@
 
 
 </x-layout>
+<script>
+    $(document).ready(function() {
+    // Use event delegation for radio button click
+    $(document).on('click', '.price-enable', function() {
+    let priceId = $(this).attr('id').split('-')[1];
+    $("#price-" + priceId).toggleClass('d-none');
+    $(".price-qty[data-id=" + priceId + "]").toggle();
+    });
+
+    // Change value function
+    function changeValue(button, value) {
+    let input = $(button).closest('.input-group').find('input');
+    let currentValue = parseInt(input.val());
+    let newValue = currentValue + value;
+
+    if (newValue >= parseInt(input.attr('min')) && newValue <= parseInt(input.attr('max'))) {
+    input.val(newValue);
+    }
+    }
+
+    // Attach changeValue function to buttons
+    $('.input-group').on('click', 'button', function() {
+    let value = $(this).hasClass('rounded-left') ? -1 : 1;
+    changeValue(this, value);
+    });
+    });
+ </script>
 
 <script>
 function selectColor(evt, color) {
