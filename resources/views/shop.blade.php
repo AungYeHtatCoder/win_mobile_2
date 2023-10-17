@@ -13,15 +13,15 @@
    @foreach($mergedProducts as $product)
    <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded">
     <div class="text-end">
-    @if($product->storages || $product->rams)
-        <a href="{{url('/product_detail/'.$product->id) }}">
-            <i class="fas fa-cart-arrow-down text-dark"></i>
-        </a>
-    @else
-        <a href="{{url('/accessory_detail/'.$product->id) }}">
-            <i class="fas fa-cart-arrow-down text-dark"></i>
-        </a>
-    @endif
+     @if($product->storages || $product->rams)
+     <a href="{{url('/product_detail/'.$product->id) }}">
+      <i class="fas fa-cart-arrow-down text-dark"></i>
+     </a>
+     @else
+     <a href="{{url('/accessory_detail/'.$product->id) }}">
+      <i class="fas fa-cart-arrow-down text-dark"></i>
+     </a>
+     @endif
      {{-- <a href="#"><i class="fas fa-heart text-dark"></i></a> --}}
     </div>
     <div class="text-center mb-4">
@@ -67,13 +67,6 @@
       @endif
       <strong class="text-decoration-line-through text-danger">$20</strong>
      </div>
-     <!-- <div class="">
-            <span class="fas fa-star"></span>
-            <span class="fas fa-star"></span>
-            <span class="fas fa-star"></span>
-            <span class="fas fa-star-half"></span>
-            <span class="fas fa-star-half"></span>
-          </div> -->
      <div class="custom-hide text-end">
       <a href="#" class="btn btn-warning text-white">Add to cart</a>
      </div>
