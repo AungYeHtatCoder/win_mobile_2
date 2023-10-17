@@ -21,148 +21,149 @@
 		     <span class="menu-icon">
 		      <i class="bi bi-envelope"></i>
 		     </span>
-		     <span class="menu-text">Email</span>
+		     <span class="menu-text">Orders</span>
 		     <span class="menu-caret"><b class="caret"></b></span>
 		    </a>
 		    <div class="menu-submenu">
 		     <div class="menu-item">
-		      <a href="email_inbox.html" class="menu-link">
-		       <span class="menu-text">Inbox</span>
+		      <a href="{{ url('/admin/orders/pending/') }}" class="menu-link">
+		       <span class="menu-text">Pending Orders</span>
 		      </a>
 		     </div>
 		     <div class="menu-item">
-		      <a href="email_compose.html" class="menu-link">
-		       <span class="menu-text">Compose</span>
+		      <a href="{{ url('/admin/orders/delivering/') }}" class="menu-link">
+		       <span class="menu-text">Delivering Orders</span>
 		      </a>
 		     </div>
 		     <div class="menu-item">
-		      <a href="email_detail.html" class="menu-link">
-		       <span class="menu-text">Detail</span>
+		      <a href="{{ url('/admin/orders/completed/') }}" class="menu-link">
+		       <span class="menu-text">Completed Orders</span>
 		      </a>
 		     </div>
 		    </div>
 		   </div>
-		   <div class="menu-header">Authentications</div>
-		   <div class="menu-item has-sub">
-		    <a href="javascript:;" class="menu-link">
-		     <div class="menu-icon">
-		      <i class="bi bi-bag-check"></i>
-		      <span class="w-5px h-5px rounded-3 bg-theme position-absolute top-0 end-0 mt-3px me-3px"></span>
-		     </div>
-		     <div class="menu-text d-flex align-items-center">UserManagement</div>
-		     <span class="menu-caret"><b class="caret"></b></span>
-		    </a>
-		    <div class="menu-submenu">
-		     <div class="menu-item">
-		      <a href="{{ route('admin.permissions.index') }}" class="menu-link">
-		       <div class="menu-text">Permission</div>
-		      </a>
-		     </div>
-		     <div class="menu-item">
-		      <a href="{{ route('admin.roles.index') }}" class="menu-link">
-		       <div class="menu-text">Role</div>
-		      </a>
-		     </div>
-		     <div class="menu-item">
-		      <a href="{{ route('admin.users.index') }}" class="menu-link">
-		       <div class="menu-text">Users</div>
-		      </a>
-		     </div>
-		     <div class="menu-item">
-		      <a href="pos_table_booking.html" class="menu-link">
-		       <div class="menu-text">Table Booking</div>
-		      </a>
-		     </div>
-		     <div class="menu-item">
-		      <a href="pos_menu_stock.html" class="menu-link">
-		       <div class="menu-text">Menu Stock</div>
-		      </a>
-		     </div>
-		    </div>
-		   </div>
+		    <div class="menu-header">Authentications</div>
+                <div class="menu-item has-sub">
+                    <a href="javascript:;" class="menu-link">
+                    <div class="menu-icon">
+                    <i class="bi bi-bag-check"></i>
+                    <span class="w-5px h-5px rounded-3 bg-theme position-absolute top-0 end-0 mt-3px me-3px"></span>
+                    </div>
+                    <div class="menu-text d-flex align-items-center">UserManagement</div>
+                    <span class="menu-caret"><b class="caret"></b></span>
+                    </a>
+                    <div class="menu-submenu">
+                    <div class="menu-item">
+                    <a href="{{ route('admin.permissions.index') }}" class="menu-link">
+                    <div class="menu-text">Permission</div>
+                    </a>
+                    </div>
+                    <div class="menu-item">
+                    <a href="{{ route('admin.roles.index') }}" class="menu-link">
+                    <div class="menu-text">Role</div>
+                    </a>
+                    </div>
+                    <div class="menu-item">
+                    <a href="{{ route('admin.users.index') }}" class="menu-link">
+                    <div class="menu-text">Users</div>
+                    </a>
+                    </div>
+                    <div class="menu-item">
+                    <a href="pos_table_booking.html" class="menu-link">
+                    <div class="menu-text">Table Booking</div>
+                    </a>
+                    </div>
+                    <div class="menu-item">
+                    <a href="pos_menu_stock.html" class="menu-link">
+                    <div class="menu-text">Menu Stock</div>
+                    </a>
+                    </div>
+                </div>
+            </div>
+
 		   {{-- User Interface --}}
-		   <div class="menu-header">User Interface</div>
-		   <div class="menu-item has-sub">
-		    <a href="javascript:;" class="menu-link">
-		     <div class="menu-icon">
-		      <i class="bi bi-layout-sidebar"></i>
-		      {{-- <span class="w-5px h-5px rounded-3 bg-theme position-absolute top-0 end-0 mt-3px me-3px"></span> --}}
-		     </div>
-		     <div class="menu-text d-flex align-items-center">Home Page</div>
-		     <span class="menu-caret"><b class="caret"></b></span>
-		    </a>
-		    <div class="menu-submenu">
-		     <div class="menu-item">
-		      <a href="{{ route('admin.banners.index') }}" class="menu-link">
-		       <div class="menu-text">Home Banners</div>
-		      </a>
-		     </div>
-		    </div>
-		   </div>
+            <div class="menu-header">User Interface</div>
+                <div class="menu-item has-sub">
+                    <a href="javascript:;" class="menu-link">
+                        <div class="menu-icon">
+                            <i class="bi bi-layout-sidebar"></i>
+                        </div>
+                        <div class="menu-text d-flex align-items-center">Home Page</div>
+                        <span class="menu-caret"><b class="caret"></b></span>
+                    </a>
+                    <div class="menu-submenu">
+                        <div class="menu-item">
+                            <a href="{{ route('admin.banners.index') }}" class="menu-link">
+                                <div class="menu-text">Home Banners</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
 		   {{-- User Interface --}}
 
 		   {{-- Product Management --}}
-		   <div class="menu-header">Product Management</div>
-		   <div class="menu-item has-sub">
-		    <a href="javascript:;" class="menu-link">
-		     <div class="menu-icon">
-		      <i class="bi bi-grid-3x3"></i>
-		      {{-- <span class="w-5px h-5px rounded-3 bg-theme position-absolute top-0 end-0 mt-3px me-3px"></span> --}}
-		     </div>
-		     <div class="menu-text d-flex align-items-center">Product Data</div>
-		     <span class="menu-caret"><b class="caret"></b></span>
-		    </a>
-		    <div class="menu-submenu">
-		     <div class="menu-item">
-		      <a href="{{ route('admin.products.index') }}" class="menu-link">
-		       <div class="menu-text">Products</div>
-		      </a>
-		     </div>
-		     <div class="menu-item">
-		      <a href="{{ route('admin.product_prices.index') }}" class="menu-link">
-		       <div class="menu-text">Product Stocks</div>
-		      </a>
-		     </div>
-		     <div class="menu-item">
-		      <a href="{{ route('admin.accessories.index') }}" class="menu-link">
-		       <div class="menu-text">Accessories</div>
-		      </a>
-		     </div>
-		     <div class="menu-item">
-		      <a href="{{ route('admin.accessory_categories.index') }}" class="menu-link">
-		       <div class="menu-text">Accessory Categories</div>
-		      </a>
-		     </div>
+            <div class="menu-header">Product Management</div>
+                <div class="menu-item has-sub">
+                    <a href="javascript:;" class="menu-link">
+                        <div class="menu-icon">
+                            <i class="bi bi-grid-3x3"></i>
+                            {{-- <span class="w-5px h-5px rounded-3 bg-theme position-absolute top-0 end-0 mt-3px me-3px"></span> --}}
+                        </div>
+                        <div class="menu-text d-flex align-items-center">Product Data</div>
+                        <span class="menu-caret">
+                            <b class="caret"></b>
+                        </span>
+                    </a>
+                    <div class="menu-submenu">
+                        <div class="menu-item">
+                            <a href="{{ route('admin.products.index') }}" class="menu-link">
+                                <div class="menu-text">Products</div>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="{{ route('admin.product_prices.index') }}" class="menu-link">
+                                <div class="menu-text">Product Stocks</div>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="{{ route('admin.accessories.index') }}" class="menu-link">
+                                <div class="menu-text">Accessories</div>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="{{ route('admin.accessory_categories.index') }}" class="menu-link">
+                                <div class="menu-text">Accessory Categories</div>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="{{ route('admin.categories.index') }}" class="menu-link">
+                                <div class="menu-text">Categories</div>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="{{ route('admin.brands.index') }}" class="menu-link">
+                                <div class="menu-text">Brands</div>
+                            </a>
+                        </div>
 
-		     <div class="menu-item">
-		      <a href="{{ route('admin.categories.index') }}" class="menu-link">
-		       <div class="menu-text">Categories</div>
-		      </a>
-		     </div>
-		     <div class="menu-item">
-		      <a href="{{ route('admin.brands.index') }}" class="menu-link">
-		       <div class="menu-text">Brands</div>
-		      </a>
-		     </div>
-
-		     <div class="menu-item">
-		      <a href="{{ route('admin.colors.index') }}" target="_blank" class="menu-link">
-		       <div class="menu-text">Color</div>
-		      </a>
-		     </div>
-		     <div class="menu-item">
-		      <a href="{{ route('admin.storages.index') }}" target="_blank" class="menu-link">
-		       <div class="menu-text">Storage</div>
-		      </a>
-		     </div>
-		     <div class="menu-item">
-		      <a href="{{ route('admin.rams.index') }}" target="_blank" class="menu-link">
-		       <div class="menu-text">RAM</div>
-		      </a>
-		     </div>
-		    </div>
-		   </div>
-		  </div>
+                        <div class="menu-item">
+                            <a href="{{ route('admin.colors.index') }}" target="_blank" class="menu-link">
+                                <div class="menu-text">Color</div>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="{{ route('admin.storages.index') }}" target="_blank" class="menu-link">
+                                <div class="menu-text">Storage</div>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="{{ route('admin.rams.index') }}" target="_blank" class="menu-link">
+                                <div class="menu-text">RAM</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 		  {{-- Product Management --}}
 
 		  <div class="menu">

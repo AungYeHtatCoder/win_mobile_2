@@ -53,8 +53,8 @@
   </div>
  </section>
 
- <section class="container mt-md-5">
-    <div class="mt-5 d-flex justify-content-center">
+ <section class="container mt-md-5 mb-4">
+    <div class="mt-5 d-flex justify-content-center py-4 my-5">
       <h2 class="text-center topic">Available Products</h2>
     </div>
   <div class="row">
@@ -129,7 +129,7 @@
         <a href="contact.html" type="button" class="text-white rounded px-3 py-2 me-2" style="background: #c20f04;opacity:0.8;">Contact us</a>
         <a href="shop.html" type="button" class="text-white rounded px-3 py-2 me-2" style="background: #c20f04;opacity:0.8;">Shop Now >> </a>
       </div>
-      
+
      </div>
      <div class="col-md-6 col-sm-12 mt-sm-5">
       <img src="./assets/banner_promo.jpg" class="img-fluid w-100 rounded" alt="">
@@ -140,7 +140,7 @@
  </section>
 
  <section>
-  <div class="container">
+  <div class="container py-4">
    <div class="mt-5 d-flex justify-content-center">
     <h2 class="text-center topic">Available Accessories</h2>
    </div>
@@ -178,7 +178,7 @@
   </div>
  </section>
  <hr class="mx-5">
- 
+
 
  <section class="mt-lg-5 mt-sm-3 promotions">
   <div class="container p-3">

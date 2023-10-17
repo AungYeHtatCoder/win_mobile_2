@@ -24,7 +24,7 @@
 
 			<!-- BEGIN brand -->
 			<div class="brand">
-				<a href="index.html" class="brand-logo">
+				<a href="{{ url('/') }}" class="brand-logo">
 					<span class="brand-img">
 						<span class="brand-img-text text-theme">W</span>
 					</span>
@@ -177,7 +177,7 @@
 					<div class="dropdown-menu dropdown-menu-end me-lg-3 fs-11px mt-1">
 						@if(Auth::user()->id === 1)
 						<a class="dropdown-item d-flex align-items-center" href="{{ route('admin.profiles.index') }}">AdminPROFILE <i class="bi bi-person-circle ms-auto text-theme fs-16px my-n1"></i></a>
-						@else 
+						@else
 						<a class="dropdown-item d-flex align-items-center" href="{{ route('admin.profiles.index') }}">UserPROFILE <i class="bi bi-person-circle ms-auto text-theme fs-16px my-n1"></i></a>
 						@endif
 						<a class="dropdown-item d-flex align-items-center" href="email_inbox.html">INBOX <i class="bi bi-envelope ms-auto text-theme fs-16px my-n1"></i></a>

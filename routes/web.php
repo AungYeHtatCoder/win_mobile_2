@@ -22,6 +22,7 @@ use App\Http\Controllers\Admin\AccessoryController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\ProductPriceController;
 use App\Http\Controllers\Admin\AccessoryCategoryController;
+use App\Http\Controllers\Admin\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -118,6 +119,7 @@ Route::post('/cart/update/{id}', [ShopController::class, 'cartUpdate']);
 Route::get('/checkout', [ShopController::class, 'checkout']);
 Route::post('/deliveryInfo', [ShopController::class, 'deliveryInfo']);
 Route::post('/order', [ShopController::class, 'order']);
+Route::get('/order_success/{id}', [ShopController::class, 'orderSuccess']);
 
 
 
@@ -181,6 +183,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'App\Http\Co
 
     // Accessory resource route
     Route::resource('accessories', AccessoryController::class);
+
+    Route::get('/order_detail/{id}', [OrderController::class, 'detail']);
+    Route::get('/orders/pending/', [OrderController::class, 'pending']);
+    Route::get('/orders/delivering/', [OrderController::class, 'delivering']);
+    Route::get('/orders/completed/', [OrderController::class, 'completed']);
+    Route::post('/orders/status/{id}', [OrderController::class, 'status']);
 });
 
 // csrf token error fix

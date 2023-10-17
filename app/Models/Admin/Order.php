@@ -2,6 +2,7 @@
 
 namespace App\Models\Admin;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -12,6 +13,7 @@ class Order extends Model
         'user_id',
         'sub_total',
         'payment_method',
+        'status',
         'payment_photo'
     ];
 
