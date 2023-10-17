@@ -127,7 +127,7 @@
                   </ul>
                 </li>
 
-       <li><a href="#">Brand</a>
+          <li><a href="#">Brand</a>
         <ul>
          @foreach($brands as $brand)
          <li><a href="{{ url('/shop/accessorybrands/'.$brand->id) }}"><span

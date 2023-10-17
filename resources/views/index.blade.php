@@ -1,5 +1,5 @@
 <x-layout>
-
+  <x-client_secondary_nav />
  <!-- content section start  -->
  <section class="container mt-lg-5">
   <div class="row d-flex justify-content-center">

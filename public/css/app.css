@@ -24,7 +24,7 @@ nav {
   padding: 20px;
 }
 
-nav>a>img{
+nav>a>img {
   position: relative;
   left: 7rem;
   top: 0.3rem;
@@ -65,7 +65,7 @@ nav>a>img{
     margin-right: 6rem;
   }
 
-  .navbar .navbar-brand img{
+  .navbar .navbar-brand img {
     margin-left: -20px;
   }
 }
@@ -76,7 +76,7 @@ nav>a>img{
     margin-top: 10px;
   }
 
-  .navbar .navbar-brand img{
+  .navbar .navbar-brand img {
     margin-left: -20px;
   }
 
@@ -91,7 +91,7 @@ nav>a>img{
     margin-top: 10px;
   }
 
-  .navbar .navbar-brand img{
+  .navbar .navbar-brand img {
     margin-left: -30px;
   }
 
@@ -106,7 +106,7 @@ nav>a>img{
     margin-top: 10px;
   }
 
-  .navbar .navbar-brand img{
+  .navbar .navbar-brand img {
     margin-left: -40px;
   }
 
@@ -120,14 +120,14 @@ nav>a>img{
     margin-left: 7.5rem;
     margin-top: 10px;
   }
-  
-.menu-lg-bars{
-  margin-right: 1rem;
-}
 
-.navbar>button.navbuttons{
-  margin-right: 5rem;
-}
+  .menu-lg-bars {
+    margin-right: 1rem;
+  }
+
+  .navbar>button.navbuttons {
+    margin-right: 5rem;
+  }
 }
 
 @media(max-width:700px) {
@@ -136,11 +136,11 @@ nav>a>img{
     margin-top: 10px;
   }
 
-  .navbar .navbar-brand img{
+  .navbar .navbar-brand img {
     margin-left: -50px;
   }
 
-  .navbar>button.navbuttons{
+  .navbar>button.navbuttons {
     margin-right: 3rem;
   }
 }
@@ -222,7 +222,7 @@ nav>a>img{
     margin-right: 0 !important;
   } */
 
-  nav>a>img{
+  nav>a>img {
     position: relative;
     left: 4rem;
     top: 0.3rem;
@@ -272,7 +272,7 @@ nav>a>img{
     margin-right: 0 !important;
   } */
 
-  nav>a>img{
+  nav>a>img {
     position: relative;
     left: 3rem;
     top: 0.3rem;
@@ -395,13 +395,8 @@ hr {
 
 #modal-carousel img {
   max-width: 50%;
-  /* Adjust this value to control the maximum width */
-  max-height: 50%;
-  /* Adjust this value to control the maximum height */
   display: block;
-  /* Ensures the image takes up the available space */
   margin: 0 auto;
-  /* Center the image horizontally */
 }
 
 .modal-content {
@@ -977,7 +972,7 @@ nav {
 
 /* for plus icon */
 @media (min-width:766px) {
-  #nav>ul>li>i{
+  #nav>ul>li>i {
     display: none;
   }
 

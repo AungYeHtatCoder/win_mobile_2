@@ -64,6 +64,21 @@
             </div>
            </div>
            <div class="mb-3 row">
+            <label for="inputEmail1" class="col-sm-2 col-form-label">Category</label>
+            <div class="col-sm-10">
+             <select name="accessorycat_id" id="" class="form-select form-control">
+              <option value="">Choose Category</option>
+              @foreach($accessory_categories as $cat)
+              <option value="{{ $cat->id}}" {{ $cat->id == $accessory->category_id ? "selected" : "" }}>{{ $cat->name }}
+              </option>
+              @endforeach
+             </select>
+             @error('accessorycat_id')
+             <span class="text-danger">*{{ "The accesssory categories field is required." }}</span>
+             @enderror
+            </div>
+           </div>
+           <div class="mb-3 row">
             <label for="inputEmail2" class="col-sm-2 col-form-label">Image 1</label>
             <div class="col-sm-10">
              <input type="file" class="form-control" id="inputEmail2" name="img1">
