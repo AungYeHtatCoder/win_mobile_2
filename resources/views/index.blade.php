@@ -131,7 +131,7 @@
       </div>
 
      </div>
-     <div class="col-md-6 col-sm-12 mt-sm-5">
+     <div class="col-md-6 col-sm-12 mt-lg-0 mt-5">
       <img src="./assets/banner_promo.jpg" class="img-fluid w-100 rounded" alt="">
      </div>
     </div>
@@ -188,7 +188,19 @@
       <img src="./assets/promo_clipart.jpg" alt="" width="100px" height="100px">
       <h3 class="d-inline">ကြိုတင် Preorder တင်လို့ရပြီနော် </h3>
 
-      <div class="d-flex justify-content-center fw-bold mt-5">
+      <div class="row">
+        <!-- <div class=" col-mfw-bold mt-5"> -->
+          <div class="col-lg-5 col-10 mx-lg-3 mx-auto p-3 mt-lg-0 mt-3 bg-light shadow">Redmi Note 13 Pro+ (12/256)
+            <p>Color - Black / White</p>
+          </div>
+
+          <div class="col-lg-5 col-10 p-3 mx-auto mt-lg-0 mt-3 bg-light shadow">Redmi Note 13 Pro+ (12/512)
+            <p>Color - Black / White</p>
+          </div>
+        <!-- </div> -->
+      </div>
+
+      <!-- <div class="d-flex justify-content-center fw-bold mt-5">
         <div class="mx-3 p-3 bg-light shadow">Redmi Note 13 Pro+ (12/256)
           <p>Color - Black / White</p>
         </div>
@@ -196,11 +208,11 @@
         <div class="p-3 bg-light shadow">Redmi Note 13 Pro+ (12/512)
           <p>Color - Black / White</p>
         </div>
-      </div>
+      </div> -->
 
     </div>
 
-    <div class="col-lg-3 col-sm-11 mt-sm-5">
+    <div class="col-lg-3 col-sm-11 mt-sm-5 mt-lg-0 mt-md-5 mt-5">
         <img src="./assets/promo_img.jpg" alt="" style="width:300px;height:300px;transform:rotate(15deg);">
     </div>
 

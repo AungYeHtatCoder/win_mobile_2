@@ -89,9 +89,7 @@ Route::get('/change-password',function(){
 });
 
 // order-history
-Route::get('/order-history',function(){
-    return view('order_history');
-});
+
 
 //Frontend Routes
 Route::get('/', [HomeController::class, 'index']);
@@ -121,6 +119,8 @@ Route::post('/deliveryInfo', [ShopController::class, 'deliveryInfo']);
 Route::post('/order', [ShopController::class, 'order']);
 Route::get('/order_success/{id}', [ShopController::class, 'orderSuccess']);
 
+Route::get('/order_history', [ShopController::class, 'orderHistory']);
+Route::get('/order_detail/{id}', [ShopController::class, 'orderDetail']);
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

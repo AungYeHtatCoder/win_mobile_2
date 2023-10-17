@@ -280,5 +280,16 @@ class ShopController extends Controller
         return view('order_success', compact('order', 'orderProducts'));
     }
 
+    public function orderHistory(){
+        $orders = OrderedProduct::all();
+        return view('/order_history', compact('orders'));
+    }
+
+    public function orderDetail($id){
+        $details = OrderedProduct::find($id);
+        // return $details;
+        return view('/order_detail', compact('details'));
+    }
+
 
 }
