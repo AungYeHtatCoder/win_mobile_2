@@ -1,12 +1,26 @@
 <x-layout>
  <!-- content section start -->
  <section class="container mt-md-5">
-  <div class="row">
+  <div style="text-align: center;">
+   @if($filterName === '')
+   <h3>Serach Result</h3>
+   @else
+   <h3>{{ $filterName }}</h3>
+   @endif
+  </div>
+  <div class="row mt-4">
    @foreach($mergedProducts as $product)
    <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded">
     <div class="text-end">
-     <a href="my_cart.html"><i class="fas fa-cart-arrow-down text-dark"></i></a>
-     <a href="#"><i class="fas fa-heart text-dark"></i></a>
+     @if($product->storages || $product->rams)
+     <a href="{{url('/product_detail/'.$product->id) }}">
+      <i class="fas fa-cart-arrow-down text-dark"></i>
+     </a>
+     @else
+     <a href="{{url('/accessory_detail/'.$product->id) }}">
+      <i class="fas fa-cart-arrow-down text-dark"></i>
+     </a>
+     @endif
     </div>
     <div class="text-center mb-4">
      <img src="{{ $product->img1_url }}" class="img-fluid w-50" alt="">
@@ -50,16 +64,6 @@
       <h6>Ks - {{ $product->normal_price }}</h6>
       @endif
       <strong class="text-decoration-line-through text-danger">$20</strong>
-     </div>
-     <!-- <div class="">
-            <span class="fas fa-star"></span>
-            <span class="fas fa-star"></span>
-            <span class="fas fa-star"></span>
-            <span class="fas fa-star-half"></span>
-            <span class="fas fa-star-half"></span>
-          </div> -->
-     <div class="custom-hide text-end">
-      <a href="#" class="btn btn-warning text-white">Add to cart</a>
      </div>
     </div>
    </div>

@@ -132,15 +132,16 @@ class AccessoryController extends Controller
      */
     public function update(Request $request, Accessory $accessory)
     {
-        if(!$accessory){
-            return redirect()->back()->with('error', "Accessory Not Found!");
+        if (!$accessory) {
+            return redirect()->back()->with('error', 'Accessory Not Found!');
         }
+
         $request->validate([
-        'name' => 'required',
-        'brand_id' => 'required',
-        'accessorycat_id' => 'required',
-        'description' => 'required',
-    ]);
+            'name' => 'required',
+            'brand_id' => 'required',
+            'accessorycat_id' => 'required',
+            'description' => 'required',
+        ]);
         //image1
         if($request->file('img1')){
             //remove product from localstorage
@@ -230,24 +231,28 @@ class AccessoryController extends Controller
         }
 
         $accessory->update([
-            'name' => $request->name,
-            'brand_id' => $request->brand_id,
-            'accessorycat_id' => $request->accessorycat_id,
-            'img1' => $filename1,
-            'img2' => $filename2,
-            'img3' => $filename3,
-            'img4' => $filename4,
-            'description' => $request->description
-        ]);
-        foreach ($request->colors as $colorId => $colorData) {
+        'name' => $request->name,
+        'brand_id' => $request->brand_id,
+        'accessorycat_id' => $request->accessorycat_id,
+        'img1' => $filename1,
+        'img2' => $filename2,
+        'img3' => $filename3,
+        'img4' => $filename4,
+        'description' => $request->description,
+    ]);
+
+    // Handle color data (assuming $request->colors is an associative array)
+    $colorsData = $request->colors;
+
+    foreach ($colorsData as $colorId => $colorData) {
         $pivotData = [
             'qty' => (int) $colorData['qty'],
             'normal_price' => (int) $colorData['normal_price'],
-            'discount_price' =>(int) $colorData['discount_price'],
+            'discount_price' => (int) $colorData['discount_price'],
         ];
+
         $accessory->colors()->syncWithoutDetaching([$colorId => $pivotData]);
     }
-
         return redirect()->route('admin.accessories.index')->with('success', 'Accessory Updated.');
 
     }

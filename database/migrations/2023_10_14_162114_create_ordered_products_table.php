@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('ordered_products', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('order_id');
             $table->unsignedBigInteger('product_id')->nullable();
             $table->unsignedBigInteger('accessory_id')->nullable();
             $table->unsignedBigInteger('color_id');
@@ -21,6 +22,7 @@ return new class extends Migration
             $table->float('unit_price')->nullable();
             $table->float('total_price');
 
+            $table->foreign('order_id')->references('id')->on('orders')->onDelete('Cascade');
             $table->foreign('product_id')->references('id')->on('products')->onDelete('Cascade');
             $table->foreign('accessory_id')->references('id')->on('accessories')->onDelete('Cascade');
             $table->foreign('color_id')->references('id')->on('colors')->onDelete('Cascade');

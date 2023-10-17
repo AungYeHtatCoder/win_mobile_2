@@ -19,135 +19,12 @@
    <!-- BEGIN profile-container -->
    <div class="profile-container">
     <!-- BEGIN profile-sidebar -->
-    <div class="profile-sidebar">
-     <div class="desktop-sticky-top">
-      <div class="profile-img">
-       <img src="{{ Auth::user()->profile }}" alt="">
-      </div>
-      <!-- profile info -->
-      <h4 class="text align-center">User Information </h4>
-      <h4>{{ Auth::user()->name }}</h4>
-      <div class="mb-3 text-inverse text-opacity-50 fw-bold mt-n2">@ <span>{{ Auth::user()->email }}</span> </div>
 
-      <div class="mb-1">
-       <i class="fa fa-map-marker-alt fa-fw text-inverse text-opacity-50"></i> {{ Auth::user()->address }}
-      </div>
-      <div class="mb-3">
-       <i class="fa fa-link fa-fw text-inverse text-opacity-50"></i> {{ Auth::user()->phone }}
-      </div>
-      <div class="mb-3">
-       <i class="fa fa-link fa-fw text-inverse text-opacity-50"></i> Kpay No {{ Auth::user()->kpay_no }}
-      </div>
-      <div class="mb-3">
-       <i class="fa fa-link fa-fw text-inverse text-opacity-50"></i> Join Date
-      </div>
-      <div class="mb-3">
-       {{-- @if(Auth::user()->salaries->isNotEmpty())
-            <h3>Salary History:</h3>
-            <ul>
-                @foreach(Auth::user()->salaries as $salary)
-                    <li>
-                        Amount: {{ $salary->amount }}
-       Payment Date: {{ $salary->payment_date }}
-       </li>
-       @endforeach
-       </ul>
-       @else
-       <p>No salary records available.</p>
-       @endif --}}
-      </div>
-
-      <hr class="mt-4 mb-4">
-
-      <!-- people-to-follow -->
-      {{-- <div class="fw-bold mb-3 fs-16px">People to follow</div>
-									<div class="d-flex align-items-center mb-3">
-										<img src="assets/img/user/user-1.jpg" alt="" width="30" class="rounded-circle">
-										<div class="flex-fill px-3">
-											<div class="fw-bold text-truncate w-100px">Noor Rowe</div>
-											<div class="fs-12px text-inverse text-opacity-50">3.1m followers</div>
-										</div>
-										<a href="#" class="btn btn-sm btn-outline-theme fs-11px">Follow</a>
-									</div>
-									<div class="d-flex align-items-center mb-3">
-										<img src="assets/img/user/user-2.jpg" alt="" width="30" class="rounded-circle">
-										<div class="flex-fill px-3">
-											<div class="fw-bold text-truncate w-100px">Abbey Parker</div>
-											<div class="fs-12px text-inverse text-opacity-50">302k followers</div>
-										</div>
-										<a href="#" class="btn btn-sm btn-outline-theme fs-11px">Follow</a>
-									</div>
-									<div class="d-flex align-items-center mb-3">
-										<img src="assets/img/user/user-3.jpg" alt="" width="30" class="rounded-circle">
-										<div class="flex-fill px-3">
-											<div class="fw-bold text-truncate w-100px">Savannah Nicholson</div>
-											<div class="fs-12px text-inverse text-opacity-50">720k followers</div>
-										</div>
-										<a href="#" class="btn btn-sm btn-outline-theme fs-11px">Follow</a>
-									</div>
-									<div class="d-flex align-items-center mb-3">
-										<img src="assets/img/user/user-4.jpg" alt="" width="30" class="rounded-circle">
-										<div class="flex-fill px-3">
-											<div class="fw-bold text-truncate w-100px">Kenny Bright</div>
-											<div class="fs-12px text-inverse text-opacity-50">1.4m followers</div>
-										</div>
-										<a href="#" class="btn btn-sm btn-outline-theme fs-11px">Follow</a>
-									</div>
-									<div class="d-flex align-items-center">
-										<img src="assets/img/user/user-5.jpg" alt="" width="30" class="rounded-circle">
-										<div class="flex-fill px-3">
-											<div class="fw-bold text-truncate w-100px">Cara Poole</div>
-											<div class="fs-12px text-inverse text-opacity-50">989k followers</div>
-										</div>
-										<a href="#" class="btn btn-sm btn-outline-theme fs-11px">Follow</a>
-									</div> --}}
-     </div>
-    </div>
     <!-- END profile-sidebar -->
 
     <!-- BEGIN profile-content -->
     <div class="profile-content">
-     <ul class="profile-tab nav nav-tabs nav-tabs-v2">
-      <li class="nav-item">
-       <a href="#profile-post" class="nav-link active" data-bs-toggle="tab">
-        <div class="nav-field">UserName</div>
-        <div class="nav-value">{{ Auth::user()->name }}</div>
-       </a>
-      </li>
-      <li class="nav-item">
-       <a href="#profile-followers" class="nav-link" data-bs-toggle="tab">
-        <div class="nav-field">Staff Role</div>
-        <div class="nav-value">
-         @if(Auth::user()->roles->isNotEmpty())
-         {{ Auth::user()->roles->first()->title }}
-         @else
-         No Role Assigned
-         @endif
-        </div>
-       </a>
-      </li>
 
-      <li class="nav-item">
-       <a href="#profile-media" class="nav-link" data-bs-toggle="tab">
-        <div class="nav-field">Salary</div>
-        <div class="nav-value">
-         250000
-        </div>
-       </a>
-      </li>
-      <li class="nav-item">
-       <a href="#profile-video" class="nav-link" data-bs-toggle="tab">
-        <div class="nav-field">Join Date</div>
-        <div class="nav-value"></div>
-       </a>
-      </li>
-      <li class="nav-item">
-       <a href="#profile-followers" class="nav-link" data-bs-toggle="tab">
-        <div class="nav-field">Kpay No</div>
-        <div class="nav-value">{{ Auth::user()->kpay_no }}</div>
-       </a>
-      </li>
-     </ul>
      <div class="profile-content-container">
       <div class="row gx-4">
        <div class="col-xl-8">
@@ -307,9 +184,9 @@
 
 
            {{-- change phone and address  --}}
-           <div class="list-group-item px-3">
+           <!-- <div class="list-group-item px-3">
             <div class="text-inverse text-opacity-50"><small><strong></strong></small></div>
-            <div class="fw-bold mb-2"># You can change your Phone & Address here</div>
+            <div class="fw-bold mb-2"># You can change your Phone here</div>
             <a class="card text-inverse text-decoration-none mb-1">
              <div class="card-body">
               <div class="row no-gutters">
@@ -319,7 +196,8 @@
                  @method('PUT')
                  <div class="form-group">
                   <label for="phone">Phone</label>
-                  <input type="text" id="phone" class="form-control" name="phone" value="{{ Auth::user()->phone }}">
+                  <input type="text" id="phone" class="form-control" name="phone"
+                   placeholder="{{ Auth::user()->phone }}">
                   @error('phone')
                   <span class="invalid-feedback" role="alert">
                    <strong>{{ $message }}</strong>
@@ -338,7 +216,7 @@
                   @enderror
                  </div>
                  <div class="form-group mt-3">
-                  <button type="submit" class="btn btn-primary btn-sm">Change Phone & Address</button>
+                  <button type="submit" class="btn btn-primary btn-sm">Change Phone</button>
                  </div>
                 </form>
                </div>
@@ -353,10 +231,10 @@
              </div>
             </a>
             {{-- <div><small class="text-inverse text-opacity-50">1.89m share</small></div> --}}
-           </div>
+           </div> -->
            {{-- change phone & address end --}}
            {{-- kpay add start --}}
-           <div class="list-group-item px-3">
+           <!-- <div class="list-group-item px-3">
             {{-- <div class="text-inverse text-opacity-50"><small><strong></strong></small></div> --}}
             <div class="fw-bold mb-2"># You can change your Kpay No</div>
             <a class="card text-inverse text-decoration-none mb-1">
@@ -393,12 +271,12 @@
              </div>
             </a>
             {{-- <div><small class="text-inverse text-opacity-50">1.89m share</small></div> --}}
-           </div>
+           </div> -->
            {{-- kpay add end --}}
 
-           <a href="#" class="list-group-item list-group-action text-center">
+           <!-- <a href="#" class="list-group-item list-group-action text-center">
             Show more
-           </a>
+           </a> -->
           </div>
           <div class="card-arrow">
            <div class="card-arrow-top-left"></div>
