@@ -14,7 +14,7 @@
        <a href="/profile">Profile</a>
       </li>
       <li class="list-group-item">
-       <a href="/order-history">Order History</a>
+       <a href="{{ url('/order_history') }}">Order History</a>
       </li>
      </ul>
     </aside>

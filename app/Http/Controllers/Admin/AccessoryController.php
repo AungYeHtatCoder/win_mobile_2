@@ -234,7 +234,7 @@ class AccessoryController extends Controller
         $accessory->update([
         'name' => $request->name,
         'brand_id' => $request->brand_id,
-        'accessorycat_id' => $request->accessorycat_id,
+        'category_id' => $request->accessorycat_id,
         'img1' => $filename1,
         'img2' => $filename2,
         'img3' => $filename3,
