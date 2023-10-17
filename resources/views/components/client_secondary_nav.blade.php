@@ -1,5 +1,5 @@
 <!-- secondary navbar section start  -->
-<section class="container" style="padding-top: 10rem;">
+<section class="container" style="padding-top: 8rem;">
 
  <div class="row secondary-nav">
 
