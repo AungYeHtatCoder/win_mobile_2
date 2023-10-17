@@ -109,7 +109,8 @@
               <li><a href="#"><i class="fas fa-greater-than me-2"></i>Oppo</a></li>
             </ul>
             <!-- end mobile menu -->
-          </li> --}}
+          </li>
+           --}}
           <li class="nav-item">
             <a href="/contact" class="nav-link d-inline fw-bold">Contact</a>
             <!-- <i class="fas fa-plus plus-icons"  data-bs-target="#accessory" data-bs-toggle="collapse"></i> -->
@@ -162,11 +163,11 @@
               <!-- mobile menu -->
               <ul id="account" class="collapse sub-menus">
                 <li>
-                  <a href="/profile"><i class="fas fa-user me-2"></i>Account</a>
+                  <a href="/"><i class="fas fa-lock me-2"></i>Signin</a>
                 </li>
-                <!-- <li>
-                  <a href="#"><i class="fas fa-heart me-2"></i>wishlist</a>
-                </li> -->
+                <li>
+                  <a href="#"><i class="fas fa-user me-2"></i>Profile</a>
+                </li>
                 <li>
                   <a href="/my-cart"><i class="fas fa-shopping-bag me-2"></i>Cart</a>
                 </li>
