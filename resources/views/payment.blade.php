@@ -10,23 +10,45 @@
             <tbody>
               <tr>
                 <td>Client ID :</td>
-                <td>ID2121512</td>
+                <td>
+                  <input type="text" value="ID2121512" class="form-control" disabled>
+                </td>
               </tr>
               <tr>
                 <td>Name :</td>
-                <td>Aung Myo Lwin</td>
+                <td>
+                  <input type="text" value="Aung Myo Lwin" class="form-control">
+                </td>
               </tr>
               <tr>
                 <td>Email :</td>
-                <td>aungmyolwin@gmail.com</td>
+                <td>
+                  <input type="text" value="aungmyolwin@gmail.com" class="form-control">
+                </td>
+              </tr>
+              <tr>
+                <td>Address :</td>
+                <td>
+                  <input type="text" value="" class="form-control" placeholder="Address">
+                </td>
               </tr>
               <tr>
                 <td>Phone :</td>
-                <td>09-123456789</td>
+                <td>
+                  <input type="text" value="09-123456789" class="form-control">
+                </td>
+              </tr>
+              <tr>
+                <td>Cart Items :</td>
+                <td>
+                  <input type="text" value="iPhone 14 Pro" class="form-control" disabled>
+                </td>
               </tr>
               <tr>
                 <td>Order ID :</td>
-                <td>451512</td>
+                <td>
+                  <input type="text" value="451512" class="form-control">
+                </td>
               </tr>
               <tr>
                 <td>Payment Option :</td>
