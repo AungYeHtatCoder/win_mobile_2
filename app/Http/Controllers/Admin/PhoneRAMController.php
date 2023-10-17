@@ -39,7 +39,7 @@ class PhoneRAMController extends Controller
         ]);
 
         $color->save();
-        return redirect()->route('admin.rams.index')->with('toast_success', 'RAM created successfully.');
+        return redirect()->route('admin.rams.index')->with('success', 'RAM created successfully.');
     }
 
     /**
@@ -74,7 +74,7 @@ class PhoneRAMController extends Controller
             'name' => $request->name
         ]);
 
-        return redirect()->route('admin.rams.index')->with('toast_success', 'RAM updated successfully.');
+        return redirect()->route('admin.rams.index')->with('success', 'RAM updated successfully.');
     }
 
     /**
@@ -84,6 +84,6 @@ class PhoneRAMController extends Controller
     {
         $ram_del = Ram::findOrFail($id);
         $ram_del->delete();
-        return redirect()->route('admin.rams.index')->with('toast_success', 'RAM deleted successfully.');
+        return redirect()->route('admin.rams.index')->with('success', 'RAM deleted successfully.');
     }
 }

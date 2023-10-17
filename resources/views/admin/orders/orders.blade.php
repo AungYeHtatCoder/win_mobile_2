@@ -24,7 +24,7 @@
      </ul>
 
      <h1 class="page-header">
-        {{ $status }}
+      {{ $status }}
      </h1>
 
      <hr class="mb-4">
@@ -57,21 +57,21 @@
            <td>{{ $order->user->name }}</td>
            <td>{{ $order->user->phone }}</td>
            <td>{{ $order->user->address }}</td>
-            <td>
-                {{ $order->status }}
-                <form action="{{ url('/admin/orders/status/'.$order->id) }}" method="post">
-                    @csrf
-                    <div class="my-2">
-                        <select name="status" id="" class="form-select">
-                            <option value="pending">pending</option>
-                            <option value="delivering">delivering</option>
-                            <option value="completed">completed</option>
-                        </select>
-                        <button class="btn btn-sm btn-outline-theme mt-2" type="submit">Change</button>
-                    </div>
+           <td>
+            {{ $order->status }}
+            <form action="{{ url('/admin/orders/status/'.$order->id) }}" method="post">
+             @csrf
+             <div class="my-2">
+              <select name="status" id="" class="form-select">
+               <option value="pending">pending</option>
+               <option value="delivering">delivering</option>
+               <option value="completed">completed</option>
+              </select>
+              <button class="btn btn-sm btn-outline-theme mt-2" type="submit">Change</button>
+             </div>
 
-                </form>
-            </td>
+            </form>
+           </td>
            <td>{{ $order->sub_total }}</td>
            <td>{{ $order->created_at->format('F j, Y') }}</td>
            <td>{{ $order->updated_at->format('F j, Y') }}</td>
@@ -79,9 +79,9 @@
             {{-- <a href="{{ url('/orders/pending/') }}" class="btn btn-primary btn-sm">Edit</a> --}}
             <a href="{{ url('/admin/order_detail/'.$order->id) }}" class="btn btn-info btn-sm">Show</a>
             {{-- <form class="d-inline" action="{{ route('admin.orders.destroy', $order->id) }}" method="POST">
-             @csrf
-             @method('DELETE')
-             <button type="submit" class="btn btn-danger btn-sm">Del</button>
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-danger btn-sm">Del</button>
             </form> --}}
            </td>
           </tr>

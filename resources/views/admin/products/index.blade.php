@@ -36,14 +36,6 @@
       <p></p>
       <div class="card">
        <div class="card-body">
-        @if (session('success'))
-        <div class="alert alert-primary" role="alert">
-         {{ session('success') }}
-        </div>
-        @elseif (session('error'))
-        <div class="alert alert-danger" role="alert">
-         {{ session('error') }}
-        </div>
         <table id="datatableDefault" class="table text-nowrap w-100">
          <thead>
           <tr>
@@ -142,4 +134,19 @@
 <script src="{{ asset('admin_app/assets/js/demo/table-plugins.demo.js') }}"></script>
 <script src="{{ asset('admin_app/assets/js/demo/sidebar-scrollspy.demo.js') }}"></script>
 <!-- ================== END page-js ================== -->
+
+<script src="{{ asset('assets/js/sweetalert.min.js') }}"></script>
+<script src="{{ asset('assets/js/sweetAlert.js') }}"></script>
+@if (Session::has('success'))
+<script>
+showSweetAlert("Success!", "{{ Session::get('success') }}", "success");
+</script>
+@endif
+@if (Session::has('error'))
+<script>
+showSweetAlert("Sorry!", "{{ Session::get('error') }}", "error");
+</script>
+@endif
+
+
 @endsection
