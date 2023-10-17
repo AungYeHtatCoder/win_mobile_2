@@ -3,20 +3,21 @@
 
  <div class="row secondary-nav">
 
-  <div class="col-lg-9 col-md-8 d-sm-none d-none d-lg-block d-md-block">
-   <form class="search-box">
-    <input type="search" placeholder="Search.." name="search" class=" ">
+  <div class="col-lg-9 d-lg-block d-none">
+   <form class="search-box" action="{{ route('search') }}" method="get">
+    <input type="search" placeholder="Search.." name="search" value="{{ request('search') }}" class="">
     <button type="submit"><i class="fa fa-search"></i></button>
    </form>
+
   </div>
 
   <!-- <span class="fas fa-search"></span> -->
 
   <select name="category" id="category" class="col-lg-2 col-md-3 col-sm-4 col-4   d-block  select-box">
    <option value="choose">Choose Brands..</option>
+   <option value="all">All Product</option>
    @foreach($brands as $brand)
-   <option value="{{ $brand->name }}"><span class="fas fa-greater-than"></span><a href="">{{ $brand->name }}</a>
-   </option>
+   <option value="{{ $brand->id }}">{{ $brand->name }}</option>
    @endforeach
   </select>
  </div>

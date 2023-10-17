@@ -48,11 +48,11 @@
        </tr>
       </table>
       <div class="text-center">
-       <a href="/profile-edit" class="btn btn-secondary">Edit</a>
+       <a href="{{ url('/profile-edit') }}" class="btn btn-secondary">Edit</a>
       </div>
      </form>
     </div>
-    >>>>>>> origin
+
    </div>
    </form>
   </div>

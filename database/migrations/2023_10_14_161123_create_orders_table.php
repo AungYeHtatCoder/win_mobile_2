@@ -17,6 +17,7 @@ return new class extends Migration
             $table->integer('sub_total')->nullable();
             $table->string('payment_method')->nullable();
             $table->string('payment_photo')->nullable();
+            $table->string('status')->default('pending');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

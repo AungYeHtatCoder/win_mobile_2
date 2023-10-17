@@ -14,4 +14,8 @@ class Order extends Model
         'payment_method',
         'payment_photo'
     ];
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }
