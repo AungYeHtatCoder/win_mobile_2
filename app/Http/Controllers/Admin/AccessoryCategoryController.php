@@ -36,7 +36,7 @@ class AccessoryCategoryController extends Controller
         AccessoryCategories::create([
             'name' => $request->name
         ]);
-        return redirect(route('admin.accessory_categories.index'))->with('success', "New Accessory Category Created.");
+        return redirect(route('admin.accessory_categories.index'))->with('toast_success', "New Accessory Category Created.");
     }
 
     /**
