@@ -36,7 +36,7 @@ use App\Http\Controllers\Admin\AccessoryCategoryController;
 
 Auth::routes();
 
-// admin profile image retrieve 
+// admin profile image retrieve
 Route::get('storage/{path}', function ($path) {
     return response()->file(storage_path('app/public/' . $path));
 })->where('path', '.*');
@@ -109,6 +109,10 @@ Route::post('/addToCart', [ShopController::class, 'addToCart']);
 Route::get('/my-cart', [ShopController::class, 'cart']);
 Route::get('/cart/delete/{id}', [ShopController::class, 'cartDelete']);
 Route::post('/cart/update/{id}', [ShopController::class, 'cartUpdate']);
+
+Route::get('/checkout', [ShopController::class, 'checkout']);
+Route::post('/deliveryInfo', [ShopController::class, 'deliveryInfo']);
+Route::post('/order', [ShopController::class, 'order']);
 
 
 

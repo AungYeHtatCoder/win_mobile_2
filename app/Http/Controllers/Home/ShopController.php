@@ -10,6 +10,9 @@ use App\Models\Admin\Accessory;
 use App\Models\Admin\ProductPrice;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Models\Admin\Order;
+use App\Models\Admin\OrderedProduct;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class ShopController extends Controller
@@ -19,7 +22,7 @@ class ShopController extends Controller
         $accessories = Accessory::all();
         $mergedProducts = $accessories->concat($products)->sortBy('name');
         $filterName = 'ALL PRODUCT';
-        
+
         // return $mergedProducts;
         return view('shop', compact('mergedProducts', 'filterName'));
     }
@@ -142,8 +145,89 @@ class ShopController extends Controller
         return redirect()->back()->with('success', "Cart Updated");
     }
 
-    public function checkoutlist(){
-        
+    public function checkout(){
+        return view('checkout');
+    }
+
+    public function deliveryInfo(Request $request){
+        $request->validate([
+            'phone' => 'required',
+            'address' => 'required'
+        ]);
+        $user = User::find(Auth::user()->id);
+        $user->update([
+            'phone' => $request->phone,
+            'address' => $request->address,
+        ]);
+        return redirect()->back()->with('success', "Delivery Info Added.");
+    }
+
+    public function order(Request $request){
+        if(Auth::user()->phone && Auth::user()->address){
+            $carts = Cart::where('user_id', Auth::user()->id)->get();
+            // return $request->payment_method;
+
+            $request->validate([
+                'payment_method' => 'required'
+            ]);
+
+            if($request->file('payment_photo')){
+                // image
+                $image = $request->file('payment_photo');
+                $ext = $image->getClientOriginalExtension();
+                $filename = uniqid('payment') . '.' . $ext; // Generate a unique filename
+                $image->move(public_path('assets/img/payments/'), $filename); // Save the file
+            }else{
+                $filename = NULL;
+            }
+
+            $order = Order::create([
+                'user_id' => Auth::user()->id,
+                'payment_method' => $request->payment_method,
+                'payment_photo' => $filename,
+            ]);
+
+            foreach($carts as $cart){
+                if($cart->product_id){
+                    OrderedProduct::create([
+                        'order_id' => $order->id,
+                        'product_id' => $cart->product_id ?? "",
+                        'color_id' => $cart->color_id,
+                        'product_prices_id' => $cart->product_prices_id ?? "",
+                        'qty' => $cart->qty,
+                        'unit_price' => $cart->unit_price,
+                        'total_price' => $cart->qty * $cart->unit_price,
+                    ]);
+
+                    $reducedQty = ProductPrice::find($cart->product_prices_id);
+                    $reducedQty->update([ 'qty' => $reducedQty->qty - $cart->qty ]);
+
+                }else{
+                    OrderedProduct::create([
+                        'order_id' => $order->id,
+                        'accessory_id' => $cart->accessory_id ?? "",
+                        'color_id' => $cart->color_id,
+                        'qty' => $cart->qty,
+                        'unit_price' => $cart->unit_price,
+                        'total_price' => $cart->qty * $cart->unit_price,
+                    ]);
+
+
+                }
+            }
+            // Fetch the sub_total directly from the database query
+            $subTotal = OrderedProduct::where('order_id', $order->id)->sum('total_price');
+            // return $subTotal;
+
+            // Update the sub_total in the orders table
+            Order::where('id', $order->id)->update(['sub_total' => $subTotal]);
+
+
+            $carts->each->delete();
+            return redirect()->back()->with('success', "Ordered Successfully.");
+        }else{
+            return redirect()->back()->with('error', "Please Fill Delivery Information First.");
+        }
     }
 
 
