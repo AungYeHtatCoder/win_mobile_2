@@ -104,7 +104,7 @@ class AccessoryController extends Controller
     }
 
     $accessory->colors()->attach($colors);
-    return redirect()->route('admin.accessories.index')->with('success', 'Accessory Created.');
+    return redirect()->route('admin.accessories.index')->with('toast_success', 'Accessory Created.');
 }
 
     /**
@@ -251,7 +251,7 @@ class AccessoryController extends Controller
 }
 
 
-    return redirect()->route('admin.accessories.index')->with('success', 'Accessory Updated.');
+    return redirect()->route('admin.accessories.index')->with('toast_success', 'Accessory Updated.');
 }
 
     /**
@@ -279,6 +279,6 @@ class AccessoryController extends Controller
             File::delete(public_path('assets/img/products/'.$accessory->img4));
         }
         $accessory->delete();
-        return redirect()->back()->with('success', "Accessory Deleted.");
+        return redirect()->back()->with('toast_success', "Accessory Deleted.");
     }
 }

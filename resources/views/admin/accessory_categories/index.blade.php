@@ -36,6 +36,11 @@
       <p></p>
       <div class="card">
        <div class="card-body">
+        @if (session('toast_success'))
+        <div class="alert alert-primary" role="alert">
+         {{ session('toast_success') }}
+        </div>
+        @endif
         <table id="datatableDefault" class="table text-nowrap w-100">
          <thead>
           <tr>
