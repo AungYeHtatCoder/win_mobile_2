@@ -27,7 +27,7 @@ return new class extends Migration
             $table->foreign('accessory_id')->references('id')->on('accessories')->onDelete('Cascade');
             $table->foreign('color_id')->references('id')->on('colors')->onDelete('Cascade');
             $table->foreign('product_prices_id')->references('id')->on('product_prices')->onDelete('Cascade');
-            // $table->timestamps();
+            $table->timestamps();
         });
     }
 
