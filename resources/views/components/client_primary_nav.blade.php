@@ -183,10 +183,18 @@
      {{-- <a href="#!" class="text-dark"><i class="far fa-heart mx-2"></i></a> --}}
     </li>
     <li>
-     <a href="/profile" class="text-dark"><i class="far fa-user mx-2"></i></a>
+      <div class="btn-group" role="group">
+            <a href="/profile" id="dropdown" type="button" class="dropdown-toggle text-dark" data-bs-toggle="dropdown"><i class="far fa-user mx-2"></i></a>
+          <div class="dropdown-menu text-center">
+              <a href="/" class="dropdown-item">Sign in</a>
+              <a href="/" class="dropdown-item">login</a>
+              <div class="dropdown-divider"></div>
+              <a href="/" class="dropdown-item">Profile</a>
+          </div>
+      </div>
     </li>
     <li>
-        <a href="/my-cart" class="text-dark position-relative">
+        <a href="/my-cart" class="text-dark position-relative ms-3">
             <i class="fa fa-shopping-bag mx-2"></i>
             @auth
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{ $carts ? $carts->count() : '0' }}</span>
