@@ -1,5 +1,5 @@
 <x-layout>
-    <x-client_secondary_nav />
+ <x-client_secondary_nav />
  <!-- content section start -->
  <section class="container mt-md-5">
   <div style="text-align: center;">

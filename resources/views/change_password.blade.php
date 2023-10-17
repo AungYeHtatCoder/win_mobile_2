@@ -11,14 +11,14 @@
         <td>Old Password</td>
         <td>:</td>
         <td>
-         <input type="text" name="old_password" class="form-control" value="{{ Auth::user()->password }}">
+         <input type="password" name="old_password" class="form-control" value="">
         </td>
        </tr>
        <tr>
         <td>New Password</td>
         <td>:</td>
         <td>
-         <input type="text" name="password" class="form-control" value="*******">
+         <input type="password" name="password" class="form-control" value="">
         </td>
        </tr>
       </table>

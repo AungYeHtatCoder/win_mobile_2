@@ -6,7 +6,7 @@
    <div class="row">
     <aside class="col-md-4 border p-3">
      <div class="d-flex flex-column justify-content-center align-items-center">
-      <img src="{{ asset('assets/profile.png') }}" class="w-25 rounded-full" alt="">
+      <img src="{{ Auth::user()->profile }}" class="w-25 rounded-full" alt="">
       <h4>{{ Auth::user()->name }}</h4>
       <a href="/change-password" class="text-secondary"><small>Change Password</small></a>
      </div>
