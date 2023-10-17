@@ -1,7 +1,7 @@
 <x-layout>
     {{-- <x-client_secondary_navbar /> --}}
     <!-- content section start  -->
-    <section class="container mt-md-5">
+    <section class="container mt-md-5" id="cart" style="overflow: hidden;">
         <div class="row">
             <div class="col-md-8 mx-1">
                 @auth
@@ -99,15 +99,9 @@
                         })) }} MMK
                     </strong>
                 </div>
-                {{-- <div class="col-lg-12 d-flex justify-content-between">
-                    <h6>Discount</h6> <strong class="text-danger fw-bold">$20</strong>
-                </div>
-                <hr>
-                <div class="col-lg-12 d-flex justify-content-between">
-                    <h6>Total</h6> <strong class="text-success fw-bold">$700</strong>
-                </div> --}}
+
                 <div class="col-lg-12 w-100 mt-3 text-center">
-                    <a href="#!" class="btn btn-primary btn-block">Check Out</a>
+                    <a href="{{ url('/checkout') }}" class="btn btn-primary btn-block checkout">Check Out</a>
                 </div>
             </div>
             @endauth
@@ -120,24 +114,5 @@
         </div>
     </section>
     <!-- content section end  -->
-
-    {{-- checkout list --}}
-    <section class="container my-5" id="checkout">
-        <div class="row">
-            <div class="col-md-8 mb-3">
-                <h3 class="text-center">Delivery Information</h3>
-                <form action="" method="post">
-                    @csrf
-                    <div class="mb-3">
-                        
-                    </div>
-
-                </form>
-            </div>
-            <div class="col-md-4 mb-3">
-
-            </div>
-        </div>
-    </section>
 
 </x-layout>

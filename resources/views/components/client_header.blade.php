@@ -1,7 +1,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./assets/logo.jpg" rel="icon">
+  <link href="./assets/logo_1.png" rel="icon">
   <title>Win Mobile</title>
 
   <!-- bootstrap css1 js1 -->
