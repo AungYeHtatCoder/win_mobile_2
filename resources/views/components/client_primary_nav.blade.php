@@ -1,6 +1,6 @@
 <!-- primary navbar section start -->
-<section class="container row">
- <nav class="navbar navbar-expand-md fixed-top">
+<section class="container-fluid row">
+ <nav class="navbar navbar-expand-md sticky-top">
   <a href="{{ url('/') }}" class="navbar-brand col-lg-1 col-md-1 d-flex justify-content-start">
    <img src="./assets/logo_1.png" class="d-inline" alt="" style="width:60px;height:auto" />
    <!-- <span  class="logo d-inline fw-bold"> Win <br/> <small>Mobile</small></span> -->
@@ -187,10 +187,10 @@
       <a href="/profile" id="dropdown" type="button" class="dropdown-toggle text-dark" data-bs-toggle="dropdown"><i
         class="far fa-user mx-2"></i></a>
       <div class="dropdown-menu text-center">
-       <a href="/" class="dropdown-item">Sign in</a>
-       <a href="/" class="dropdown-item">login</a>
+       <a href="{{ url('/login') }}" class="dropdown-item">Sign in</a>
+       <a href="{{ url('/login') }}" class="dropdown-item">login</a>
        <div class="dropdown-divider"></div>
-       <a href="/" class="dropdown-item">Profile</a>
+       <a href="{{ url('/profile') }}" class="dropdown-item">Profile</a>
       </div>
      </div>
     </li>

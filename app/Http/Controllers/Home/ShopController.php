@@ -229,5 +229,16 @@ class ShopController extends Controller
         }
     }
 
+    public function orderHistory(){
+        $orders = OrderedProduct::all();
+        return view('/order_history', compact('orders'));
+    }
+
+    public function orderDetail($id){
+        $details = OrderedProduct::find($id);
+        // return $details;
+        return view('/order_detail', compact('details'));
+    }
+
 
 }
