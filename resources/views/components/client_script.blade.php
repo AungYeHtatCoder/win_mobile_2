@@ -83,8 +83,8 @@ $(document).ready(function() {
  var productDetailsCarousel = $('#product-details-carousel');
  var modal = $('#carousel-modal');
  var modalCarousel = $('#modal-carousel');
- var currentItemIndex = 0; // Track the currently displayed item index
- var clonedItems = null; // Store cloned items
+ var currentItemIndex = 0;
+ var clonedItems = null;
 
  // Initialize the main Owl Carousel for product details
  productDetailsCarousel.owlCarousel({
@@ -103,7 +103,7 @@ $(document).ready(function() {
   loop: true,
   autoplay: false,
   nav: true,
-  dots: true,
+  // dots: true,
  });
 
  // Handle click on a carousel item to open the modal
@@ -111,11 +111,10 @@ $(document).ready(function() {
   var itemId = $(this).data('item-id');
   var items = productDetailsCarousel.find('.item');
 
-  // Find the index of the selected item and set it as the current item index
   items.each(function(index) {
    if ($(this).data('item-id') === itemId) {
     currentItemIndex = index;
-    return false; // Exit the loop
+    return false;
    }
   });
 

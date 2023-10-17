@@ -1,9 +1,9 @@
 <!-- footer section start  -->
-<footer class="container-fluid mt-5">
- <!-- <div class="container"> -->
- <div class=" row  justify-content-center">
+<footer class="container-fluid mt-5 -bottom-3">
+ <div class="container">
+ <div class=" row  justify-content-between">
 
-  <div class="col-lg-5 col-md-4 footer_sections">
+  <div class="col-lg-3 col-md-4 footer_sections">
    <h5>Address</h6>
     <span><b>အေးမြကြည်လင်စျေးအနီး ၊ ကျောက်ဆည်မြို့</b></span>
 
@@ -40,7 +40,7 @@
     target="__blank">Delight Myanmar</a></p>
  </div>
 
- <!-- </div> -->
+ </div>
 
 </footer>
 <!-- footer section end  -->

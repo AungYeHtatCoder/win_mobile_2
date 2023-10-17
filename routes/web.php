@@ -62,6 +62,11 @@ Route::get('/payment',function(){
     return view('payment');
 });
 
+// payment success
+Route::get('/payment-success',function(){
+    return view('payment_success');
+});
+
 // contact
 // Route::get('/contact',function(){
 //     return view('contact');
