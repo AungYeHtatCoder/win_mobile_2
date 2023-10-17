@@ -115,7 +115,7 @@
             <a href="/contact" class="nav-link d-inline fw-bold">Contact</a>
             <!-- <i class="fas fa-plus plus-icons"  data-bs-target="#accessory" data-bs-toggle="collapse"></i> -->
             <!-- dropdown menu -->
-            <div class="menu container-fluid dropdown-contents">
+            <!-- <div class="menu container-fluid dropdown-contents">
               <ul class="row">
                 <li><a href="#">Accessory</a>
                   <ul>
@@ -141,7 +141,7 @@
        </li>
 
       </ul>
-     </div>
+     </div> -->
      <!-- end dropdown menu -->
      <!-- mobile menu -->
      <!-- <ul id="accessory" class="collapse sub-menus">

@@ -896,7 +896,7 @@ nav {
   }
 
   .menu-lg-bars>ul>li>a {
-    margin-left: 1rem;
+    margin-left: 3.1rem;
     font-size: 20px;
   }
 
@@ -925,7 +925,7 @@ nav {
   }
 
   .menu-lg-bars>ul>li>a {
-    margin-left: 1rem;
+    margin-left: 3.3rem;
     font-size: 20px;
   }
 
@@ -949,12 +949,12 @@ nav {
     width: 670px;
     background-color: #f0f0f0;
     margin-bottom: 2px;
-    margin-left: 5px;
-    margin-right: 5px;
+    /* margin-left: 5px;
+    margin-right: 5px; */
   }
 
   .menu-lg-bars>ul>li>a {
-    margin-left: 1rem;
+    margin-left: 5.2rem;
     font-size: 20px;
   }
 

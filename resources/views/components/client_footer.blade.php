@@ -16,9 +16,10 @@
 
   <div class="col-lg-3 col-md-4 footer_sections">
    <h5>Useful Links</h6>
+    <span><a href="#">Home</a></span>
     <span><a href="#">About us</a></span>
     <span><a href="{{ url('/shop') }}">Shop Now</a></span>
-    <span><a href="contact.html">Contact us</a></span>
+    <span><a href="contact.html">Contact</a></span>
   </div>
 
   <div class="col-lg-3 col-md-4 footer_sections">
