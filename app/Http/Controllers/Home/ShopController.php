@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Home;
 
+use App\Models\Admin\Cart;
+use App\Models\Admin\Brand;
 use Illuminate\Http\Request;
 use App\Models\Admin\Product;
-use App\Models\Admin\Brand;
 use App\Models\Admin\Accessory;
 use App\Models\Admin\ProductPrice;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use App\Models\Admin\Cart;
 use App\Models\Admin\Order;
 use App\Models\Admin\OrderedProduct;
 use App\Models\User;
@@ -20,15 +21,32 @@ class ShopController extends Controller
         $products = Product::all();
         $accessories = Accessory::all();
         $mergedProducts = $accessories->concat($products)->sortBy('name');
+        $filterName = 'ALL PRODUCT';
 
         // return $mergedProducts;
-        return view('shop', compact('mergedProducts'));
+        return view('shop', compact('mergedProducts', 'filterName'));
     }
 
-    public function brandfilter($id) {
-        $mergedProducts = Product::where('brand_id', $id)->get();
-        // return $mergedProducts;
-        return view('shop', compact('mergedProducts'));
+    public function brandfilter(Request $request,$id) {
+        $products = Product::all();
+        $accessories = Accessory::all();
+        $mergedProducts = $accessories->concat($products)->filter(function ($product) use ($id) {
+            return $product->brand_id == $id;
+        })->sortBy('name');
+        $filter = Brand::find($id);
+        $filterName = $filter->name;
+    return view('shop', compact('mergedProducts', 'filterName'));
+    }
+
+    public function search(Request $request)
+    {
+        $searchQuery = $request->input('search');
+
+        $products = Product::where('name', 'like', "%$searchQuery%")->get();
+        $accessories = Accessory::where('name', 'like', "%$searchQuery%")->get();
+        $mergedProducts = $accessories->concat($products)->sortBy('name');
+        $filterName = "";
+        return view('shop', compact('mergedProducts', 'filterName'));
     }
 
     public function accessorycategory($id) {
