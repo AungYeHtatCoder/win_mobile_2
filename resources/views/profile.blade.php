@@ -1,11 +1,11 @@
 <x-layout>
  <!-- profile section start -->
- <section>
+ <section style="padding: 5rem;">
   <div class="container">
    <div class="row">
     <aside class="col-md-4 border p-3">
      <div class="d-flex flex-column justify-content-center align-items-center">
-      <img src="{{ asset('assets/profile.png') }}" class="w-25 rounded-full" alt="">
+      <img src="{{ Auth::user()->profile }}" class="w-25 rounded-full" alt="">
       <h4>{{ Auth::user()->name }}</h4>
       <a href="/change-password" class="text-secondary"><small>Change Password</small></a>
      </div>
@@ -62,3 +62,16 @@
  <!-- profile section end -->
 
 </x-layout>
+<script src="{{ asset('assets/js/sweetalert.min.js') }}"></script>
+<script src="{{ asset('assets/js/sweetAlert.js') }}"></script>
+@if (Session::has('success'))
+<script>
+showSweetAlert("Success!", "{{ Session::get('success') }}", "success");
+</script>
+@endif
+@if (Session::has('error'))
+<script>
+showSweetAlert("Sorry!", "{{ Session::get('error') }}", "error");
+</script>
+@endif
+<script>

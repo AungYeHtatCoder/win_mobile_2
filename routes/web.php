@@ -100,6 +100,7 @@ Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::get('/profile', [AuthController::class, 'profile'])->name('profile');
 Route::post('/profile/update/{id}', [AuthController::class, 'profileUpdate']);
 Route::post('/profile/changepassword/{id}', [AuthController::class, 'ChangeProfilePw']);
+Route::post('/profile/changeprofile/{id}', [AuthController::class, 'ChangeProfile']);
 
 Route::get('/shop', [ShopController::class, 'shop']);
 Route::get('/shop/brands/{id}', [ShopController::class, 'brandfilter']);
