@@ -4,7 +4,7 @@
  <section class="container mt-md-5">
   <div style="text-align: center;">
    @if($filterName === '')
-   <h3>Serach Result</h3>
+   <h3>Search Result</h3>
    @else
    <h3>{{ $filterName }}</h3>
    @endif

@@ -124,7 +124,8 @@ class AccessoryController extends Controller
         $accessory = Accessory::find($id);
         $brands = Brand::all();
         $colors = Color::all();
-        return view('admin.accessories.edit', compact('accessory', 'brands', 'colors'));
+        $accessory_categories = AccessoryCategories::all();
+        return view('admin.accessories.edit', compact('accessory', 'brands', 'colors', 'accessory_categories'));
     }
 
     /**
@@ -240,22 +241,18 @@ class AccessoryController extends Controller
         'img4' => $filename4,
         'description' => $request->description,
     ]);
+    foreach ($request->colors as $colorId => $colorData) {
+    $pivotData = [
+        'qty' => (int) $colorData['qty'],
+        'normal_price' => (int) $colorData['normal_price'],
+        'discount_price' =>(int) $colorData['discount_price'],
+    ];
+    $accessory->colors()->syncWithoutDetaching([$colorId => $pivotData]);
+}
 
-    // Handle color data (assuming $request->colors is an associative array)
-    $colorsData = $request->colors;
 
-    foreach ($colorsData as $colorId => $colorData) {
-        $pivotData = [
-            'qty' => (int) $colorData['qty'],
-            'normal_price' => (int) $colorData['normal_price'],
-            'discount_price' => (int) $colorData['discount_price'],
-        ];
-
-        $accessory->colors()->syncWithoutDetaching([$colorId => $pivotData]);
-    }
-        return redirect()->route('admin.accessories.index')->with('success', 'Accessory Updated.');
-
-    }
+    return redirect()->route('admin.accessories.index')->with('success', 'Accessory Updated.');
+}
 
     /**
      * Remove the specified resource from storage.
