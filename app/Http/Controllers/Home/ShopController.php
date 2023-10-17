@@ -211,8 +211,7 @@ class ShopController extends Controller
                         'unit_price' => $cart->unit_price,
                         'total_price' => $cart->qty * $cart->unit_price,
                     ]);
-
-
+                    
                 }
             }
             // Fetch the sub_total directly from the database query
