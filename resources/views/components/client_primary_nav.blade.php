@@ -1,8 +1,9 @@
 <!-- primary navbar section start -->
 <section class="container row">
- <nav class="navbar navbar-expand-md fixed-top" style="z-index: 0.5 !important;">
-  <a href="{{ url('/') }}" class="navbar-brand col-lg-1 col-md-1">
-   <span class="logo"> Win <small class="d-block">Mobile</small></span>
+ <nav class="navbar navbar-expand-md fixed-top">
+  <a href="{{ url('/') }}" class="navbar-brand col-lg-1 col-md-1 d-flex justify-content-start">
+    <img src="./assets/logo_1.png" class="d-inline" alt="" style="width:60px;height:auto"/>
+   <!-- <span  class="logo d-inline fw-bold"> Win <br/> <small>Mobile</small></span> -->
   </a>
 
   <div class="col-md-10 mobile-search">
@@ -12,48 +13,54 @@
    </form>
   </div>
 
-  <button type="button" class="navbar-toggler me-2 navbuttons" data-bs-toggle="collapse" data-bs-target="#nav">
+  <button type="button" class="navbar-toggler navbuttons" data-bs-toggle="collapse" data-bs-target="#nav">
    <div class="bg-dark lines1"></div>
    <div class="bg-dark lines2"></div>
    <div class="bg-dark lines3"></div>
   </button>
 
-  <div id="nav" class="navbar navbar-collapse collapse justify-content-center align-items-center menu-lg-bars">
-   <ul class="navbar-nav">
-    <li class="nav-item dropdowns">
-     <a href="/" class="nav-link" data-bs-target="#phone" data-bs-toggle="collapse">Phone
-      <i class="fas fa-plus plus-icons"></i>
-     </a>
-     <!-- dropdown menu -->
-     <div class="menu container-fluid dropdown-contents">
-      <ul class="row">
-       @foreach($categories as $category)
-       <li><a href="#">{{ $category->name }}</a>
+      <div id="nav" class="navbar navbar-collapse collapse justify-content-center align-items-center menu-lg-bars">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a href="/" class="nav-link d-inline fw-bold">Home</a></li>
+          <li class="nav-item">
+            <a href="/shop" class="nav-link d-inline fw-bold">Shop</a> 
+            <!-- <i class="fas fa-plus plus-icons " data-bs-target="#phone" data-bs-toggle="collapse"></i> -->
+            <!-- dropdown menu -->
+            <!-- <div class="menu container-fluid dropdown-contents">
+              <ul class="row">
+                <li><a href="#">Brand New</a>
+                  <ul>
+                    <li><a href="#"><span class="fas fa-greater-than me-2"></span>IOS</a></li>
+                    <li><a href="#"><span class="fas fa-greater-than me-2"></span>Android</a></li>
+                    <li><a href="#"><span class="fas fa-greater-than me-2"></span>Tablet</a></li>
+                    <li><a href="#"><span class="fas fa-greater-than me-2"></span>Keypad</a></li>
+                  </ul>
+                </li>
 
-        <ul>
-         @foreach($brands as $brand)
-         <li><a href="{{ url('/shop/brands/'.$brand->id) }}"><span
-            class="fas fa-greater-than me-2"></span>{{ $brand->name }}</a></li>
-         @endforeach
-        </ul>
+                <li><a href="#">Second Hand</a>
+                  <ul>
+                    <li><a href="#"><span class="fas fa-greater-than me-2"></span>IOS</a></li>
+                    <li><a href="#"><span class="fas fa-greater-than me-2"></span>Android</a></li>
+                    <li><a href="#"><span class="fas fa-greater-than me-2"></span>Tablet</a></li>
+                    <li><a href="#"><span class="fas fa-greater-than me-2"></span>Keypad</a></li>
+                  </ul>
+                </li>
 
-       </li>
-       @endforeach
-       <li>
-        <img src="./assets/side8.jpg" alt="">
-       </li>
+                <li>
+                  <img src="./assets/side8.jpg" alt="">
+                </li>
 
       </ul>
-     </div>
+     </div> -->
      <!-- end dropdown menu -->
 
      <!-- mobile menu -->
-     <ul id="phone" class="collapse sub-menus">
+     <!-- <ul id="phone" class="collapse sub-menus">
       <li><a href="#"><i class="fas fa-greater-than me-2"></i>IOS</a></li>
       <li><a href="#"><i class="fas fa-greater-than me-2"></i>Android</a></li>
       <li><a href="#"><i class="fas fa-greater-than me-2"></i>Tablet</a></li>
       <li><a href="#"><i class="fas fa-greater-than me-2"></i>Keypad</a></li>
-     </ul>
+     </ul> -->
      <!-- end mobile menu -->
     </li>
     {{-- <li class="nav-item dropdowns">
@@ -103,21 +110,21 @@
             </ul>
             <!-- end mobile menu -->
           </li> --}}
-    <li class="nav-item dropdowns">
-     <a href="#" class="nav-link" data-bs-target="#accessory" data-bs-toggle="collapse">Accessory
-      <i class="fas fa-plus plus-icons"></i>
-     </a>
-     <!-- dropdown menu -->
-     <div class="menu container-fluid dropdown-contents">
-      <ul class="row">
-       <li><a href="#">Accessory</a>
-        <ul>
-         @foreach($accessory_cats as $cat)
-         <li><a href="{{ url('/shop/accessorycategories/'.$cat->id) }}"><span
-            class="fas fa-greater-than me-2"></span>{{ $cat->name }}</a></li>
-         @endforeach
-        </ul>
-       </li>
+          <li class="nav-item">
+            <a href="/contact" class="nav-link d-inline fw-bold">Contact</a>
+            <!-- <i class="fas fa-plus plus-icons"  data-bs-target="#accessory" data-bs-toggle="collapse"></i> -->
+            <!-- dropdown menu -->
+            <div class="menu container-fluid dropdown-contents">
+              <ul class="row">
+                <li><a href="#">Accessory</a>
+                  <ul>
+                    <li><a href="#"><span class="fas fa-greater-than me-2"></span>Airpod</a></li>
+                    <li><a href="#"><span class="fas fa-greater-than me-2"></span>Watch</a></li>
+                    <li><a href="#"><span class="fas fa-greater-than me-2"></span>Power bank</a></li>
+                    <li><a href="#"><span class="fas fa-greater-than me-2"></span>Speaker</a></li>
+                    <li><a href="#"><span class="fas fa-greater-than me-2"></span>Headphone</a></li>
+                  </ul>
+                </li>
 
        <li><a href="#">Brand</a>
         <ul>
@@ -136,39 +143,39 @@
      </div>
      <!-- end dropdown menu -->
      <!-- mobile menu -->
-     <ul id="accessory" class="collapse sub-menus">
+     <!-- <ul id="accessory" class="collapse sub-menus">
       <li><a href="#"><i class="fas fa-greater-than me-2"></i>Airpod</a></li>
       <li><a href="#"><i class="fas fa-greater-than me-2"></i>Watch</a></li>
       <li><a href="#"><i class="fas fa-greater-than me-2"></i>Power bank</a></li>
       <li><a href="#"><i class="fas fa-greater-than me-2"></i>Speaker</a></li>
       <li><a href="#"><i class="fas fa-greater-than me-2"></i>Headphone</a></li>
       <li><a href="#"><i class="fas fa-greater-than me-2"></i>Cover</a></li>
-     </ul>
+     </ul> -->
      <!-- end mobile menu -->
     </li>
 
-    <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a href="/aboutus.html" class="nav-link d-inline fw-bold">About Us</a></li>
 
-    <li class="mobile-view">
-     <a href="#" class="nav-link" data-bs-target="#account" data-bs-toggle="collapse">Account
-      <i class="fas fa-plus plus-icons"></i>
-      <!-- mobile menu -->
-      <ul id="account" class="collapse sub-menus">
-       <li>
-        <a href="/profile"><i class="fas fa-user me-2"></i>Account</a>
-       </li>
-       <li>
-        {{-- <a href="#"><i class="fas fa-heart me-2"></i>wishlist</a> --}}
-       </li>
-       <li>
-        <a href="/my-cart"><i class="fas fa-shopping-bag me-2"></i>Cart</a>
-       </li>
-      </ul>
-      <!-- end mobile menu -->
-     </a>
-    </li>
-   </ul>
-  </div>
+          <li class="mobile-view">
+            <a href="#" class="nav-link d-inline fw-bold">Account</a>
+              <i class="fas fa-plus plus-icons"  data-bs-target="#account" data-bs-toggle="collapse"></i>
+              <!-- mobile menu -->
+              <ul id="account" class="collapse sub-menus">
+                <li>
+                  <a href="/profile"><i class="fas fa-user me-2"></i>Account</a>
+                </li>
+                <!-- <li>
+                  <a href="#"><i class="fas fa-heart me-2"></i>wishlist</a>
+                </li> -->
+                <li>
+                  <a href="/my-cart"><i class="fas fa-shopping-bag me-2"></i>Cart</a>
+                </li>
+              </ul>
+              <!-- end mobile menu -->
+            </a>
+          </li>
+        </ul>
+      </div>
 
   <div class="d-none d-md-block d-lg-block icons">
    <ul class="d-flex">

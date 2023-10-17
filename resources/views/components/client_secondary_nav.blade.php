@@ -1,5 +1,5 @@
 <!-- secondary navbar section start  -->
-<section class="container" style="padding-top: 7rem;">
+<section class="container" style="padding-top: 10rem;">
 
  <div class="row secondary-nav">
 
@@ -13,7 +13,7 @@
 
   <!-- <span class="fas fa-search"></span> -->
 
-  <select name="category" id="category" class="col-lg-2 d-lg-block d-none select-box">
+  <select name="category" id="category" class="col-lg-2 col-md-3 col-sm-4 col-4   d-block  select-box">
    <option value="choose">Choose Brands..</option>
    <option value="all">All Product</option>
    @foreach($brands as $brand)
