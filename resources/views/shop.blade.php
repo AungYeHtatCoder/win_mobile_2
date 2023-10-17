@@ -1,7 +1,15 @@
 <x-layout>
  <!-- content section start -->
  <section class="container mt-md-5">
-  <div class="row">
+  <div style="text-align: center;">
+   @if($filterName === '')
+   <h3>Serach Result</h3>
+   @else
+   <h3>{{ $filterName }}</h3>
+   @endif
+  </div>
+
+  <div class="row mt-4">
    @foreach($mergedProducts as $product)
    <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded">
     <div class="text-end">
