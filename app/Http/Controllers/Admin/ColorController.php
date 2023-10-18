@@ -39,7 +39,7 @@ class ColorController extends Controller
         ]);
 
         $color->save();
-        return redirect()->route('admin.colors.index')->with('toast_success', 'Color created successfully.');
+        return redirect()->route('admin.colors.index')->with('success', 'Color created successfully.');
     }
 
     /**
@@ -74,7 +74,7 @@ class ColorController extends Controller
             'name' => $request->name
         ]);
 
-        return redirect()->route('admin.colors.index')->with('toast_success', 'Color updated successfully.');
+        return redirect()->route('admin.colors.index')->with('success', 'Color updated successfully.');
     }
 
     /**
@@ -84,6 +84,6 @@ class ColorController extends Controller
     {
         $color = Color::findOrFail($id);
         $color->delete();
-        return redirect()->route('admin.colors.index')->with('toast_success', 'color deleted successfully.');
+        return redirect()->route('admin.colors.index')->with('success', 'color deleted successfully.');
     }
 }

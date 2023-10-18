@@ -36,7 +36,7 @@ class AccessoryCategoryController extends Controller
         AccessoryCategories::create([
             'name' => $request->name
         ]);
-        return redirect(route('admin.accessory_categories.index'))->with('toast_success', "New Accessory Category Created.");
+        return redirect(route('admin.accessory_categories.index'))->with('success', "New Accessory Category Created.");
     }
 
     /**
@@ -70,7 +70,7 @@ class AccessoryCategoryController extends Controller
             'name' => $request->name
         ]);
 
-        return redirect()->route('admin.accessory_categories.index')->with('toast_success', 'Accessory Category updated successfully.');
+        return redirect()->route('admin.accessory_categories.index')->with('success', 'Accessory Category updated successfully.');
     }
 
     /**
@@ -80,6 +80,6 @@ class AccessoryCategoryController extends Controller
     {
         $a = AccessoryCategories::findOrFail($id);
         $a->delete();
-        return redirect()->route('admin.accessory_categories.index')->with('toast_success', 'Accessory Category deleted successfully.');
+        return redirect()->route('admin.accessory_categories.index')->with('success', 'Accessory Category deleted successfully.');
     }
 }

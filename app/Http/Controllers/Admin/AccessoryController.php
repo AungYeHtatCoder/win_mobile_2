@@ -35,77 +35,77 @@ class AccessoryController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-   public function store(Request $request)
-{
-    $request->validate([
-        'name' => 'required',
-        'brand_id' => 'required',
-        'accessorycat_id' => 'required',
-        'img1' => 'required|image|mimes:jpeg,png,jpg,gif', // Add image validation rules here
-        'description' => 'required',
-    ]);
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'brand_id' => 'required',
+            'accessorycat_id' => 'required',
+            'img1' => 'required|image|mimes:jpeg,png,jpg,gif', // Add image validation rules here
+            'description' => 'required',
+        ]);
 
-    $filenames = [];
+        $filenames = [];
 
-     // image
+        // image
         $image = $request->file('img1');
         $ext = $image->getClientOriginalExtension();
         $filename1 = uniqid('product') . '.' . $ext; // Generate a unique filename
         $image->move(public_path('assets/img/products/'), $filename1); // Save the file
 
-        if($request->file('img2')){
+        if ($request->file('img2')) {
             // image
             $image = $request->file('img2');
             $ext = $image->getClientOriginalExtension();
             $filename2 = uniqid('product') . '.' . $ext; // Generate a unique filename
             $image->move(public_path('assets/img/products/'), $filename2); // Save the file
-        }else{
+        } else {
             $filename2 = NULL;
         }
-        if($request->file('img3')){
+        if ($request->file('img3')) {
             // image
             $image = $request->file('img3');
             $ext = $image->getClientOriginalExtension();
             $filename3 = uniqid('product') . '.' . $ext; // Generate a unique filename
             $image->move(public_path('assets/img/products/'), $filename3); // Save the file
-        }else{
+        } else {
             $filename3 = NULL;
         }
-        if($request->file('img4')){
+        if ($request->file('img4')) {
             // image
             $image = $request->file('img4');
             $ext = $image->getClientOriginalExtension();
             $filename4 = uniqid('product') . '.' . $ext; // Generate a unique filename
             $image->move(public_path('assets/img/products/'), $filename4); // Save the file
-        }else{
+        } else {
             $filename4 = NULL;
         }
 
-    // Create the accessory
-    $accessory = Accessory::create([
-        'name' => $request->name,
-        'brand_id' => $request->brand_id,
-        'category_id' => $request->accessorycat_id,
-        'img1' => $filename1,
-        'img2' => $filename2,
-        'img3' => $filename3,
-        'img4' => $filename4,
-        'description' => $request->description,
-    ]);
+        // Create the accessory
+        $accessory = Accessory::create([
+            'name' => $request->name,
+            'brand_id' => $request->brand_id,
+            'category_id' => $request->accessorycat_id,
+            'img1' => $filename1,
+            'img2' => $filename2,
+            'img3' => $filename3,
+            'img4' => $filename4,
+            'description' => $request->description,
+        ]);
 
-    // Attach colors
-    $colors = [];
-    foreach ($request->colors as $color) {
-        $colors[$color['color_id']] = [
-            'qty' => (int) $color['qty'],
-            'normal_price' => (float) $color['normal_price'],
-            'discount_price' => (float) $color['discount_price'],
-        ];
+        // Attach colors
+        $colors = [];
+        foreach ($request->colors as $color) {
+            $colors[$color['color_id']] = [
+                'qty' => (int) $color['qty'],
+                'normal_price' => (float) $color['normal_price'],
+                'discount_price' => (float) $color['discount_price'],
+            ];
+        }
+
+        $accessory->colors()->attach($colors);
+        return redirect()->route('admin.accessories.index')->with('success', 'Accessory Created.');
     }
-
-    $accessory->colors()->attach($colors);
-    return redirect()->route('admin.accessories.index')->with('toast_success', 'Accessory Created.');
-}
 
     /**
      * Display the specified resource.
@@ -144,141 +144,148 @@ class AccessoryController extends Controller
             'description' => 'required',
         ]);
         //image1
-        if($request->file('img1')){
+        if ($request->file('img1')) {
             //remove product from localstorage
-            File::delete(public_path('assets/img/products/'.$accessory->img1));
+            File::delete(public_path('assets/img/products/' . $accessory->img1));
             // image
             $image = $request->file('img1');
             $ext = $image->getClientOriginalExtension();
             $filename1 = uniqid('product') . '.' . $ext; // Generate a unique filename
             $image->move(public_path('assets/img/products/'), $filename1); // Save the file
-        }else{
+        } else {
             $filename1 = $accessory->img1;
         }
 
         //image 2
-        if(!$accessory->img2){
-            if($request->file('img2')){
+        if (!$accessory->img2) {
+            if ($request->file('img2')) {
                 // image
                 $image = $request->file('img2');
                 $ext = $image->getClientOriginalExtension();
                 $filename2 = uniqid('product') . '.' . $ext; // Generate a unique filename
                 $image->move(public_path('assets/img/products/'), $filename2); // Save the file
-            }else{
+            } else {
                 $filename2 = NULL;
             }
-        }else{
-            if($request->file('img2')){
+        } else {
+            if ($request->file('img2')) {
                 //remove product from localstorage
-                File::delete(public_path('assets/img/products/'.$accessory->img2));
+                File::delete(public_path('assets/img/products/' . $accessory->img2));
                 // image
                 $image = $request->file('img2');
                 $ext = $image->getClientOriginalExtension();
                 $filename2 = uniqid('product') . '.' . $ext; // Generate a unique filename
                 $image->move(public_path('assets/img/products/'), $filename2); // Save the file
-            }else{
+            } else {
                 $filename2 = $accessory->img2;
             }
         }
 
         //image3
-        if(!$accessory->img3){
-            if($request->file('img3')){
+        if (!$accessory->img3) {
+            if ($request->file('img3')) {
                 // image
                 $image = $request->file('img3');
                 $ext = $image->getClientOriginalExtension();
                 $filename3 = uniqid('product') . '.' . $ext; // Generate a unique filename
                 $image->move(public_path('assets/img/products/'), $filename3); // Save the file
-            }else{
+            } else {
                 $filename3 = NULL;
             }
-        }else{
-            if($request->file('img3')){
+        } else {
+            if ($request->file('img3')) {
                 //remove product from localstorage
-                File::delete(public_path('assets/img/products/'.$accessory->img3));
+                File::delete(public_path('assets/img/products/' . $accessory->img3));
                 // image
                 $image = $request->file('img3');
                 $ext = $image->getClientOriginalExtension();
                 $filename3 = uniqid('product') . '.' . $ext; // Generate a unique filename
                 $image->move(public_path('assets/img/products/'), $filename3); // Save the file
-            }else{
+            } else {
                 $filename3 = $accessory->img3;
             }
         }
 
         //image4
-        if(!$accessory->img4){
-            if($request->file('img4')){
+        if (!$accessory->img4) {
+            if ($request->file('img4')) {
                 // image
                 $image = $request->file('img4');
                 $ext = $image->getClientOriginalExtension();
                 $filename4 = uniqid('product') . '.' . $ext; // Generate a unique filename
                 $image->move(public_path('assets/img/products/'), $filename4); // Save the file
-            }else{
+            } else {
                 $filename4 = NULL;
             }
-        }else{
-            if($request->file('img4')){
+        } else {
+            if ($request->file('img4')) {
                 //remove product from localstorage
-                File::delete(public_path('assets/img/products/'.$accessory->img4));
+                File::delete(public_path('assets/img/products/' . $accessory->img4));
                 // image
                 $image = $request->file('img4');
                 $ext = $image->getClientOriginalExtension();
                 $filename4 = uniqid('product') . '.' . $ext; // Generate a unique filename
                 $image->move(public_path('assets/img/products/'), $filename4); // Save the file
-            }else{
+            } else {
                 $filename4 = $accessory->img4;
             }
         }
 
         $accessory->update([
-        'name' => $request->name,
-        'brand_id' => $request->brand_id,
-        'category_id' => $request->accessorycat_id,
-        'img1' => $filename1,
-        'img2' => $filename2,
-        'img3' => $filename3,
-        'img4' => $filename4,
-        'description' => $request->description,
-    ]);
-    foreach ($request->colors as $colorId => $colorData) {
-    $pivotData = [
-        'qty' => (int) $colorData['qty'],
-        'normal_price' => (int) $colorData['normal_price'],
-        'discount_price' =>(int) $colorData['discount_price'],
-    ];
-    $accessory->colors()->syncWithoutDetaching([$colorId => $pivotData]);
-}
+            'name' => $request->name,
+            'brand_id' => $request->brand_id,
+            'category_id' => $request->accessorycat_id,
+            'img1' => $filename1,
+            'img2' => $filename2,
+            'img3' => $filename3,
+            'img4' => $filename4,
+            'description' => $request->description,
+        ]);
+        $colors = [];
+
+        foreach ($request->colors as $color) {
+            if (isset($color['qty']) && $color['qty'] !== null) {
+                // Only add data for checkboxes that are not disabled
+                $colors[$color['color_id']] = [
+                    'qty' => (int) $color['qty'],
+                    'normal_price' => (float) $color['normal_price'],
+                    'discount_price' => (float) $color['discount_price'],
+                ];
+            }
+        }
+
+        $accessory->colors()->sync($colors);
 
 
-    return redirect()->route('admin.accessories.index')->with('toast_success', 'Accessory Updated.');
-}
+
+        return redirect()->route('admin.accessories.index')->with('success', 'Accessory Updated.');
+    }
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(Accessory $accessory)
     {
-         if(!$accessory){
+        if (!$accessory) {
             return redirect()->back()->with('error', "Accesssory Not Found!");
         }
-        if($accessory->img1){
+        if ($accessory->img1) {
             //remove product from localstorage
-            File::delete(public_path('assets/img/products/'.$accessory->img1));
+            File::delete(public_path('assets/img/products/' . $accessory->img1));
         }
-        if($accessory->img2){
+        if ($accessory->img2) {
             //remove product from localstorage
-            File::delete(public_path('assets/img/products/'.$accessory->img2));
+            File::delete(public_path('assets/img/products/' . $accessory->img2));
         }
-        if($accessory->img3){
+        if ($accessory->img3) {
             //remove product from localstorage
-            File::delete(public_path('assets/img/products/'.$accessory->img3));
+            File::delete(public_path('assets/img/products/' . $accessory->img3));
         }
-        if($accessory->img4){
+        if ($accessory->img4) {
             //remove product from localstorage
-            File::delete(public_path('assets/img/products/'.$accessory->img4));
+            File::delete(public_path('assets/img/products/' . $accessory->img4));
         }
         $accessory->delete();
-        return redirect()->back()->with('toast_success', "Accessory Deleted.");
+        return redirect()->back()->with('success', "Accessory Deleted.");
     }
 }

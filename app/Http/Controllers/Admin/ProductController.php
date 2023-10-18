@@ -238,7 +238,7 @@ class ProductController extends Controller
         $product->storages()->sync($request->input('storages', []));
         $product->rams()->sync($request->input('rams', []));
 
-        return redirect(route('admin.products.index'))->with('successs', "Product Updated Successfully.");
+        return redirect(route('admin.products.index'))->with('success', "Product Updated Successfully.");
     }
 
     /**

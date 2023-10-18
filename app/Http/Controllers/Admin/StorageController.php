@@ -40,7 +40,7 @@ class StorageController extends Controller
         ]);
 
         $storage->save();
-        return redirect()->route('admin.storages.index')->with('toast_success', 'Storage created successfully.');
+        return redirect()->route('admin.storages.index')->with('success', 'Storage created successfully.');
     }
 
     /**
@@ -74,7 +74,7 @@ class StorageController extends Controller
         $storage->update([
             'name' => $request->name
         ]);
-        return redirect()->route('admin.storages.index')->with('toast_success', 'Storage updated successfully.');
+        return redirect()->route('admin.storages.index')->with('success', 'Storage updated successfully.');
 
 
     }
@@ -84,8 +84,8 @@ class StorageController extends Controller
      */
     public function destroy($id)
     {
-        $storage = Storage::findOrFail($id);
-        $storage->destroy();
-         return redirect()->route('admin.storages.index')->with('toast_success', 'Storage deleted successfully.');
+        $storage = Storage::find($id);
+        $storage->delete();
+         return redirect()->route('admin.storages.index')->with('success', 'Storage deleted successfully.');
     }
 }
