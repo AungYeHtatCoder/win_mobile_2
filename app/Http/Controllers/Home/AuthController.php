@@ -39,7 +39,7 @@ class AuthController extends Controller
     }
 
     public function profileUpdate(Request $request, $id){
-        
+
         $request->validate([
             'name',
             'phone',
@@ -49,9 +49,9 @@ class AuthController extends Controller
         $user->update([
             'name' => $request->name,
             'phone' => $request->phone,
-            'address' => $request->address,            
+            'address' => $request->address,
         ]);
-        return redirect('profile')->with('success', 'Profile Update successfully');        
+        return redirect('profile')->with('success', 'Profile Update successfully');
     }
 
    public function changeProfile(Request $request) {
@@ -78,7 +78,7 @@ class AuthController extends Controller
         $user->profile = URL::to(Storage::url($path));
         $user->profile_mime = $newImage->getClientMimeType();
         $user->profile_size = $newImage->getSize();
-        
+
         // If there is an old image, delete it
         if ($user->getOriginal('profile')) {
             $oldImagePath = str_replace(URL::to('/'), '', $user->getOriginal('profile'));
@@ -92,10 +92,10 @@ class AuthController extends Controller
 }
 
 
-    public function ChangeProfilePw(Request $request, $id){
+    public function ChangeProfilePw(Request $request){
        $request->validate([
             'old_password' => 'required',
-            'password' => 'required|confirmed|min:8',
+            'password' => 'required|min:8',
 
         ]);
         $user = User::find(Auth::user()->id);

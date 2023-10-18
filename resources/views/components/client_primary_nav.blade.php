@@ -187,11 +187,33 @@
      <div class="btn-group" role="group">
       <a href="/profile" id="dropdown" type="button" class="dropdown-toggle text-dark" data-bs-toggle="dropdown"><i
         class="far fa-user mx-2"></i></a>
-      <div class="dropdown-menu text-center">
-       <a href="{{ url('/login') }}" class="dropdown-item">Sign in</a>
-       <a href="{{ url('/login') }}" class="dropdown-item">login</a>
-       <div class="dropdown-divider"></div>
-       <a href="{{ url('/profile') }}" class="dropdown-item">Profile</a>
+      <div class="dropdown-menu text-start">
+        @guest
+        <a href="{{ url('/login') }}" class="dropdown-item">
+            <i class="fa-solid fa-unlock me-2"></i>
+            <span>Login</span>
+        </a>
+        <a href="{{ url('/register') }}" class="dropdown-item">
+            <i class="fa-solid fa-user-pen me-2"></i>
+            <span>Register</span>
+        </a>
+        @endguest
+
+        @auth
+        <div class="dropdown-divider"></div>
+        <a href="{{ url('/profile') }}" class="dropdown-item">
+            <i class="fa-solid fa-user me-2"></i>
+            <span>Profile</span>
+        </a>
+        <form action="{{ route('logout') }}" method="post">
+            @csrf
+            <button type="submit" class="dropdown-item">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </button>
+        </form>
+        @endauth
+
       </div>
     </li>
     <li>

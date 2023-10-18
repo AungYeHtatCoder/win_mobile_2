@@ -186,12 +186,11 @@
 						<div class="dropdown-divider"></div>
 						{{-- <a class="dropdown-item d-flex align-items-center" href="page_login.html">LOGOUT <i class="bi bi-toggle-off ms-auto text-theme fs-16px my-n1"></i></a> --}}
 						       <form action="{{ route('logout') }}" method="post">
-        @csrf
-        <button type="submit" class="dropdown-item d-flex align-items-center">
-
-									LOGOUT <i class="bi bi-toggle-off ms-auto text-theme fs-16px my-n1"></i>
-        </button>
-       </form>
+                                    @csrf
+                                    <button type="submit" class="dropdown-item d-flex align-items-center">
+                                        LOGOUT <i class="bi bi-toggle-off ms-auto text-theme fs-16px my-n1"></i>
+                                    </button>
+                                </form>
 					</div>
 				</div>
 			</div>
