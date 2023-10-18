@@ -1,7 +1,7 @@
 <x-layout>
  <!-- profile section start -->
  <section>
-  <div class="container">
+  <div class="container my-5 pt-5">
    <div class="row">
     <aside class="col-md-4 border p-3">
      <div class="d-flex flex-column justify-content-center align-items-center">

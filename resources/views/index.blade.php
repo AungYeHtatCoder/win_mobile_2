@@ -68,7 +68,7 @@
      <img src="{{ $product->img1_url }}" class="img-fluid w-50" alt="">
     </div>
     <div>
-     <a href="{{url('/product_detail/'.$product->id) }}">{{ $product->name }} <sup class="text-warning">New</sup></a>
+     <a href="{{url('/product_detail/'.$product->id) }}">{{ $product->name }} <sup class="text-success">New</sup></a>
     </div>
     <div>
      <small>Color : </small>
