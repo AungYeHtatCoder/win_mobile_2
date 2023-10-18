@@ -1,7 +1,12 @@
 <x-layout>
  <!-- profile section start -->
+<<<<<<< HEAD
  <section style="padding: 5rem;">
   <div class="container">
+=======
+ <section>
+  <div class="container my-5 pt-5">
+>>>>>>> myomin
    <div class="row">
     <aside class="col-md-4 border p-3">
      <div class="d-flex flex-column justify-content-center align-items-center">
@@ -62,16 +67,3 @@
  <!-- profile section end -->
 
 </x-layout>
-<script src="{{ asset('assets/js/sweetalert.min.js') }}"></script>
-<script src="{{ asset('assets/js/sweetAlert.js') }}"></script>
-@if (Session::has('success'))
-<script>
-showSweetAlert("Success!", "{{ Session::get('success') }}", "success");
-</script>
-@endif
-@if (Session::has('error'))
-<script>
-showSweetAlert("Sorry!", "{{ Session::get('error') }}", "error");
-</script>
-@endif
-<script>

@@ -8,6 +8,8 @@
  rel="stylesheet">
 <link href="{{ asset('admin_app/assets/plugins/bootstrap-table/dist/bootstrap-table.min.css') }}" rel="stylesheet">
 @endsection
+
+
 @section('content')
 <div class="container">
  <!-- BEGIN row -->
@@ -36,81 +38,90 @@
       <p></p>
       <div class="card">
        <div class="card-body">
-        <table id="datatableDefault" class="table text-nowrap w-100">
-         <thead>
-          <tr>
-           <th>#</th>
-           <th>Name</th>
-           <th>Image1</th>
-           <th>Brand</th>
-           <th>Colors</th>
-           <th>Storages</th>
-           <th>RAM</th>
-           <th>Created_at</th>
-           <th>Action</th>
-          </tr>
-         </thead>
-         <tbody>
-          @foreach ($products as $key => $product)
-          <tr>
-           <td>{{ ++$key }}</td>
-           <td>{{ $product->name }}</td>
-           <td>
-            <img width="100px" class="img-thumbnail" src="{{ $product->img1_url }}" alt="">
-           </td>
-           <td>
-            {{ $product->brand->name }}
-           </td>
-           <td>
-            @foreach ($product->colors as $color)
-            <span class="badge text-bg-info">{{ $color->name }}</span>
-            @endforeach
-           </td>
-           <td>
-            @foreach ($product->storages as $storage)
-            <span class="badge text-bg-secondary">{{ $storage->name }}</span>
-            @endforeach
-           </td>
-           <td>
-            @foreach ($product->rams as $ram)
-            <span class="badge text-bg-theme">{{ $ram->name }}</span>
-            @endforeach
-           </td>
-           <td>
-            {{ $product->created_at->format('j M, Y') }}
-           </td>
-           <td>
-            <a href="{{ url('/admin/products/prices/'.$product->id) }}" class="btn btn-sm btn-secondary">Pricing</a>
-            <a href="{{ route('admin.products.edit', $product->id) }}" class="btn btn-sm btn-primary">Edit</a>
-            <a href="{{ route('admin.products.show', $product->id) }}" class="btn btn-sm btn-info">Show</a>
-            <form action="{{ route('admin.products.destroy', $product->id) }}" class="d-inline" method="POST">
-             @csrf
-             @method('DELETE')
-             <button type="submit" class="btn btn-danger btn-sm">Del</button>
-            </form>
-           </td>
-          </tr>
-          @endforeach
-         </tbody>
-        </table>
+        <<<<<<< HEAD=======@if (session('success')) <div class="alert alert-primary" role="alert">
+         {{ session('success') }}
        </div>
+       @elseif (session('error'))
+       <div class="alert alert-danger" role="alert">
+        {{ session('error') }}
+       </div>
+       @endif
+       >>>>>>> 5f341d9db797e4e23d9bb98306a1ca9c6d4b2d17
+       <table id="datatableDefault" class="table text-nowrap w-100">
+        <thead>
+         <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Image1</th>
+          <th>Brand</th>
+          <th>Colors</th>
+          <th>Storages</th>
+          <th>RAM</th>
+          <th>Created_at</th>
+          <th>Action</th>
+         </tr>
+        </thead>
+        <tbody>
+         @foreach ($products as $key => $product)
+         <tr>
+          <td>{{ ++$key }}</td>
+          <td>{{ $product->name }}</td>
+          <td>
+           <img width="100px" class="img-thumbnail" src="{{ $product->img1_url }}" alt="">
+          </td>
+          <td>
+           {{ $product->brand->name }}
+          </td>
+          <td>
+           @foreach ($product->colors as $color)
+           <span class="badge text-bg-info">{{ $color->name }}</span>
+           @endforeach
+          </td>
+          <td>
+           @foreach ($product->storages as $storage)
+           <span class="badge text-bg-secondary">{{ $storage->name }}</span>
+           @endforeach
+          </td>
+          <td>
+           @foreach ($product->rams as $ram)
+           <span class="badge text-bg-theme">{{ $ram->name }}</span>
+           @endforeach
+          </td>
+          <td>
+           {{ $product->created_at->format('j M, Y') }}
+          </td>
+          <td>
+           <a href="{{ url('/admin/products/prices/'.$product->id) }}" class="btn btn-sm btn-secondary">Pricing</a>
+           <a href="{{ route('admin.products.edit', $product->id) }}" class="btn btn-sm btn-primary">Edit</a>
+           <a href="{{ route('admin.products.show', $product->id) }}" class="btn btn-sm btn-info">Show</a>
+           <form action="{{ route('admin.products.destroy', $product->id) }}" class="d-inline" method="POST">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-danger btn-sm">Del</button>
+           </form>
+          </td>
+         </tr>
+         @endforeach
+        </tbody>
+       </table>
       </div>
      </div>
-
-     <!-- END #datatable -->
-
-     <!-- BEGIN #bootstrapTable -->
-
-     <!-- END #bootstrapTable -->
     </div>
-    <!-- END col-9-->
+
+    <!-- END #datatable -->
+
+    <!-- BEGIN #bootstrapTable -->
+
+    <!-- END #bootstrapTable -->
    </div>
-   <!-- END row -->
+   <!-- END col-9-->
   </div>
-  <!-- END col-10 -->
+  <!-- END row -->
  </div>
- <!-- END row -->
- @include('sweetalert::alert')
+ <!-- END col-10 -->
+</div>
+<!-- END row -->
+@include('sweetalert::alert')
 
 </div>
 @endsection
@@ -149,4 +160,23 @@ showSweetAlert("Sorry!", "{{ Session::get('error') }}", "error");
 @endif
 
 
+@endsection
+<script src="{{ asset('admin_app/assets/plugins/@highlightjs/cdn-assets/highlight.min.js') }}"></script>
+<script src="{{ asset('admin_app/assets/js/demo/highlightjs.demo.js') }}"></script>
+<script src="{{ asset('admin_app/assets/plugins/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('admin_app/assets/plugins/datatables.net-bs5/js/dataTables.bootstrap5.min.js') }}"></script>
+<script src="{{ asset('admin_app/assets/plugins/datatables.net-buttons/js/dataTables.buttons.min.js') }}"></script>
+<script src="{{ asset('admin_app/assets/plugins/datatables.net-buttons/js/buttons.colVis.min.js') }}"></script>
+<script src="{{ asset('admin_app/assets/plugins/datatables.net-buttons/js/buttons.flash.min.js') }}"></script>
+<script src="{{ asset('admin_app/assets/plugins/datatables.net-buttons/js/buttons.html5.min.js') }}"></script>
+<script src="{{ asset('admin_app/assets/plugins/datatables.net-buttons/js/buttons.print.min.js') }}"></script>
+<script src="{{ asset('admin_app/assets/plugins/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js') }}"></script>
+<script src="{{ asset('admin_app/assets/plugins/datatables.net-responsive/js/dataTables.responsive.min.js') }}">
+</script>
+<script src="{{ asset('admin_app/assets/plugins/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js') }}">
+</script>
+<script src="{{ asset('admin_app/assets/plugins/bootstrap-table/dist/bootstrap-table.min.js') }}"></script>
+<script src="{{ asset('admin_app/assets/js/demo/table-plugins.demo.js') }}"></script>
+<script src="{{ asset('admin_app/assets/js/demo/sidebar-scrollspy.demo.js') }}"></script>
+<!-- ================== END page-js ================== -->
 @endsection

@@ -14,6 +14,19 @@
 <!-- custom js -->
 <script src="{{ asset('js/app.js') }}"></script>
 <!-- script section section end  -->
+<script src="{{ asset('assets/js/sweetalert.min.js') }}"></script>
+<script src="{{ asset('assets/js/sweetAlert.js') }}"></script>
+@if (Session::has('success'))
+<script>
+showSweetAlert("Success!", "{{ Session::get('success') }}", "success");
+</script>
+@endif
+@if (Session::has('error'))
+<script>
+showSweetAlert("Sorry!", "{{ Session::get('error') }}", "error");
+</script>
+@endif
+<script>
 
 
 <script>
@@ -68,15 +81,6 @@ $(document).ready(function() {
 //     $('.stop').on('click', function () {
 //       owl.trigger('stop.owl.autoplay')
 //     })
-
-//     $(document).ready(function () {
-//       $(" #nav > ul > li.dropdowns").click(function (e) {
-//         if ($(window).width() > 1400) {
-//           $(this).parent("ul").parent('div').siblings('div').fadeToggle(150);
-//           e.preventDefault();
-//         }
-//       });
-//     });
 // });
 
 $(document).ready(function() {
@@ -94,7 +98,7 @@ $(document).ready(function() {
   autoplay: true,
   autoplayTimeout: 3000,
   autoplayHoverPause: true,
-  nav: false,
+  // nav: true,
  });
 
  // Initialize the modal Owl Carousel for manual navigation
@@ -103,7 +107,7 @@ $(document).ready(function() {
   loop: true,
   autoplay: false,
   nav: true,
-  // dots: true,
+  dots: false,
  });
 
  // Handle click on a carousel item to open the modal
