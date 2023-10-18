@@ -67,16 +67,3 @@
  <!-- profile section end -->
 
 </x-layout>
-<script src="{{ asset('assets/js/sweetalert.min.js') }}"></script>
-<script src="{{ asset('assets/js/sweetAlert.js') }}"></script>
-@if (Session::has('success'))
-<script>
-showSweetAlert("Success!", "{{ Session::get('success') }}", "success");
-</script>
-@endif
-@if (Session::has('error'))
-<script>
-showSweetAlert("Sorry!", "{{ Session::get('error') }}", "error");
-</script>
-@endif
-<script>

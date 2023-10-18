@@ -4,7 +4,7 @@
   <div class="container d-flex justify-content-center">
    <div class="row">
     <div class="col-md-12">
-     <form action="{{ url('/profile/changepassword/'.Auth::user()->id) }}" method="post">
+     <form action="{{ url('/profile/changepassword/') }}" method="post">
       @csrf
       <table class="table">
        <tr>
@@ -12,6 +12,9 @@
         <td>:</td>
         <td>
          <input type="password" name="old_password" class="form-control" value="">
+         @error('old_password')
+         <p class="text-danger">*{{ $message }}</p>
+         @enderror
         </td>
        </tr>
        <tr>
@@ -19,6 +22,9 @@
         <td>:</td>
         <td>
          <input type="password" name="password" class="form-control" value="">
+         @error('password')
+         <p class="text-danger">*{{ $message }}</p>
+         @enderror
         </td>
        </tr>
       </table>
