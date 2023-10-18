@@ -68,15 +68,6 @@ $(document).ready(function() {
 //     $('.stop').on('click', function () {
 //       owl.trigger('stop.owl.autoplay')
 //     })
-
-//     $(document).ready(function () {
-//       $(" #nav > ul > li.dropdowns").click(function (e) {
-//         if ($(window).width() > 1400) {
-//           $(this).parent("ul").parent('div').siblings('div').fadeToggle(150);
-//           e.preventDefault();
-//         }
-//       });
-//     });
 // });
 
 $(document).ready(function() {
@@ -94,7 +85,7 @@ $(document).ready(function() {
   autoplay: true,
   autoplayTimeout: 3000,
   autoplayHoverPause: true,
-  nav: false,
+  // nav: true,
  });
 
  // Initialize the modal Owl Carousel for manual navigation
@@ -102,7 +93,7 @@ $(document).ready(function() {
   items: 1,
   loop: true,
   autoplay: false,
-  nav: true,
+  // nav: true,
   // dots: true,
  });
 
