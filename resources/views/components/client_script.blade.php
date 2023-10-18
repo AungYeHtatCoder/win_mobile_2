@@ -93,8 +93,8 @@ $(document).ready(function() {
   items: 1,
   loop: true,
   autoplay: false,
-  // nav: true,
-  // dots: true,
+  nav: true,
+  dots: false,
  });
 
  // Handle click on a carousel item to open the modal

@@ -401,11 +401,16 @@ hr {
 
 .modal-content {
   position: absolute;
-  top: 55%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 50%;
   max-width: 50%;
+}
+
+.owl-nav {
+  margin-top: 0 !important;
+  font-size: 2rem;
 }
 
 /* Close button */
