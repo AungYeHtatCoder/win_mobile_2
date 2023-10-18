@@ -55,7 +55,8 @@
               <option value="">Choose Brand</option>
               @foreach ($brands as $brand)
               <option value="{{ $brand->id }}" {{ $brand->id == $accessory->brand_id ? "selected" : "" }}>
-               {{ $brand->name }}</option>
+               {{ $brand->name }}
+              </option>
               @endforeach
              </select>
              @error('brand_id')
@@ -145,7 +146,8 @@
 
              <div>
               <input type="number" name="{{ $inputName }}[qty]" value="{{ $colorQty }}" data-id="{{ $color->id }}"
-               class="color-qty form-control" placeholder="Quantity" {{ $colorQty ? null : 'disabled' }}>
+               class="color-qty form-control" placeholder="Quantity"
+               {{ is_null($colorQty) ? 'disabled' : ($colorQty == 0 ? 'enabled' : '') }}>
              </div>
 
              <div>
