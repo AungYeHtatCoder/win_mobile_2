@@ -1,6 +1,6 @@
 <x-layout>
  <!-- content section start -->
- <section class="container justify-content-center align-items-center aboutus" style="padding-top: 3rem;">
+ <section class="container justify-content-center align-items-center aboutus" style="padding-top: 8rem;">
 
   <div class="text-center">
    <p class="fw-bold">

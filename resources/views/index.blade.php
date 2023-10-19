@@ -122,12 +122,12 @@
  <section class="mb-5">
   <div class="container">
    <!-- <div class="row"> -->
-   <div class="row my-3 ms-1">
-    <div class="col-md-6 col-sm-12 mt-3">
+   <div class="row my-3 ms-1" >
+    <div class="col-md-6 col-sm-12 mt-sm-3">
      <div class="justify-content-center aligns-items-center mt-lg-5">
-      <p>✅ အဟောင်းပေးအသစ်ယူ အလဲအထပ်ရပါတယ်ရှင့်</p>
-      <p>✅ Win Mobile မှာ အရစ်ကျစနစ်နဲ့ ငွေပေးချေလိုရတယ်လေ။</p>
-      <p>✅ အရစ်ကျ ဝယ်ယူထားတဲ့ ဖုန်းအတွက် ကုန်ကျစရိတ်ကို တစ်လချင်းစီ အေးဆေး ပေးသွင်းသွားရုံပဲ။</p>
+      <p><span class="fa-solid fa-check"></span> အဟောင်းပေးအသစ်ယူ အလဲအထပ်ရပါတယ်ရှင့်</p>
+      <p><span class="fa-solid fa-check"></span> Win Mobile မှာ အရစ်ကျစနစ်နဲ့ ငွေပေးချေလိုရတယ်လေ။</p>
+      <p><span class="fa-solid fa-check"></span> အရစ်ကျ ဝယ်ယူထားတဲ့ ဖုန်းအတွက် ကုန်ကျစရိတ်ကို တစ်လချင်းစီ အေးဆေး ပေးသွင်းသွားရုံပဲ။</p>
      </div>
 
      <div class="mt-5">

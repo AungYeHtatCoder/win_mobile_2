@@ -1,5 +1,5 @@
 <!-- secondary navbar section start  -->
-<section class="container mt-4">
+<section class="container mt-4" style="padding-top:7rem">
     <div class="row secondary-nav">
         <div class="col-lg-9 d-lg-block d-none">
             <form class="search-box" action="{{ route('search') }}" method="get">

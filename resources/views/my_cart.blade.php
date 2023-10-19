@@ -1,7 +1,7 @@
 <x-layout>
     {{-- <x-client_secondary_navbar /> --}}
     <!-- content section start  -->
-    <section class="container mt-md-5" id="cart" style="overflow: hidden;">
+    <section class="container mt-md-5" id="cart" style="overflow: hidden;padding-top:10rem">
         <div class="row">
             <div class="col-md-8 mx-1">
                 @auth

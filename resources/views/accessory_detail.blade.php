@@ -1,6 +1,6 @@
 <x-layout>
 
- <section class="container mt-md-5 mt-sm-3">
+ <section class="container mt-md-5 mt-sm-3" style="padding-top:7rem;">
   <div class="row">
    <div class="col-md-6 col-sm-12 border border-1 p-3">
     <div>

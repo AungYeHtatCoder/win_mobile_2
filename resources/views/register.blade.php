@@ -1,8 +1,8 @@
 <x-layout>
 <!-- content section start  -->
-  <section class="registers ">
+  <section class="registers " style="padding-top:7rem">
     <div class="row d-flex flex-column justify-content-center align-items-center">
-      <form class="col-md-6 shadow p-3 bg-body rounded mt-5 mb-5 d-flex flex-column justify-content-center align-items-center" action="{{ route('register') }}" method="POST">
+      <form class="col-md-6 col-8 shadow p-3 bg-body rounded mt-5 mb-5 d-flex flex-column justify-content-center align-items-center" action="{{ route('register') }}" method="POST">
         @csrf
         <h4 class="text-center p-3">Register here!</h4>
 

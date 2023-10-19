@@ -1,12 +1,7 @@
 <x-layout>
  <!-- profile section start -->
-<<<<<<< HEAD
- <section style="padding: 5rem;">
-  <div class="container">
-=======
- <section>
-  <div class="container my-5 pt-5">
->>>>>>> myomin
+ <section style="padding-top:7rem;">
+  <div class="container my-5 pt-5" >
    <div class="row">
     <aside class="col-md-4 border p-3">
      <div class="d-flex flex-column justify-content-center align-items-center">

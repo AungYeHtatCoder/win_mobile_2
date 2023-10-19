@@ -11,7 +11,7 @@
   </div>
   <div class="row mt-4">
    @foreach($mergedProducts as $product)
-   <div class="col-lg-3 col-sm-12 d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded">
+   <div class="col-lg-3 col-sm-12 col-10 mx-auto d-flex flex-column justify-content-between m-1 shadow p-3 bg-body rounded">
     <div class="text-end">
      @if($product->storages || $product->rams)
      <a href="{{url('/product_detail/'.$product->id) }}">
