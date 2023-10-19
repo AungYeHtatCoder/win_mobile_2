@@ -9,7 +9,7 @@
 
     <div>
      <span>Phone : +959773900001 , +959400000235</span><br>
-     <span>Facebook : WIN Mobile Second Shop-Kyauk Se /<br /> Win Mobile Kyauk Se-2</span><br>
+     <span>Facebook : WIN Mobile Second Shop - Kyauk Se /<br /> Win Mobile Kyauk Se-2</span><br>
      <!-- <span>Email : admin@gmail.com</span> -->
     </div>
   </div>
@@ -25,7 +25,7 @@
   <div class="col-lg-3 col-md-4 footer_sections">
    <h5>Follow Us</h6>
     <span><a href="#">Facebook</a></span>
-    <span><a href="#">Tiktok</a></span>
+    <span><a href="">viber</a></span>
     <span><a href="#">Telegram</a></span>
 
   </div>

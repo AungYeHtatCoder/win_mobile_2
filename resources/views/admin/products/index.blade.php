@@ -38,15 +38,15 @@
       <p></p>
       <div class="card">
        <div class="card-body">
-        <<<<<<< HEAD=======@if (session('success')) <div class="alert alert-primary" role="alert">
-         {{ session('success') }}
+        <div class="alert alert-primary" role="alert">
+         @if (session('success'))
        </div>
        @elseif (session('error'))
        <div class="alert alert-danger" role="alert">
         {{ session('error') }}
        </div>
        @endif
-       >>>>>>> 5f341d9db797e4e23d9bb98306a1ca9c6d4b2d17
+       
        <table id="datatableDefault" class="table text-nowrap w-100">
         <thead>
          <tr>
@@ -160,7 +160,6 @@ showSweetAlert("Sorry!", "{{ Session::get('error') }}", "error");
 @endif
 
 
-@endsection
 <script src="{{ asset('admin_app/assets/plugins/@highlightjs/cdn-assets/highlight.min.js') }}"></script>
 <script src="{{ asset('admin_app/assets/js/demo/highlightjs.demo.js') }}"></script>
 <script src="{{ asset('admin_app/assets/plugins/datatables.net/js/jquery.dataTables.min.js') }}"></script>

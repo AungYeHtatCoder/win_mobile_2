@@ -1,6 +1,6 @@
 <x-layout>
  {{-- checkout list --}}
- <section class="container my-5">
+ <section class="container my-5" style="padding-top:5rem;">
   <div class="d-flex justify-content-start">
    <div>
     <a href="{{ url('/') }}" class="btn btn-sm btn-outline-success">Back To Home</a>
@@ -8,10 +8,10 @@
   </div>
   <h3 class="text-center text-success">You have ordered successfully.</h3>
   <div class="row">
-   <div class="col-md-4 offset-md-4">
-    <div class="card my-5 p-4 text-center border-none shadow">
-     <div class="d-flex">
-      <div class="me-4">
+   <div class="col-lg-4 col-md-5 col-8 mx-auto offset-md-4">
+    <div class="card my-5 p-4  text-center border-none shadow">
+     <div class="d-flex ">
+      <div class="me-4 ">
        Name :
       </div>
       <div>

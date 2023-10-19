@@ -1,6 +1,6 @@
 <x-layout>
  <!-- content section start -->
- <section class="contents">
+ <section class="contents" style="padding-top:2rem">
   <div class="container row d-flex justify-content-center align-items-center" style="padding-top: 5rem;">
    <div class="col-lg-7 col-md-6 text-center mx-md-5 p-md-5 mx-auto">
     <h1><span class="fw-bold">Contact </span>Us</h1>

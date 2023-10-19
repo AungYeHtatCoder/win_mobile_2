@@ -1,9 +1,9 @@
 <x-layout>
 
     <!-- content section start  -->
-  <section class="logins">
+  <section class="logins" style="padding-top:7rem">
     <div class="row d-flex flex-column justify-content-center align-items-center">
-      <form class="col-lg-4 col-md-6 col-sm-8 shadow p-3 bg-body rounded mt-5 mb-5" action="{{ route('login') }}" method="POST">
+      <form class="col-lg-4 col-md-6 col-sm-8 col-8 shadow p-3 bg-body rounded mt-5 mb-5" action="{{ route('login') }}" method="POST">
         @csrf
         <h4 class="text-center p-3">Login here!</h4>
         <div class="form-group row mb-3">

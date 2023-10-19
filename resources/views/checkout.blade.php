@@ -1,6 +1,6 @@
 <x-layout>
     {{-- checkout list --}}
-    <section class="container my-5">
+    <section class="container my-5" style="padding-top:5rem;">
         <h3 class="text-center">Checkout Lists</h3>
         <div class="row">
             <div class="col-md-8 mb-3">
